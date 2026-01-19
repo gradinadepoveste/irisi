@@ -3223,73 +3223,75 @@
   season: "Inflorire la mijlocul sezonului"
 },
     ];
-
-    const gallery = document.getElementById("gallery");
-    const search = document.getElementById("search");
+    const searchInput = document.getElementById("search");
     const colorFilter = document.getElementById("colorFilter");
     const classFilter = document.getElementById("classFilter");
     const seasonFilter = document.getElementById("seasonFilter");
     const minHeight = document.getElementById("minHeight");
     const maxHeight = document.getElementById("maxHeight");
-    const resetBtn = document.getElementById("resetBtn");
+    const sortHeight = document.getElementById("sortHeight");
+    const gallery = document.getElementById("gallery");
     const counter = document.getElementById("counter");
 
-    function renderGallery() {
-      const query = search.value.toLowerCase();
-      const color = colorFilter.value;
-      const cls = classFilter.value;
-      const season = seasonFilter.value.toLowerCase();
-      const min = parseInt(minHeight.value) || 0;
-      const max = parseInt(maxHeight.value) || 200;
-
-      const filtered = flowers.filter(flower => {
-        const matchName = flower.name.toLowerCase().includes(query);
-        const matchColor = !color || flower.color.toLowerCase().includes(color);
-        const matchClass = !cls || flower.class === cls;
-        const matchSeason = !season || flower.season.toLowerCase().includes(season);
-        const matchHeight = flower.height >= min && flower.height <= max;
-        return matchName && matchColor && matchClass && matchSeason && matchHeight;
-      });
-
+    function renderGallery(data) {
       gallery.innerHTML = "";
-      counter.textContent = `Rezultate afișate: ${filtered.length}`;
-
-      filtered.forEach(flower => {
+      data.forEach(flower => {
         const card = document.createElement("div");
         card.className = "card";
         card.innerHTML = `
           <img src="${flower.image}" alt="${flower.name}" />
-          <p>
-            <strong>${flower.name}</strong>
-            ${flower.season}<br>
-            Culoare: ${flower.color}<br>
-            Înălțime: ${flower.height} cm<br>
-            Clasificare: ${flower.class}
-          </p>
+          <strong>${flower.name}</strong>
+          <p>Înălțime: ${flower.height} cm</p>
+          <p>Clasă: ${flower.class}</p>
+          <p>Sezon: ${flower.season}</p>
         `;
         gallery.appendChild(card);
       });
+      counter.textContent = `${data.length} rezultate găsite`;
     }
 
-    function resetFilters() {
-      search.value = "";
+    function applyFilters() {
+      let filtered = flowers.filter(f => {
+        const matchesName = f.name.toLowerCase().includes(searchInput.value.toLowerCase());
+        const matchesColor = !colorFilter.value || (f.color && f.color.toLowerCase().includes(colorFilter.value));
+        const matchesClass = !classFilter.value || f.class === classFilter.value;
+        const matchesSeason = !seasonFilter.value || f.season.toLowerCase().includes(seasonFilter.value);
+        const matchesMin = !minHeight.value || f.height >= parseInt(minHeight.value);
+        const matchesMax = !maxHeight.value || f.height <= parseInt(maxHeight.value);
+        return matchesName && matchesColor && matchesClass && matchesSeason && matchesMin && matchesMax;
+      });
+
+      const sortValue = sortHeight.value;
+      if (sortValue === "asc") {
+        filtered.sort((a, b) => (a.height || 0) - (b.height || 0));
+      } else if (sortValue === "desc") {
+        filtered.sort((a, b) => (b.height || 0) - (a.height || 0));
+      }
+
+      renderGallery(filtered);
+    }
+
+    searchInput.addEventListener("input", applyFilters);
+    colorFilter.addEventListener("change", applyFilters);
+    classFilter.addEventListener("change", applyFilters);
+    seasonFilter.addEventListener("change", applyFilters);
+    minHeight.addEventListener("input", applyFilters);
+    maxHeight.addEventListener("input", applyFilters);
+    sortHeight.addEventListener("change", applyFilters);
+
+    document.getElementById("resetBtn").addEventListener("click", () => {
+      searchInput.value = "";
       colorFilter.value = "";
       classFilter.value = "";
       seasonFilter.value = "";
       minHeight.value = "";
       maxHeight.value = "";
-      renderGallery();
-    }
+      sortHeight.value = "";
+      renderGallery(flowers);
+    });
 
-    search.addEventListener("input", renderGallery);
-    colorFilter.addEventListener("change", renderGallery);
-    classFilter.addEventListener("change", renderGallery);
-    seasonFilter.addEventListener("change", renderGallery);
-    minHeight.addEventListener("input", renderGallery);
-    maxHeight.addEventListener("input", renderGallery);
-    resetBtn.addEventListener("click", resetFilters);
-
-    renderGallery();
+    // Inițializare
+    renderGallery(flowers);
   </script>
 </body>
 </html>
