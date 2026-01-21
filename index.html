@@ -5647,38 +5647,54 @@ function renderGallery(data) {
 }
 
     function applyFilters() {
-      const nameVal = document.getElementById("search").value.toLowerCase();
-      const letterVal = document.getElementById("searchLetter").value.toLowerCase();
-      const colorVal = document.getElementById("colorFilter").value;
-      const seasonVal = document.getElementById("seasonFilter").value;
-      const rebloomVal = document.getElementById("rebloomFilter").value;
-      const classVal = document.getElementById("classFilter").value;
-      const minH = parseInt(document.getElementById("minHeight").value) || 0;
-      const maxH = parseInt(document.getElementById("maxHeight").value) || 999;
+    const nameVal = document.getElementById("search").value.toLowerCase();
+    const letterVal = document.getElementById("searchLetter").value.toLowerCase();
+    const colorVal = document.getElementById("colorFilter").value;
+    const seasonVal = document.getElementById("seasonFilter").value;
+    const rebloomVal = document.getElementById("rebloomFilter").value;
+    const classVal = document.getElementById("classFilter").value;
+    const minH = parseInt(document.getElementById("minHeight").value) || 0;
+    const maxH = parseInt(document.getElementById("maxHeight").value) || 999;
 
-      let filtered = flowers.filter(f => {
-        const h = parseInt(f.height) || 0;
+    let filtered = flowers.filter(f => {
+        // Folosim o curățare mai strictă: extragem doar cifrele din string
+        // Asta elimină orice eroare cauzată de "cm", spații sau alte caractere
+        const h = parseInt(String(f.height).replace(/\D/g, '')) || 0;
+
         const matchesName = f.name.toLowerCase().includes(nameVal);
         const matchesLetter = !letterVal || f.name.toLowerCase().startsWith(letterVal);
-        const matchesColor = !colorVal || (f.color && f.color.toLowerCase().includes(colorVal));
-        const matchesSeason = !seasonVal || (f.season && f.season.toLowerCase().includes(seasonVal));
+        const matchesColor = !colorVal || (f.color && f.color.toLowerCase().includes(colorVal.toLowerCase()));
+        const matchesSeason = !seasonVal || (f.season && f.season.toLowerCase().includes(seasonVal.toLowerCase()));
         const matchesClass = !classVal || f.class === classVal;
         const matchesRebloom = !rebloomVal || (rebloomVal === "rebloom" ? f.rebloom : !f.rebloom);
         const matchesHeight = h >= minH && h <= maxH;
 
         return matchesName && matchesLetter && matchesColor && matchesSeason && matchesClass && matchesRebloom && matchesHeight;
-      });
+    });
 
-      // Sortări
-      if (document.getElementById("sortAlpha").value === "az") filtered.sort((a, b) => a.name.localeCompare(b.name));
-      if (document.getElementById("sortAlpha").value === "za") filtered.sort((a, b) => b.name.localeCompare(a.name));
-      
-      const hSort = document.getElementById("sortHeight").value;
-      if (hSort === "asc") filtered.sort((a, b) => parseInt(a.height) - parseInt(b.height));
-      if (hSort === "desc") filtered.sort((a, b) => parseInt(b.height) - parseInt(a.height));
+    // --- LOGICA DE SORTARE COMBINATĂ ---
+    const alphaSort = document.getElementById("sortAlpha").value;
+    const hSort = document.getElementById("sortHeight").value;
 
-      renderGallery(filtered);
-    }
+    filtered.sort((a, b) => {
+        // 1. Prioritate Sortare Înălțime (dacă este selectată)
+        if (hSort) {
+            const valA = parseInt(String(a.height).replace(/\D/g, '')) || 0;
+            const valB = parseInt(String(b.height).replace(/\D/g, '')) || 0;
+            if (valA !== valB) {
+                return hSort === "asc" ? valA - valB : valB - valA;
+            }
+        }
+
+        // 2. Apoi Sortare Alfabetică (ca secundară sau principală)
+        if (alphaSort === "za") {
+            return b.name.localeCompare(a.name);
+        }
+        return a.name.localeCompare(b.name); // Default A-Z
+    });
+
+    renderGallery(filtered);
+}
 
     // Evenimente
     document.querySelectorAll(".filters input, .filters select").forEach(el => {
@@ -5700,6 +5716,7 @@ function renderGallery(data) {
   </script>
 </body>
 </html>
+
 
 
 
