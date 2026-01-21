@@ -4,133 +4,88 @@
   <meta charset="UTF-8" />
   <title>Grădina de poveste</title>
   <style>
-    body {
-      font-family: sans-serif;
-      background: #f9f9f9;
-      margin: 0;
-      padding: 1rem;
+    body { font-family: sans-serif; background: #f9f9f9; margin: 0; padding: 1rem; scroll-behavior: smooth; }
+    header { text-align: center; margin-bottom: 2rem; }
+    .filters { 
+      display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; 
+      margin-bottom: 1rem; background: #eee; padding: 1rem; border-radius: 8px;
+      position: sticky; top: 10px; z-index: 100;
     }
-    header {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-    header img {
-      max-width: 100%;
-      height: auto;
-      margin-top: 1rem;
-      border-radius: 8px;
-    }
-    .filters {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      justify-content: center;
-      margin-bottom: 1rem;
-    }
-    .filters input,
-    .filters select,
-    .filters button {
-      padding: 0.4rem 0.6rem;
-      font-size: 0.95rem;
-    }
-    #minHeight,
-    #maxHeight {
-      width: 100px;
-    }
-    #seasonFilter {
-      width: 150px;
-    }
-    #sortHeight {
-      width: 180px;
-    }
-    .counter {
-      text-align: center;
-      margin-bottom: 1rem;
-      font-style: italic;
-      color: #555;
-    }
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: center;
-    }
-    .card {
-      background: white;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      width: 220px;
-      padding: 1rem;
-      text-align: center;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      transition: transform 0.2s ease;
-    }
-    .card:hover {
-      transform: scale(1.03);
-    }
-    .card img {
-      width: 100%;
-      height: auto;
-      border-radius: 4px;
-    }
-    .card strong {
-      font-size: 1.1rem;
-      display: block;
-      margin-bottom: 0.3rem;
-    }
-    .card p {
-      margin: 0.5rem 0;
-      font-size: 0.9rem;
-    }
-    @media (max-width: 600px) {
-      .card {
-        width: 90%;
-      }
+    .filters input, .filters select, .filters button { padding: 0.4rem; font-size: 0.9rem; }
+    #searchLetter { width: 60px; text-align: center; }
+    #minHeight, #maxHeight { width: 80px; }
+    
+    .gallery { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
+    .card { background: white; border: 1px solid #ccc; border-radius: 8px; width: 220px; padding: 1rem; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    .card img { width: 100%; height: 200px; object-fit: cover; border-radius: 4px; }
+    
+    .rebloom-badge { background: #28a745; color: white; font-size: 0.7rem; padding: 2px 5px; border-radius: 4px; display: inline-block; margin-bottom: 5px; }
+    
+    #backToTop {
+      position: fixed; bottom: 20px; right: 20px; padding: 10px 15px;
+      background: #007bff; color: white; border: none; border-radius: 50%;
+      cursor: pointer; display: none; font-weight: bold;
     }
   </style>
 </head>
 <body>
+
   <header>
     <h1>Grădina de poveste</h1>
     <p>Catalog interactiv de iriși</p>
-    <img src="aIMG_E4385.jpg" alt="Imagine decorativă" />
   </header>
 
   <div class="filters">
-    <input type="text" id="search" placeholder="Caută după nume..." />
+    <input type="text" id="search" placeholder="Caută nume..." />
+
+    <select id="sortAlpha">
+      <option value="">Ordonare A-Z</option>
+      <option value="az">A-Z</option>
+      <option value="za">Z-A</option>
+    </select>
+    <input type="text" id="searchLetter" maxlength="1" placeholder="Litera" title="Introdu o literă pentru filtrare" />
+
     <select id="colorFilter">
       <option value="">Toate culorile</option>
       <option value="mov">Mov</option>
       <option value="albastru">Albastru</option>
-      <option value="visiniu">Visiniu</option>
-      <option value="bicolor">Bicolor</option>
-      <option value="maro">Maro</option>
+      <option value="galben">Galben</option>
+      </select>
+
+    <select id="seasonFilter">
+      <option value="">Orice perioadă</option>
+      <option value="timpurie">Timpurie</option>
+      <option value="mijloc">Mijloc</option>
+      <option value="târzie">Târzie</option>
     </select>
+
+    <select id="rebloomFilter">
+      <option value="">Tip înflorire</option>
+      <option value="normal">Normală</option>
+      <option value="rebloom">Reînflorire</option>
+    </select>
+
     <select id="classFilter">
-      <option value="">Toate clasificările</option>
+      <option value="">Clasă</option>
       <option value="TB">TB</option>
       <option value="IB">IB</option>
-      <option value="BB">BB</option>
-      <option value="SDB">SDB</option>
     </select>
-    <select id="seasonFilter">
-      <option value="">Toate perioadele</option>
-      <option value="timpurie">Înflorire timpurie</option>
-      <option value="mijlocul sezonului">Înflorire la mijlocul sezonului</option>
-      <option value="târzie">Înflorire târzie</option>
-    </select>
-    <input type="number" id="minHeight" placeholder="Înălțime minimă (cm)" />
-    <input type="number" id="maxHeight" placeholder="Înălțime maximă (cm)" />
+
+    <input type="number" id="minHeight" placeholder="H min" />
+    <input type="number" id="maxHeight" placeholder="H max" />
     <select id="sortHeight">
-      <option value="">Înălțime</option>
-      <option value="asc">Înălțime crescătoare</option>
-      <option value="desc">Înălțime descrescătoare</option>
-    </select>    
-    <button id="resetBtn">🔄 Resetează filtrele</button>
+      <option value="">Sort. Înălțime</option>
+      <option value="asc">Crescător</option>
+      <option value="desc">Descrescător</option>
+    </select>
+
+    <button id="resetBtn">🔄 Reset</button>
   </div>
 
-  <div class="counter" id="counter"></div>
+  <div id="counter" style="text-align:center; margin-bottom:10px;"></div>
   <section class="gallery" id="gallery"></section>
+
+  <button id="backToTop">↑ TOP</button>
 
   <script>
     const flowers = [
@@ -5632,78 +5587,80 @@
     season: ""
   },  
     ];
-    const searchInput = document.getElementById("search");
-    const colorFilter = document.getElementById("colorFilter");
-    const classFilter = document.getElementById("classFilter");
-    const seasonFilter = document.getElementById("seasonFilter");
-    const minHeight = document.getElementById("minHeight");
-    const maxHeight = document.getElementById("maxHeight");
-    const sortHeight = document.getElementById("sortHeight");
-    const gallery = document.getElementById("gallery");
-    const counter = document.getElementById("counter");
-
+    
     function renderGallery(data) {
+      const gallery = document.getElementById("gallery");
       gallery.innerHTML = "";
-      data.forEach(flower => {
+      data.forEach(f => {
         const card = document.createElement("div");
         card.className = "card";
         card.innerHTML = `
-          <img src="${flower.image}" alt="${flower.name}" />
-          <strong>${flower.name}</strong>
-          <p>Înălțime: ${flower.height} cm</p>
-          <p>Clasă: ${flower.class}</p>
-          <p>Sezon: ${flower.season}</p>
+          <img src="${f.image}" alt="${f.name}">
+          ${f.rebloom ? '<span class="rebloom-badge">REÎNFLORITOR</span>' : ''}
+          <strong>${f.name}</strong>
+          <p>Înălțime: ${f.height}</p>
+          <p>Clasă: ${f.class} | Sezon: ${f.season}</p>
         `;
         gallery.appendChild(card);
       });
-      counter.textContent = `${data.length} rezultate găsite`;
+      document.getElementById("counter").textContent = `${data.length} iriși găsiți`;
     }
 
     function applyFilters() {
+      const nameVal = document.getElementById("search").value.toLowerCase();
+      const letterVal = document.getElementById("searchLetter").value.toLowerCase();
+      const colorVal = document.getElementById("colorFilter").value;
+      const seasonVal = document.getElementById("seasonFilter").value;
+      const rebloomVal = document.getElementById("rebloomFilter").value;
+      const classVal = document.getElementById("classFilter").value;
+      const minH = parseInt(document.getElementById("minHeight").value) || 0;
+      const maxH = parseInt(document.getElementById("maxHeight").value) || 999;
+
       let filtered = flowers.filter(f => {
-        const matchesName = f.name.toLowerCase().includes(searchInput.value.toLowerCase());
-        const matchesColor = !colorFilter.value || (f.color && f.color.toLowerCase().includes(colorFilter.value));
-        const matchesClass = !classFilter.value || f.class === classFilter.value;
-        const matchesSeason = !seasonFilter.value || f.season.toLowerCase().includes(seasonFilter.value);
-        const matchesMin = !minHeight.value || f.height >= parseInt(minHeight.value);
-        const matchesMax = !maxHeight.value || f.height <= parseInt(maxHeight.value);
-        return matchesName && matchesColor && matchesClass && matchesSeason && matchesMin && matchesMax;
+        const h = parseInt(f.height) || 0;
+        const matchesName = f.name.toLowerCase().includes(nameVal);
+        const matchesLetter = !letterVal || f.name.toLowerCase().startsWith(letterVal);
+        const matchesColor = !colorVal || (f.color && f.color.toLowerCase().includes(colorVal));
+        const matchesSeason = !seasonVal || (f.season && f.season.toLowerCase().includes(seasonVal));
+        const matchesClass = !classVal || f.class === classVal;
+        const matchesRebloom = !rebloomVal || (rebloomVal === "rebloom" ? f.rebloom : !f.rebloom);
+        const matchesHeight = h >= minH && h <= maxH;
+
+        return matchesName && matchesLetter && matchesColor && matchesSeason && matchesClass && matchesRebloom && matchesHeight;
       });
 
-      const sortValue = sortHeight.value;
-      if (sortValue === "asc") {
-        filtered.sort((a, b) => (a.height || 0) - (b.height || 0));
-      } else if (sortValue === "desc") {
-        filtered.sort((a, b) => (b.height || 0) - (a.height || 0));
-      }
+      // Sortări
+      if (document.getElementById("sortAlpha").value === "az") filtered.sort((a, b) => a.name.localeCompare(b.name));
+      if (document.getElementById("sortAlpha").value === "za") filtered.sort((a, b) => b.name.localeCompare(a.name));
+      
+      const hSort = document.getElementById("sortHeight").value;
+      if (hSort === "asc") filtered.sort((a, b) => parseInt(a.height) - parseInt(b.height));
+      if (hSort === "desc") filtered.sort((a, b) => parseInt(b.height) - parseInt(a.height));
 
       renderGallery(filtered);
     }
 
-    searchInput.addEventListener("input", applyFilters);
-    colorFilter.addEventListener("change", applyFilters);
-    classFilter.addEventListener("change", applyFilters);
-    seasonFilter.addEventListener("change", applyFilters);
-    minHeight.addEventListener("input", applyFilters);
-    maxHeight.addEventListener("input", applyFilters);
-    sortHeight.addEventListener("change", applyFilters);
-
-    document.getElementById("resetBtn").addEventListener("click", () => {
-      searchInput.value = "";
-      colorFilter.value = "";
-      classFilter.value = "";
-      seasonFilter.value = "";
-      minHeight.value = "";
-      maxHeight.value = "";
-      sortHeight.value = "";
-      renderGallery(flowers);
+    // Evenimente
+    document.querySelectorAll(".filters input, .filters select").forEach(el => {
+      el.addEventListener("input", applyFilters);
     });
 
-    // Inițializare
+    // Reset
+    document.getElementById("resetBtn").onclick = () => {
+      document.querySelectorAll(".filters input, .filters select").forEach(el => el.value = "");
+      applyFilters();
+    };
+
+    // Back to top logic
+    const topBtn = document.getElementById("backToTop");
+    window.onscroll = () => topBtn.style.display = window.scrollY > 400 ? "block" : "none";
+    topBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+
     renderGallery(flowers);
   </script>
 </body>
 </html>
+
 
 
 
