@@ -103,7 +103,7 @@
     name: "Aber Wrac'h",
     image: "Aber Wrac'h - IMG_E5136 - r17-42.jpg",
     color: "mov",
-    height: 85,
+    height: 85 cm,
     class: "TB",
     season: "Inflorire timpurie",
     rebloom: true
@@ -112,7 +112,7 @@
     name: "Abiqua Falls",
     image: "Abiqua Falls - IMG_E4224 - r12-58.jpg",
     color: "albastru",
-    height: 99,
+    height: 99 cm,
     class: "TB",
     season: "Inflorire la mijlocul sezonului",
     rebloom: true
@@ -5625,14 +5625,17 @@
       const gallery = document.getElementById("gallery");
       gallery.innerHTML = "";
       data.forEach(f => {
+        // Extragem doar cifrele pentru afișare curată
+        const inaltimeCifre = parseInt(f.height) || 0; 
+        
         const card = document.createElement("div");
         card.className = "card";
+        console.log("Încarc imaginea:", f.image);
         card.innerHTML = `
           <img src="${f.image}" alt="${f.name}">
           ${f.rebloom ? '<span class="rebloom-badge">REÎNFLORITOR</span>' : ''}
           <strong>${f.name}</strong>
-          <p>Înălțime: ${f.height}</p>
-          <p>Clasă: ${f.class} | Sezon: ${f.season}</p>
+          <p>Înălțime: ${inaltimeCifre} cm</p> <p>Clasă: ${f.class} | Sezon: ${f.season}</p>
         `;
         gallery.appendChild(card);
       });
@@ -5693,6 +5696,7 @@
   </script>
 </body>
 </html>
+
 
 
 
