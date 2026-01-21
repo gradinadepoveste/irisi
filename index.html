@@ -5621,26 +5621,30 @@
   },  
     ];
     
-    function renderGallery(data) {
-      const gallery = document.getElementById("gallery");
-      gallery.innerHTML = "";
-      data.forEach(f => {
-        // Extragem doar cifrele pentru afișare curată
-        const inaltimeCifre = parseInt(f.height) || 0; 
-        
-        const card = document.createElement("div");
-        card.className = "card";
-        console.log("Încarc imaginea:", f.image);
-        card.innerHTML = `
-          <img src="${f.image}" alt="${f.name}">
-          ${f.rebloom ? '<span class="rebloom-badge">REÎNFLORITOR</span>' : ''}
-          <strong>${f.name}</strong>
-          <p>Înălțime: ${inaltimeCifre} cm</p> <p>Clasă: ${f.class} | Sezon: ${f.season}</p>
-        `;
-        gallery.appendChild(card);
-      });
-      document.getElementById("counter").textContent = `${data.length} iriși găsiți`;
-    }
+function renderGallery(data) {
+  const gallery = document.getElementById("gallery");
+  gallery.innerHTML = "";
+  
+  data.forEach(f => {
+    // VARIANTĂ AUTOMATĂ: 
+    // Luăm orice text din f.height, extragem doar cifrele și punem " cm"
+    // Dacă f.height este gol, afișăm "N/A"
+    let afisajInaltime = f.height ? (parseInt(f.height) + " cm") : "N/A";
+
+    const card = document.createElement("div");
+    card.className = "card";
+    card.innerHTML = `
+      <img src="${f.image}" alt="${f.name}">
+      ${f.rebloom ? '<span class="rebloom-badge">REÎNFLORITOR</span>' : ''}
+      <strong>${f.name}</strong>
+      <p>Înălțime: ${afisajInaltime}</p> 
+      <p>Clasă: ${f.class} | Sezon: ${f.season}</p>
+    `;
+    gallery.appendChild(card);
+  });
+  
+  document.getElementById("counter").textContent = `${data.length} iriși găsiți`;
+}
 
     function applyFilters() {
       const nameVal = document.getElementById("search").value.toLowerCase();
@@ -5696,6 +5700,7 @@
   </script>
 </body>
 </html>
+
 
 
 
