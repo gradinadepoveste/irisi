@@ -5628,14 +5628,27 @@
 },
  ];
     
+// --- TRADUCERI SEZON ---
+const translations = {
+  "Very, very early bloom": "Înflorire foarte, foarte timpurie",
+  "Very early bloom": "Înflorire foarte timpurie",
+  "Early bloom": "Înflorire timpurie",
+  "Early to midseason bloom": "Înflorire timpurie spre mijlocul sezonului",
+  "Midseason bloom": "Înflorire la mijlocul sezonului",
+  "Late bloom": "Înflorire târzie",
+  "Very late bloom": "Înflorire foarte târzie"
+};
+
+function translate(text) {
+  return translations[text] || text;
+}
+
+// --- GALERIE ---
 function renderGallery(data) {
   const gallery = document.getElementById("gallery");
   gallery.innerHTML = "";
   
   data.forEach(f => {
-    // VARIANTĂ AUTOMATĂ: 
-    // Luăm orice text din f.height, extragem doar cifrele și punem ""
-    // Dacă f.height este gol, afișăm "N/A"
     let afisajInaltime = f.height ? (parseInt(f.height) + "") : "N/A";
 
     const card = document.createElement("div");
@@ -5645,7 +5658,7 @@ function renderGallery(data) {
       ${f.rebloom ? '<span class="rebloom-badge">REÎNFLORITOR</span>' : ''}
       <strong>${f.name}</strong>
       <p>Înălțime: ${afisajInaltime}</p> 
-      <p>Clasă: ${f.class} | Sezon: ${f.season}</p>
+      <p>Clasă: ${f.class.trim()} | Sezon: ${translate(f.season)}</p>
     `;
     gallery.appendChild(card);
   });
@@ -5653,7 +5666,8 @@ function renderGallery(data) {
   document.getElementById("counter").textContent = `${data.length} iriși găsiți`;
 }
 
-    function applyFilters() {
+// --- FILTRE ---
+function applyFilters() {
     const nameVal = document.getElementById("search").value.toLowerCase();
     const letterVal = document.getElementById("searchLetter").value.toLowerCase();
     const colorVal = document.getElementById("colorFilter").value;
@@ -5664,20 +5678,18 @@ function renderGallery(data) {
     const maxH = parseInt(document.getElementById("maxHeight").value) || 999;
 
     let filtered = flowers.filter(f => {
-        // Folosim o curățare mai strictă: extragem doar cifrele din string
-        // Asta elimină orice eroare cauzată de "cm", spații sau alte caractere
         const h = parseInt(String(f.height).replace(/\D/g, '')) || 0;
 
         const matchesName = f.name.toLowerCase().includes(nameVal);
         const matchesLetter = !letterVal || f.name.trim().toLowerCase().startsWith(letterVal.toLowerCase());
         const matchesColor = !colorVal || (
-    f.color &&
-    f.color
-      .toLowerCase()
-      .split(",")
-      .map(c => c.trim())
-      .includes(colorVal.toLowerCase())
-);
+          f.color &&
+          f.color
+            .toLowerCase()
+            .split(",")
+            .map(c => c.trim())
+            .includes(colorVal.toLowerCase())
+        );
         const matchesSeason = !seasonVal || (f.season && f.season.toLowerCase().includes(seasonVal.toLowerCase()));
         const matchesClass = !classVal || f.class.trim().toLowerCase() === classVal.trim().toLowerCase();
         const matchesRebloom = !rebloomVal || (rebloomVal === "rebloom" ? f.rebloom : !f.rebloom);
@@ -5686,12 +5698,11 @@ function renderGallery(data) {
         return matchesName && matchesLetter && matchesColor && matchesSeason && matchesClass && matchesRebloom && matchesHeight;
     });
 
-    // --- LOGICA DE SORTARE COMBINATĂ ---
+    // --- SORTARE ---
     const alphaSort = document.getElementById("sortAlpha").value;
     const hSort = document.getElementById("sortHeight").value;
 
     filtered.sort((a, b) => {
-        // 1. Prioritate Sortare Înălțime (dacă este selectată)
         if (hSort) {
             const valA = parseInt(String(a.height).replace(/\D/g, '')) || 0;
             const valB = parseInt(String(b.height).replace(/\D/g, '')) || 0;
@@ -5700,41 +5711,29 @@ function renderGallery(data) {
             }
         }
 
-        // 2. Apoi Sortare Alfabetică (ca secundară sau principală)
         if (alphaSort === "za") {
             return b.name.localeCompare(a.name);
         }
-        return a.name.localeCompare(b.name); // Default A-Z
+        return a.name.localeCompare(b.name);
     });
 
     renderGallery(filtered);
 }
 
-    // Evenimente
-    document.querySelectorAll(".filters input, .filters select").forEach(el => {
-      el.addEventListener("input", applyFilters);
-    });
+// --- EVENIMENTE ---
+document.querySelectorAll(".filters input, .filters select").forEach(el => {
+  el.addEventListener("input", applyFilters);
+});
 
-    // Reset
-    document.getElementById("resetBtn").onclick = () => {
-      document.querySelectorAll(".filters input, .filters select").forEach(el => el.value = "");
-      applyFilters();
-    };
+// Reset
+document.getElementById("resetBtn").onclick = () => {
+  document.querySelectorAll(".filters input, .filters select").forEach(el => el.value = "");
+  applyFilters();
+};
 
-    // Back to top logic
-    const topBtn = document.getElementById("backToTop");
-    window.onscroll = () => topBtn.style.display = window.scrollY > 400 ? "block" : "none";
-    topBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+// Back to top
+const topBtn = document.getElementById("backToTop");
+window.onscroll = () => topBtn.style.display = window.scrollY > 400 ? "block" : "none";
+topBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
-    renderGallery(flowers);
-  </script>
-</body>
-</html>
-
-
-
-
-
-
-
-
+renderGallery(flowers);
