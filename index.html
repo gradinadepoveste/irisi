@@ -5626,8 +5626,10 @@
     season: "Very early bloom",
     rebloom: false
 },
- ];
-    
+ // --- LISTA DE PLANTE ---
+// aici rămâne array-ul tău flowers = [ ... ]
+
+
 // --- TRADUCERI SEZON ---
 const translations = {
   "Very, very early bloom": "Înflorire foarte, foarte timpurie",
@@ -5677,6 +5679,11 @@ function applyFilters() {
     const minH = parseInt(document.getElementById("minHeight").value) || 0;
     const maxH = parseInt(document.getElementById("maxHeight").value) || 999;
 
+    // convertim sezonul românesc în engleză pentru filtrare
+    const seasonValEN = Object.keys(translations).find(
+      key => translations[key] === seasonVal
+    ) || seasonVal;
+
     let filtered = flowers.filter(f => {
         const h = parseInt(String(f.height).replace(/\D/g, '')) || 0;
 
@@ -5690,7 +5697,10 @@ function applyFilters() {
             .map(c => c.trim())
             .includes(colorVal.toLowerCase())
         );
-        const matchesSeason = !seasonVal || (f.season && f.season.toLowerCase().includes(seasonVal.toLowerCase()));
+        const matchesSeason = !seasonVal || (
+          f.season &&
+          f.season.toLowerCase().includes(seasonValEN.toLowerCase())
+        );
         const matchesClass = !classVal || f.class.trim().toLowerCase() === classVal.trim().toLowerCase();
         const matchesRebloom = !rebloomVal || (rebloomVal === "rebloom" ? f.rebloom : !f.rebloom);
         const matchesHeight = h >= minH && h <= maxH;
