@@ -155,7 +155,7 @@
     rebloom: false
 }, {
     name: "Admiral Nelson",
-    image: "Admiral Nelson - IMG_E2806 - R1-53.jpg",
+    image: " Admiral Nelson - IMG_E2806 - R1-53.jpg",
     color: "bicolor, violet, alb",
     height: 106,
     class: " TB",
@@ -3987,7 +3987,7 @@
     rebloom: false
 }, {
     name: " Pure As Gold",
-    image: " Pure as Gold IMG_20210527_133251.jpg",
+    image: " Pure as Gold  IMG_20210527_133251.jpg",
     color: "galben",
     height: 86,
     class: " TB",
@@ -5669,7 +5669,7 @@ function renderGallery(data) {
         const h = parseInt(String(f.height).replace(/\D/g, '')) || 0;
 
         const matchesName = f.name.toLowerCase().includes(nameVal);
-        const matchesLetter = !letterVal || f.name.toLowerCase().startsWith(letterVal);
+        const matchesLetter = !letterVal || f.name.trim().toLowerCase().startsWith(letterVal.toLowerCase());
         const matchesColor = !colorVal || (
     f.color &&
     f.color
@@ -5730,6 +5730,7 @@ function renderGallery(data) {
   </script>
 </body>
 </html>
+
 
 
 
