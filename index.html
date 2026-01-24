@@ -5679,7 +5679,7 @@ function renderGallery(data) {
       .includes(colorVal.toLowerCase())
 );
         const matchesSeason = !seasonVal || (f.season && f.season.toLowerCase().includes(seasonVal.toLowerCase()));
-        const matchesClass = !classVal || f.class === classVal;
+        const matchesClass = !classVal || f.class.trim().toLowerCase() === classVal.trim().toLowerCase();
         const matchesRebloom = !rebloomVal || (rebloomVal === "rebloom" ? f.rebloom : !f.rebloom);
         const matchesHeight = h >= minH && h <= maxH;
 
@@ -5730,6 +5730,7 @@ function renderGallery(data) {
   </script>
 </body>
 </html>
+
 
 
 
