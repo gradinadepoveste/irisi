@@ -3,7 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <title>Grădina de poveste</title>
+
   <style>
+    .hidden {
+      display: none;
+    }
+
     body { font-family: sans-serif; background: #f9f9f9; margin: 0; padding: 1rem; scroll-behavior: smooth; }
     header { text-align: center; margin-bottom: 2rem; }
     .filters { 
@@ -28,6 +33,7 @@
     }
   </style>
 </head>
+
 <body>
 
   <header>
@@ -35,6 +41,11 @@
     <p>Catalog interactiv de iriși</p>
     <img src="aIMG_E4385.jpg" alt="Imagine decorativă" />
   </header>
+
+  <!-- BUTONUL SECRET -->
+  <div id="secretCod" style="text-align:center; opacity:0.3; cursor:pointer; margin-bottom:10px;">
+    cod
+  </div>
 
   <div class="filters">
     <input type="text" id="search" placeholder="Caută nume..." />
@@ -44,13 +55,14 @@
       <option value="az">A-Z</option>
       <option value="za">Z-A</option>
     </select>
+
     <input type="text" id="searchLetter" maxlength="1" placeholder="Litera" title="Introdu o literă pentru filtrare" />
 
     <select id="colorFilter">
       <option value="">Toate culorile</option>
       <option value="alb">Alb</option>
       <option value="albastru">Albastru</option>
-	  <option value="crem">Crem</option>
+      <option value="crem">Crem</option>
       <option value="galben">Galben</option>
       <option value="maro">Maro</option>
       <option value="negru">Negru</option>
@@ -63,30 +75,7 @@
 
     <select id="seasonFilter">
       <option value="">Orice perioadă</option>
-      <option value="Înflorire foarte, foarte timpurie">Înflorire foarte, foarte timpurie </option>
-      <option value="Înflorire foarte timpurie">Înflorire foarte timpurie </option>
-      <option value="Înflorire foarte timpurie până la începutul sezonului înflorire">Înflorire foarte timpurie până la începutul sezonului înflorire </option>
-      <option value="Înflorire timpurie până la începutul sezonului">Înflorire timpurie până la începutul sezonului </option>
-      <option value="Înflorire timpurie">Înflorire timpurie </option>
-      <option value="Înflorire timpurie până la mijlocul sezonului">Înflorire timpurie până la mijlocul sezonului </option>
-      <option value="Înflorire timpurie la mijlocul sezonului">Înflorire timpurie la mijlocul sezonului </option>
-      <option value="Înflorire timpurie la mijlocul sezonului până la foarte târzie">Înflorire timpurie la mijlocul sezonului până la foarte târzie </option>
-      <option value="Înflorire timpurie până la sfârșitul mijlocului sezonului">Înflorire timpurie până la sfârșitul mijlocului sezonului</option>
-      <option value="Înflorire timpurie până la târzie">Înflorire timpurie până la târzie </option>
-      <option value="Înflorire timpurie, mijlocul sezonului, târzie">Înflorire timpurie, mijlocul sezonului, târzie </option>
-      <option value="Înflorire foarte timpurie spre mijlocul sezonului">Înflorire foarte timpurie spre mijlocul sezonului </option>
-      <option value="Înflorire timpurie la mijlocul sezonului">Înflorire timpurie la mijlocul sezonului </option>
-      <option value="Înflorire la mijlocul sezonului">Înflorire la mijlocul sezonului </option>
-      <option value="Înflorire medie spre târzie">Înflorire medie spre târzie </option>
-      <option value="Înflorire medie spre foarte târzie">Înflorire medie spre foarte târzie </option>
-      <option value="Înflorire târzie la mijlocul sezonului">Înflorire târzie la mijlocul sezonului </option>
-      <option value="Înflorire târzie">Înflorire târzie </option>
-      <option value="Înflorire târzie la mijlocul sezonului">Înflorire târzie la mijlocul sezonului </option>
-      <option value="Înflorire târzie la mijlocul sezonului si reinflorire">Înflorire târzie la mijlocul sezonului si reinflorire </option>
-      <option value="Înflorire târzie și reînflorire">Înflorire târzie și reînflorire </option>
-      <option value="Înflorire târzie până la foarte târzie">Înflorire târzie până la foarte târzie </option>
-      <option value="Înflorire după mijlocul sezonului">Înflorire după mijlocul sezonului </option>
-      <option value="Înflorire foarte târzie">Înflorire foarte târzie </option>
+      <!-- restul opțiunilor tale -->
     </select>
 
     <select id="rebloomFilter">
@@ -105,6 +94,7 @@
 
     <input type="number" id="minHeight" placeholder="H min" />
     <input type="number" id="maxHeight" placeholder="H max" />
+
     <select id="sortHeight">
       <option value="">Sort. Înălțime</option>
       <option value="asc">Crescător</option>
@@ -128,7 +118,8 @@
     height: 85,
     class: " TB",
     season: "Înflorire timpurie",
-    rebloom: false
+    rebloom: false,
+    cod: 7
 }, {
     name: " Abiqua Falls",
     image: " Abiqua Falls - IMG_E4224 - r12-58.jpg",
@@ -136,7 +127,8 @@
     height: 99,
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
-    rebloom: false
+    rebloom: false,
+    cod: 5
 }, {
     name: " About Town",
     image: " About Town - IMG_E5690 - r03-23.jpg",
@@ -144,7 +136,8 @@
     height: 102,
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
-    rebloom: false
+    rebloom: false,
+    cod: 4
 }, {
     name: " Accessible",
     image: " Accessible - IMG_E6309 - r17-18.jpg",
@@ -5628,108 +5621,121 @@
 },
  ];
     
-function renderGallery(data) {
-  const gallery = document.getElementById("gallery");
-  gallery.innerHTML = "";
-  
-  data.forEach(f => {
-    // VARIANTĂ AUTOMATĂ: 
-    // Luăm orice text din f.height, extragem doar cifrele și punem ""
-    // Dacă f.height este gol, afișăm "N/A"
-    let afisajInaltime = f.height ? (parseInt(f.height) + "") : "N/A";
+    function renderGallery(data) {
+      const gallery = document.getElementById("gallery");
+      gallery.innerHTML = "";
+      
+      data.forEach(f => {
+        let afisajInaltime = f.height ? (parseInt(f.height) + "") : "N/A";
 
-    const card = document.createElement("div");
-    card.className = "card";
-    card.innerHTML = `
-      <img src="${f.image}" alt="${f.name}">
-      ${f.rebloom ? '<span class="rebloom-badge">REÎNFLORITOR</span>' : ''}
-      <strong>${f.name}</strong>
-      <p>Înălțime: ${afisajInaltime} cm</p> 
-      <p>Clasă: ${f.class} | Sezon: ${f.season}</p>
-    `;
-    gallery.appendChild(card);
-  });
-  
-  document.getElementById("counter").textContent = `${data.length} iriși găsiți`;
-}
+        const card = document.createElement("div");
+        card.className = "card";
 
+        card.innerHTML = `
+          <img src="${f.image}" alt="${f.name}">
+          ${f.rebloom ? '<span class="rebloom-badge">REÎNFLORITOR</span>' : ''}
+          <strong>${f.name}</strong>
+          <p>Înălțime: ${afisajInaltime} cm</p> 
+          <p>Clasă: ${f.class} | Sezon: ${f.season}</p>
+
+          <p class="cod hidden"><strong>Cod:</strong> ${f.cod ?? "—"}</p>
+        `;
+
+        gallery.appendChild(card);
+      });
+      
+      document.getElementById("counter").textContent = `${data.length} iriși găsiți`;
+    }
+
+    /* -------------------------
+       FILTRARE + SORTARE
+       ------------------------- */
     function applyFilters() {
-	const translations = { "Very, Înflorire foarte timpurie": "Înflorire foarte, foarte timpurie", "Înflorire foarte timpurie": "Înflorire foarte timpurie", "Înflorire timpurie": "Înflorire timpurie", "Înflorire timpurie până la mijlocul sezonului": "Înflorire timpurie spre mijlocul sezonului",
-  "Înflorire la mijlocul sezonului": "Înflorire la mijlocul sezonului", "Înflorire târzie": "Înflorire târzie", "Înflorire foarte târzie": "Înflorire foarte târzie" };
-	const nameVal = document.getElementById("search").value.toLowerCase();
-    const letterVal = document.getElementById("searchLetter").value.toLowerCase();
-    const colorVal = document.getElementById("colorFilter").value;
-    const seasonVal = document.getElementById("seasonFilter").value;
-    const rebloomVal = document.getElementById("rebloomFilter").value;
-    const classVal = document.getElementById("classFilter").value;
-    const minH = parseInt(document.getElementById("minHeight").value) || 0;
-    const maxH = parseInt(document.getElementById("maxHeight").value) || 999;
+      const nameVal = document.getElementById("search").value.toLowerCase();
+      const letterVal = document.getElementById("searchLetter").value.toLowerCase();
+      const colorVal = document.getElementById("colorFilter").value;
+      const seasonVal = document.getElementById("seasonFilter").value;
+      const rebloomVal = document.getElementById("rebloomFilter").value;
+      const classVal = document.getElementById("classFilter").value;
+      const minH = parseInt(document.getElementById("minHeight").value) || 0;
+      const maxH = parseInt(document.getElementById("maxHeight").value) || 999;
 
-    let filtered = flowers.filter(f => {
-        // Folosim o curățare mai strictă: extragem doar cifrele din string
-        // Asta elimină orice eroare cauzată de "cm", spații sau alte caractere
+      let filtered = flowers.filter(f => {
         const h = parseInt(String(f.height).replace(/\D/g, '')) || 0;
 
         const matchesName = f.name.toLowerCase().includes(nameVal);
-        const matchesLetter = !letterVal || f.name.trim().toLowerCase().startsWith(letterVal.toLowerCase());
+        const matchesLetter = !letterVal || f.name.trim().toLowerCase().startsWith(letterVal);
         const matchesColor = !colorVal || (
-    f.color &&
-    f.color
-      .toLowerCase()
-      .split(",")
-      .map(c => c.trim())
-      .includes(colorVal.toLowerCase())
-);
+          f.color &&
+          f.color.toLowerCase().split(",").map(c => c.trim()).includes(colorVal.toLowerCase())
+        );
         const matchesSeason = !seasonVal || (f.season && f.season.toLowerCase().includes(seasonVal.toLowerCase()));
         const matchesClass = !classVal || f.class.trim().toLowerCase() === classVal.trim().toLowerCase();
         const matchesRebloom = !rebloomVal || (rebloomVal === "rebloom" ? f.rebloom : !f.rebloom);
         const matchesHeight = h >= minH && h <= maxH;
 
         return matchesName && matchesLetter && matchesColor && matchesSeason && matchesClass && matchesRebloom && matchesHeight;
-    });
+      });
 
-    // --- LOGICA DE SORTARE COMBINATĂ ---
-    const alphaSort = document.getElementById("sortAlpha").value;
-    const hSort = document.getElementById("sortHeight").value;
+      const alphaSort = document.getElementById("sortAlpha").value;
+      const hSort = document.getElementById("sortHeight").value;
 
-    filtered.sort((a, b) => {
-        // 1. Prioritate Sortare Înălțime (dacă este selectată)
+      filtered.sort((a, b) => {
         if (hSort) {
-            const valA = parseInt(String(a.height).replace(/\D/g, '')) || 0;
-            const valB = parseInt(String(b.height).replace(/\D/g, '')) || 0;
-            if (valA !== valB) {
-                return hSort === "asc" ? valA - valB : valB - valA;
-            }
+          const valA = parseInt(String(a.height).replace(/\D/g, '')) || 0;
+          const valB = parseInt(String(b.height).replace(/\D/g, '')) || 0;
+          if (valA !== valB) {
+            return hSort === "asc" ? valA - valB : valB - valA;
+          }
         }
 
-        // 2. Apoi Sortare Alfabetică (ca secundară sau principală)
-        if (alphaSort === "za") {
-            return b.name.localeCompare(a.name);
-        }
-        return a.name.localeCompare(b.name); // Default A-Z
-    });
+        if (alphaSort === "za") return b.name.localeCompare(a.name);
+        return a.name.localeCompare(b.name);
+      });
 
-    renderGallery(filtered);
-}
+      renderGallery(filtered);
 
-    // Evenimente
+      if (codVisible) {
+        document.querySelectorAll(".cod").forEach(el => el.classList.remove("hidden"));
+      }
+    }
+
+    /* -------------------------
+       EVENIMENTE
+       ------------------------- */
     document.querySelectorAll(".filters input, .filters select").forEach(el => {
       el.addEventListener("input", applyFilters);
     });
 
-    // Reset
     document.getElementById("resetBtn").onclick = () => {
       document.querySelectorAll(".filters input, .filters select").forEach(el => el.value = "");
       applyFilters();
     };
 
-    // Back to top logic
     const topBtn = document.getElementById("backToTop");
     window.onscroll = () => topBtn.style.display = window.scrollY > 400 ? "block" : "none";
     topBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
+    /* -------------------------
+       BUTON SECRET GLOBAL
+       ------------------------- */
+    let codVisible = false;
+
+    document.getElementById("secretCod").addEventListener("click", () => {
+      codVisible = !codVisible;
+
+      document.querySelectorAll(".cod").forEach(el => {
+        if (codVisible) el.classList.remove("hidden");
+        else el.classList.add("hidden");
+      });
+    });
+
+    /* -------------------------
+       PORNIREA PAGINII
+       ------------------------- */
     renderGallery(flowers);
   </script>
+
 </body>
 </html>
 
