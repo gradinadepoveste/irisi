@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Grădina de poveste</title>
 
+  <!-- LIGHTBOX CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
+
   <style>
     body {
       font-family: sans-serif;
@@ -25,7 +28,6 @@
       display: block;
     }
 
-    /* --- BARA DE FILTRE OPTIMIZATĂ --- */
     .filters {
       display: flex;
       flex-wrap: wrap;
@@ -48,11 +50,9 @@
       font-size: 0.9rem;
     }
 
-    /* câmpuri mici */
     #searchLetter { width: 45px; text-align: center; }
     #minHeight, #maxHeight { width: 60px; text-align: center; }
 
-    /* câmpuri mari */
     #seasonFilter,
     #colorFilter,
     #rebloomFilter,
@@ -62,7 +62,6 @@
       max-width: 130px;
     }
 
-    /* --- GALERIE --- */
     .gallery {
       display: flex;
       flex-wrap: wrap;
@@ -86,6 +85,7 @@
       height: 200px;
       object-fit: cover;
       border-radius: 4px;
+      cursor: zoom-in;
     }
 
     .rebloom-badge {
@@ -114,7 +114,6 @@
       font-weight: bold;
     }
 
-    /* --- OPTIMIZARE MOBIL --- */
     @media (max-width: 600px) {
       .filters {
         gap: 0.3rem;
@@ -172,7 +171,6 @@
 
     <select id="seasonFilter">
       <option value="">Orice perioadă</option>
-      <!-- păstrezi opțiunile tale lungi -->
     </select>
 
     <select id="rebloomFilter">
@@ -217,7 +215,8 @@
     class: " TB",
     season: "Înflorire timpurie",
     rebloom: false,
-    cod:  5
+    cod:  5,
+	rind: 'R17/42'
 }, {
     name: " Abiqua Falls",
     image: " Abiqua Falls - IMG_E4224 - r12-58.jpg",
@@ -226,7 +225,9 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod:  4
+    cod:  4,
+	rind: 'R12/58, R22/25, r25/03, R32/02'
+	
 }, {
     name: " About Town",
     image: " About Town - IMG_E5690 - r03-23.jpg",
@@ -235,7 +236,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod:  6
+    cod:  6,
+	rind: 'R3/23'
 }, {
     name: " Accessible",
     image: " Accessible - IMG_E6309 - r17-18.jpg",
@@ -244,7 +246,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod:  4
+    cod:  4,
+	rind: 'S1/03'
 }, {
     name: "Admiral Nelson",
     image: " Admiral Nelson - IMG_E2806 - R1-53.jpg",
@@ -253,7 +256,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod:  4
+    cod:  4,
+	rind: 'R1/53'
 }, {
     name: " Adoranova",
     image: " Adoranova - IMG_E5110 - r17-37.jpg",
@@ -271,7 +275,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod:  5
+    cod:  5, 
+	rind: 'r25/38'
 }, {
     name: " Adoregon",
     image: " Adoregon - IMG_E5538 - r21-13.jpg",
@@ -280,7 +285,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod:  4
+    cod:  4,
+	rind: 'R21/13'
 }, {
     name: " Advance to Go",
     image: " Advance to Go - IMG_E5292 - r19-06.jpg",
@@ -289,7 +295,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod:  3
+    cod:  3, 
+	rind: 'S3/03'
 }, {
     name: " Advantage",
     image: " Advantage - IMG_E2785 - r04-55.jpg",
@@ -298,7 +305,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod:   5
+    cod:   5,
+	rind: 'R3/31, R4/55, R7/19, R27/33, R31/28, R22/21, R9/74, R9/83, R12/72'
 }, {
     name: " Affair To Remember",
     image: " Affair To Remember - IMG_20230529_182410 - r13_28.jpg",
@@ -307,7 +315,8 @@
     class: " TB",
     season: "Înflorire timpurie până la târzie",
     rebloom: false,
-    cod: 7
+    cod: 7, 
+	rind: 'R13/28'
 }, {
     name: " Alabaster Unicorn",
     image: " Alabaster Unicorn - IMG_E5177 - R3-43.jpg",
@@ -316,7 +325,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, 
+	rind: 'R3/43'
 }, {
     name: " Alcazar",
     image: " Alcazar - IMG_E3028 - r07-62.jpg",
@@ -325,7 +335,8 @@
     class : " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 2
+    cod: 2, 
+	rind: 'R7/62, R7/63, R26/15' 
 }, {
     name: " Alfred Babilon",
     image: " Alfred Babilon - IMG_E2595 - R33-15-20.jpg",
@@ -334,7 +345,8 @@
     class: " IB",
     season: "Înflorire timpurie la mijlocul sezonului până la foarte târzie",
     rebloom: false,
-    cod: 4
+    cod: 4, 
+	rind: 'R33/15, R33/16, R33/17, R33/18, R33/19, R33/20'
 }, {
     name: " Alpine Journey",
     image: " Alpine Journey - IMG_E4893 - r14-49.jpg",
@@ -343,7 +355,8 @@
     class: " TB",
     season: "Înflorire timpurie până la începutul sezonului",
     rebloom: false,
-    cod: 3
+    cod:  3, 
+	rind: 'R14/49, R17/32, R19/41, R19/42, R22/39'
 }, {
     name: " Amarillo Frills",
     image: " Amarillo Frills - IMG_E5065 - r17-15.jpg",
@@ -352,7 +365,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, 
+	rind: 'R17/15'
 }, {
     name: " Ambassadeur",
     image: " Ambassadeur - IMG_E6129 - r09-01.jpg",
@@ -361,7 +375,8 @@
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
-    cod: 3
+    cod:  3, 
+	rind: 'R9/1'
 }, {
     name: " American Classic",
     image: " American Classic - IMG_E5470 - v20-29.jpg",
@@ -370,7 +385,8 @@
     class: " TB",
     season: "Înflorire timpurie până la târzie",
     rebloom: false,
-    cod: 3
+    cod:  3, 
+	rind: 'R20/28, R20/29, R20/30, R27/44'
 }, {
     name: " Ancient Secrets",
     image: " Ancient Secrets - IMG_E4845 - r15-28.jpg",
@@ -406,7 +422,8 @@
     class: " IB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, 
+	rind: 'R4/10, R6/56, R9/66, R10/59, R21/46, R10/51, R14/26, R21/45, r24/23, R7/30, R5/30'
 }, {
     name: " Arctic Express",
     image: " Arctic Express - IMG_E5766 - r23-07.jpg",
@@ -415,7 +432,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, 
+	rind: 'R23/7, R10/79, R11/69'
 }, {
     name: " Armageddon",
     image: " Armageddon - IMG_E4468 - r13-34.jpg",
@@ -424,7 +442,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, 
+	rind: 'R9/06, R13/34'
 }, {
     name: " Ask Alma",
     image: " Ask Alma - IMG_E3082 - r08-49.jpg",
@@ -433,7 +452,8 @@
     class: " IB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 2
+    cod: 2, 
+	rind: 'R8/49, R8/50, R8/52, R21/41, r25/27, R26/11, R26/42, R34/25'
 }, {
     name: " Ask Me Nicely",
     image: " Ask Me Nicely - IMG_E4180 - R21-25.jpg",
@@ -442,7 +462,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, 
+	rind: 'R21/25'
 }, {
     name: " Astrology",
     image: " Astrology - IMG_E2474 - r17-10.jpg",
@@ -451,7 +472,8 @@
     class: " TB",
     season: "Înflorire timpurie",
     rebloom: false,
-    cod: 5
+    cod: 5, 
+	rind: 'R17/10'
 }, {
     name: " Atomic Flame",
     image: " Atomic Flame - IMG_E6182 - r09-53.jpg",
@@ -460,7 +482,8 @@
     class: " TB",
     season: " Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, 
+	rind: 'R9/53'
 }, {
     name: " Auckland Johnson",
     image: " Auckland - IMG_E4231 - r12-60.jpg",
@@ -469,7 +492,8 @@
     class: " TB",
     season: " Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 6
+    cod: 6, 
+	rind: 'R22/10, R12/60'
 }, {
     name: " Aura Of Glamour",
     image: " Aura Of Glamour - IMG_E5050 - r17-06.jpg",
@@ -487,7 +511,8 @@
     class : " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
-    cod: 3
+    cod: 3, 
+	rind: 'Alamor'
 }, {
     name: "Autumn Circus",
     image: "Autumn Circus - IMG_E2446 - r20-36.jpg",
@@ -496,7 +521,8 @@
     class: " TB",
     season: "Înflorire timpurie si reinflorire toamna",
     rebloom: true, 
-	cod: 4
+	cod: 4, 
+	rind: 'R19/32, R20/36, R20/43, R26/44'
 }, {
     name: " Autumn Wine",
     image: " Autumn Wine - IMG_E5179 - R4-56.jpg",
@@ -505,7 +531,9 @@
     class: " BB",
     season: "Înflorire la mijlocul sezonului si reinflorire toamna",
     rebloom: true,
-    cod: 5
+    cod: 5, 
+	rind: 'R4/56'
+
 }, {
     name: " Avalon Sunset",
     image: " Avalon Sunset - IMG_E3370 - r10-01.jpg",
@@ -514,7 +542,9 @@
     class: " TB",
     season: " Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 7
+    cod: 7, 
+	rind: 'R10/1, R10/2, R10/3, R10/4, R29/01'
+
 }, {
     name: " Baby I Love You",
     image: " Baby I Love You - IMG_E5058 - r17-11.jpg",
@@ -523,7 +553,9 @@
     class: " TB",
     season: " Înflorire medie spre târzie",
     rebloom: false,
-    cod: 5
+    cod: 5, 
+	rind: 'R12/31, R17/21, R27/29'
+
 }, {
     name: " Badlands",
     image: " Badlands - IMG_E6231 - r10-58.jpg",
@@ -532,7 +564,9 @@
     class: " TB",
     season: "Înflorire timpurie până la târzie",
     rebloom: false,
-    cod: 5
+    cod: 5,
+	rind: 'R10/58'
+
 }, {
     name: " Balaklava",
     image: " Balaklava - IMG_E2409 - r21-40.jpg",
@@ -550,7 +584,9 @@
     class: " TB",
     season: " Înflorire târzie",
     rebloom: false,
-    cod: 6
+    cod: 6, 
+	rind: 'R2/39'
+
 }, {
     name: " Bamboo Curtain",
     image: " Bamboo Curtain - IMG_E4394 - R31-14.jpg",
@@ -559,7 +595,9 @@
     class: " TB",
     season: " Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, 
+	rind: 'R26/30, R31/14'
+
 }, {
     name: " Barbara My Love",
     image: " Barbara My Love - IMG_E6189 - r09-58.jpg",
@@ -568,7 +606,9 @@
     class: " TB",
     season: " Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, 
+	rind: 'R6/36, R9/58'
+
 }, {
     name: " Bazinga",
     image: " Bazinca - IMG_20220523_182635.jpg",
@@ -577,7 +617,9 @@
     class: " SDB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
-    cod: 4
+    cod: 4, 
+	rind: 'S1/07'
+
 }, {
     name: " Be Original",
     image: " Be Original - IMG_E3438 - r10-52.jpg",
@@ -586,7 +628,9 @@
     class: " TB",
     season: "Înflorire timpurie până la târzie",
     rebloom: false,
-    cod: 3
+    cod: 3, 
+	rind: 'R10/52'
+
 }, {
     name: " Beauty School",
     image: " Beauty School - IMG_E4017 - R17-23.jpg",
@@ -595,7 +639,9 @@
     class: " TB",
     season: " Înflorire târzie",
     rebloom: false,
-    cod: 5
+    cod: 5, 
+	rind: 'R17/23'
+
 }, {
     name: " Beaux Arts",
     image: " Beaux Arts - IMG_E3732 - r11-49.jpg",
@@ -613,7 +659,9 @@
     class: " TB",
     season: "Înflorire timpurie",
     rebloom: false,
-    cod: 5
+    cod: 5, 
+	rind: 'R22/6, R13/9'
+
 }, {
     name: " Berry Scary",
     image: " Berry Scary - IMG_E5929 - r05-27.jpg",
@@ -622,7 +670,9 @@
     class: " TB",
     season: " Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, 
+	rind: 'R5/27, S4/07, R14/22, R33/11'
+
 }, {
     name: " Berserk",
     image: " Berserk - IMG_E4928 - r16-15.jpg",
@@ -631,7 +681,9 @@
     class: " TB",
     season: " Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, 
+	rind: 'R16/15, r24/08, R32/18'
+
 }, {
     name: " Best And Brightest",
     image: " Best And Brightest - IMG_E5662 - r03-05.jpg",
@@ -640,7 +692,9 @@
     class: " TB",
     season: " Înflorire medie spre foarte târzie",
     rebloom: false,
-    cod: 5
+    cod: 5, 
+	rind: 'R3/5, R7/12, R28/16, R32/43'
+
 }, {
     name: " Betsey Boo",
     image: " Betsey Boo - IMG_E5737 - r22-37.jpg",
@@ -649,7 +703,9 @@
     class: " SDB",
     season: "Înflorire timpurie până la târzie",
     rebloom: false,
-    cod: 2
+    cod: 2, 
+	rind: 'R22/37'
+
 }, {
     name: " Better Than Butter",
     image: " Better than Butter - IMG_E3405 - r10-23.jpg",
@@ -658,7 +714,9 @@
     class: " TB",
     season: "Înflorire timpurie până la târzie",
     rebloom: false,
-    cod: 5
+    cod: 5, 
+	rind: 'R10/23'
+
 }, {
     name: " Big Squeeze",
     image: " Big Squeeze - IMG_20220527_101841.jpg",
@@ -667,7 +725,9 @@
     class: " TB",
     season: " Înflorire târzie",
     rebloom: false,
-    cod: 4
+    cod: 4, 
+	rind: 'R1/46, R7/7'
+
 }, {
     name: " Bistro",
     image: " Bistro - IMG_E2393 - r21-50.jpg",
@@ -676,7 +736,9 @@
     class: " IB",
     season: "Înflorire timpurie până la târzie",
     rebloom: false,
-    cod: 3
+    cod: 3,
+	rind: 'R21/50, R21/49'
+
 }, {
     name: " Black Magic Woman",
     image: " Black Magic Woman - IMG_E4450 - R2-06.jpg",
@@ -685,7 +747,9 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, 
+	rind: 'R2/6'
+
 }, {
     name: " Black Taffeta",
     image: " Black Taffeta - IMG_E2375 - r22-20.jpg",
@@ -694,7 +758,9 @@
     class: " TB",
     season: " Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, 
+	rind: 'R29/14'
+
 }, {
     name: " Blake's Achey Heart",
     image: " Blake's Achey Heart - IMG_E3491 - r11-16 -.jpg",
@@ -703,7 +769,9 @@
     class: " TB",
     season: " Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, 
+	rind: 'R11/16'
+
 }, {
     name: " Blond Response",
     image: " Blond Response - IMG_E2808 - r05-12.jpg",
@@ -712,7 +780,9 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, 
+	rind: 'R5/12'
+
 }, {
     name: " Blue Reflection",
     image: " Blue Reflection - IMG_20220523_160056.jpg",
@@ -721,7 +791,9 @@
     class: " TB",
     season: "Înflorire timpurie până la târzie",
     rebloom: false,
-    cod: 3
+    cod: 3, 
+	rind: 'R10/81'
+
 }, {
     name: " Blue Rhythm",
     image: " Blue Rithm - IMG_20220523_145628.jpg",
@@ -730,7 +802,9 @@
     class: " TB",
     season: " Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 2
+    cod: 2, 
+	rind: 'R5/58, R6/58, R6/59, R26/35, R6/60'
+
 }, {
     name: " Blueberry Bliss",
     image: " Blueberry Bliss - IMG_E5689 - r03-21.jpg",
@@ -739,7 +813,9 @@
     class: " TB",
     season: " Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5,
+	rind: 'R3/21, R31/32'
+
 }, {
     name: " Body Painting",
     image: " Body Painting - IMG_20220523_142840.jpg",
@@ -748,7 +824,9 @@
     class: " IB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, 
+	rind: 'R2/11, R2/32, R5/32, R4/22'
+
 }, {
     name: " Boginya Solntsa",
     image: " Boginya Solntsa - IMG_E5252 - rr18-41.jpg",
@@ -757,7 +835,9 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, 
+	rind: 'R18/41'
+
 }, {
     name: " Bold Look",
     image: " Bold Look - IMG_E6098 - r08-35.jpg",
@@ -766,7 +846,9 @@
     class: " TB",
     season: "Înflorire târzie",
     rebloom: false,
-    cod: 3
+    cod: 3, 
+	rind: 'R8/35'
+
 }, {
     name: " Bolshoi",
     image: " Bolshoi - IMG_E6396.jpg",
@@ -775,7 +857,9 @@
     class: " TB",
     season: "Înflorire târzie",
     rebloom: false,
-    cod: 4
+    cod: 4, 
+	rind: 'R28/12'
+
 }, {
     name: " Born This Way",
     image: " Born This Way - IMG_E6400.jpg",
@@ -784,7 +868,7 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5 
 }, {
     name: " Bottle Rocket",
     image: " Bottle Rocket - IMG_E2711 - r03-12.jpg",
@@ -793,7 +877,9 @@
     class: " TB",
     season: "Înflorire timpurie la mijlocul sezonului si reinflorire toamna",
     rebloom: true, 
-	cod: 7
+	cod: 7, 
+	rind: 'R1/44, R3/12, R31/22, R12/81'
+
 }, {
     name: " Boulevard Jazz",
     image: " Boulevard Jazz - IMG_20220526_132606.jpg",
@@ -802,7 +888,9 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, 
+	rind: 'R2/55, R8/14, R8/15, R8/16, R8/48, R10/49, R13/13, R16/32, R28/42'
+
 }, {
     name: " Boundless",
     image: " Boundless - IMG_E2752 - r04-02.jpg",
@@ -811,7 +899,9 @@
     class: " TB",
     season: "Înflorire târzie și reînflorire",
     rebloom: true, 
-	cod: 3
+	cod: 3, 
+	rind: 'R4/2'
+
 }, {
     name: " Boy Genius",
     image: " Boy Genius - IMG_20220523_142404.jpg",
@@ -820,7 +910,8 @@
     class: " IB",
     season: "Înflorire foarte timpurie până la începutul sezonului înflorire",
     rebloom: false,
-    cod: 3
+    cod: 3, 
+	rind: 'R1/16'
 }, {
     name: " Braggadocio",
     image: " Braggadocio - IMG_E6096 - r08-33.jpg",
@@ -829,7 +920,9 @@
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
-    cod: 4
+    cod: 4, 
+	rind: 'R8/33, R8/34, R13/37, R21/07, R31/17'
+
 }, {
     name: " Bratislavan Prince",
     image: " Bratislavan Prince - IMG_E5704 - r0339.jpg",
@@ -838,7 +931,9 @@
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
-    cod: 8
+    cod: 8, 
+	rind: 'R3/39, r24/13, R32/13'
+
 }, {
     name: " Brave Face",
     image: " Brave Face - IMG_E5141 - r17-44.jpg",
@@ -847,7 +942,7 @@
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
-    cod: 3
+    cod: 3 
 }, {
     name: " Brazen Beauty",
     image: " Brazen Beauty - IMG_E5209 - r18-18.jpg",
@@ -856,7 +951,9 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, 
+	rind: 'R17/36, R18/18, R19/46, R19/49, R20/09, r24/32'
+
 }, {
     name: " Breakers",
     image: " Breakers - IMG_20220523_144222.jpg",
@@ -865,7 +962,9 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, 
+	rind: 'R1/57, R3/54, R5/35, R9/45, R12/38, R14/38, R4/28, R4/31, R4/51, r25/12, R28/36, R17/17'
+
 }, {
     name: " Brickle",
     image: " Brickle - IMG_E2282 - r13-31.jpg",
@@ -874,7 +973,9 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, 
+	rind: 'R13/31'
+
 }, {
     name: " Bride's Halo",
     image: " Bride's Halo - IMG_E5457 - r20-34.jpg",
@@ -892,7 +993,9 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 8
+    cod: 8, 
+	rind: 'R1/33, R2/54, R4/14, R11/35, R11/57, R28/35, R32/32'
+
 }, {
     name: " Broad Minded",
     image: " Broad Minded - IMG_E5900 - r04-50.jpg",
@@ -901,7 +1004,9 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, 
+	rind: 'R4/50'
+
 }, {
     name: " Broadway Baby",
     image: " Broadway Baby - IMG_20230518_194121 - r7_48.jpg",
@@ -910,7 +1015,9 @@
     class: " IB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, 
+	rind: 'R7/48, R7/49, R7/50, R9/19, R9/33, R8/19, R23/21'
+
 }, {
     name: " Bronzova Socha",
     image: " Bronzova Socha - IMG_E5648 - r02-14.jpg",
@@ -919,7 +1026,9 @@
     class : " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 7
+    cod: 7, 
+	rind: 'R29/16, R32/30, R18/29, R10/12, R2/30, R2/14, R4/17, R4/16, R2/19, R2/22, R13/36'
+
 }, {
     name: " Bubble Bubble",
     image: " Bubble Bubble - IMG_E2688 - r02-49.jpg",
@@ -928,7 +1037,9 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, 
+	rind: 'R2/42, R2/49, R29/26, R30/39'
+
 }, {
     name: " Bugaboo",
     image: " Bugaboo - IMG_E2687 - R5-18.jpg",
@@ -937,7 +1048,9 @@
     class: " IB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, 
+	rind: 'R5/18, R12/79'
+
 }, {
     name: " Burgundy Brown",
     image: " Burgundy Brown - IMG_E2421 - r21-31.jpg",
@@ -946,7 +1059,9 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, 
+	rind: 'R21/31, R22/1'
+
 }, {
     name: " By Jeeves",
     image: " By Jeves - IMG_E4519 - r13-47.jpg",
@@ -964,7 +1079,9 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, 
+	rind: 'R13/4, R13/5'
+
 }, {
     name: " Calam",
     image: " Calam - IMG_E6126 - r08-65.jpg",
@@ -973,7 +1090,9 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, 
+	rind: 'R8/65'
+
 }, {
     name: " Calming Influence",
     image: " Calming Influence - IMG_E5272 - r18-49.jpg",
@@ -982,7 +1101,9 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, 
+	rind: 'R16/38, R16/39, R18/49'
+
 }, {
     name: " Candy Cane Cutie",
     image: " Candy Cane Cutie - IMG_E3478 - r11-09.jpg",
@@ -991,7 +1112,9 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, 
+	rind: 'S1/08'
+
 }, {
     name: " Candy Colours",
     image: " Candy Colours - IMG_20220520_145835.jpg",
@@ -1000,7 +1123,9 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, 
+	rind: 'R2/51'
+
 }, {
     name: " Cantor",
     image: " Cantor - IMG_20220524_185914.jpg",
@@ -1009,7 +1134,9 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, 
+	rind: 'R1/27'
+
 }, {
     name: " Caracal",
     image: " Caracal - IMG_E5764 - r23-09.jpg",
@@ -1018,7 +1145,9 @@
     class: " IB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, 
+	rind: 'R23/9, R23/12'
+
 }, {
     name: " Carl And Sissy",
     image: " Carl And Sissy - IMG_E3770 - R10-09.jpg",
@@ -1027,7 +1156,9 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 6
+    cod: 6, 
+	rind: 'R10/09'
+
 }, {
     name: " Carmel Niland",
     image: " Carmel Niland - IMG_E5474 - v20-24.jpg",
@@ -1036,7 +1167,9 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, 
+	rind: 'R20/24'
+
 }, {
     name: " Carnival Ride",
     image: " Carnival Ride - IMG_E6275 - r15-27.jpg",
@@ -1045,7 +1178,9 @@
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
-    cod: 5
+    cod: 5, 
+	rind: 'R15/27, R11/75'
+
 }, {
     name: " Carved Jade",
     image: " Carved Jade - IMG_E5402 - r19-36.jpg",
@@ -1054,7 +1189,9 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, 
+	rind: 'R19/36, R19/29, R19/37'
+
 }, {
     name: " Cat In The Hat",
     image: " Cat in the Hat - IMG_E2311 - r17-28.jpg",
@@ -1063,7 +1200,9 @@
     class: " IB",
     season: "Înflorire medie spre foarte târzie",
     rebloom: false,
-    cod: 3
+    cod: 3, 
+	rind: 'R17/28, r25/32, R32/33, R22/22, R18/51'
+
 }, {
     name: " Caterpillar Blues",
     image: " Caterpillar Blues - IMG_E5295 - r19-07.jpg",
@@ -1072,7 +1211,9 @@
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
-    cod: 4
+    cod: 4, 
+	rind: 'R19/07, R28/40'
+
 }, {
     name: " Cathedral Bells",
     image: " Cathedral Bells - IMG_E3464 - r10-64.jpg",
@@ -1081,7 +1222,9 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 2
+    cod: 2, 
+	rind: 'R10/64, R12/64, R12/66, R9/68'
+
 }, {
     name: " Catwalk",
     image: " Catwalk- IMG_E5634 - r02-29.jpg",
@@ -1090,7 +1233,9 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 6
+    cod: 6, 
+	rind: 'S2/10, R15/07, r24/19'
+
 }, {
     name: " Celebration Song",
     image: " Celebration Song - IMG_E3758 - r11-63.jpg",
@@ -1099,7 +1244,9 @@
     class: " TB",
     season: "Înflorire timpurie până la târzie",
     rebloom: false,
-    cod: 3
+    cod: 3, 
+	rind: 'R11/63'
+
 }, {
     name: " Center Line",
     image: " Center Line - IMG_E5647 - r02-16.jpg",
@@ -1108,7 +1255,9 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, 
+	rind: 'R2/16'
+
 }, {
     name: " Champagne And Strawberries",
     image: " Champagne And Strawberries - IMG_E2845 - R16-22.jpg",
@@ -1117,7 +1266,9 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, 
+	rind: 'R16/22'
+
 }, {
     name: " Champagne Frost",
     image: " Champagne Frost - IMG_E6013 - R24-28.jpg",
@@ -1126,7 +1277,9 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, 
+	rind: 'r24/28, S4/11, R21/22'
+
 }, {
     name: " Changing Times",
     image: " Changing Times - IMG_E5769 - r23-05.jpg",
@@ -1135,7 +1288,9 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, 
+	rind: 'R27/14'
+
 }, {
     name: " Chardonay And Ice",
     image: " Chardonay and Ice - IMG_20220523_155038.jpg",
@@ -1144,7 +1299,9 @@
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
-    cod: 4
+    cod: 4, 
+	rind: 'R7/02, R18/26'
+
 }, {
     name: " Chariots of Fire",
     image: " Chariots of Fire - IMG_20220530_184533.jpg",
@@ -1153,7 +1310,9 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, 
+	rind: 'R7/33'
+
 }, {
     name: " Charivna Nich",
     image: " Charivna Nich - IMG_E5613 - r02-50.jpg",
@@ -1162,7 +1321,9 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, 
+	rind: 'R2/50'
+
 }, {
     name: " Charleston",
     image: " Charleston - IMG_E6132 - r09-05.jpg",
@@ -1171,7 +1332,9 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, 
+	rind: 'R9/05'
+
 }, {
     name: " Chasha Kokhannia",
     image: " Chasha Kokhannia - IMG_E3099 - r09-08.jpg",
@@ -1180,7 +1343,9 @@
     class: " TB",
     season: "Înflorire târzie",
     rebloom: false,
-    cod: 12
+    cod: 12, 
+	rind: 'R9/8, R32/36'
+
 }, {
     name: " Cheap Frills",
     image: " Cheap Frills - IMG_E5971 - r06-04.jpg",
@@ -1189,7 +1354,9 @@
     class: " TB",
     season: "Înflorire timpurie până la târzie",
     rebloom: false,
-    cod: 4
+    cod: 4, 
+	rind: 'R6/02, R6/4, R3/49, R26/22, R28/02'
+
 }, {
     name: " Cher And Cher Alike",
     image: " Cher and Cher Alike - IMG_E2496 - r10-33.jpg",
@@ -1198,7 +1365,9 @@
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
-    cod: 4
+    cod: 4, 
+	rind: 'R8/47, R10/32, R10/33, R14/30, R15/12, R17/4, R19/1, R19/2, R20/17, R21/02, R23/8, R22/17, R23/13, R10/31, R3/32, R26/25, R27/19, R28/07, R29/38, R30/12, R31/43, R16/5, R16/10'
+
 }, {
     name: " Chevalier De Malte",
     image: " Chevalier de Malte - IMG_E2414 - r21-33.jpg",
@@ -1207,7 +1376,9 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, 
+	rind: 'R21/33, R21/34, R21/30, R21/32, R27/36, R31/05'
+
 }, {
     name: " Cheyenne Sky",
     image: " Cheyenne Sky - IMG_E5947 - r05-39.jpg",
@@ -1216,7 +1387,9 @@
     class: " TB",
     season: "Înflorire târzie",
     rebloom: false,
-    cod: 3
+    cod: 3, 
+	rind: 'R5/39, R5/56'
+
 }, {
     name: " Chic Rolle",
     image: " Chic Rolle - IMG_E4183 - R21-21.jpg",
@@ -1225,7 +1398,9 @@
     class : " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, 
+	rind: 'R21/21'
+
 }, {
     name: " China Nights",
     image: " China Nights - IMG_E3762 - r11-64.jpg",
@@ -1234,7 +1409,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului si reinflorire toamna",
     rebloom: true,
-	cod: 3
+	cod: 3, rind: 'R11/64'
+
 }, {
     name: " China Walk",
     image: " China Walk - IMG_E3002 - R4-11.jpg",
@@ -1243,7 +1419,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R3/13, R4/11, R31/04'
+
 }, {
     name: " Chinese New Year",
     image: " Chinese New Year - IMG_E5625 - r02-41.jpg",
@@ -1252,7 +1429,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R2/41, R11/59, R30/14, R31/34'
+
 }, {
     name: " Chinese Whisper",
     image: " Chinese Whisper - IMG_E5198 - r18-12.jpg",
@@ -1261,7 +1439,8 @@
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R18/12, r24/02'
+
 }, {
     name: " Chinook Arch",
     image: " Chinook Arch - IMG_20220526_154326.jpg",
@@ -1270,7 +1449,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R1/52, R10/65'
+
 }, {
     name: " Chippewa Brave",
     image: " Chippewa Brave - IMG_E5678 - r03-16.jpg",
@@ -1279,7 +1459,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R3/16, R23/06, R30/03, R32/31'
+
 }, {
     name: " Chiseled",
     image: " Chiseled - IMG_E5903 - r04-56.jpg",
@@ -1297,7 +1478,8 @@
     class: " TB",
     season: "Înflorire timpurie",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R11/56, R22/48, r25/04'
+
 }, {
     name: " Cimarron Trail",
     image: " Cimaron Trail - IMG_E3723 - r11-44.jpg",
@@ -1306,7 +1488,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R11/25, R11/44'
+
 }, {
     name: " Cinque Terre",
     image: " Cinque terre - IMG_E4444 - r13-16.jpg",
@@ -1315,7 +1498,8 @@
     class: " TB",
     season: "Înflorire târzie",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R13/16, R13/17'
+
 }, {
     name: " Citizens Band",
     image: " Citizens band - IMG_E2395 - r21-47.jpg",
@@ -1324,7 +1508,8 @@
     class: " IB",
     season: "Înflorire timpurie",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R21/47'
+
 }, {
     name: " Citrus Medley",
     image: " Citrus Medley - IMG_E4285 - r11-28 -.jpg",
@@ -1333,7 +1518,8 @@
     class: " TB",
     season: "Înflorire târzie până la foarte târzie",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R11/28'
+
 }, {
     name: " City Lights",
     image: " City Lights - IMG_E6343 - r21-26.jpg",
@@ -1342,7 +1528,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R21/23, R21/26, R27/01, R30/05, R11/84'
+
 }, {
     name: " Classic Suede",
     image: " Classic Suede - IMG_E3738 - r11-52.jpg",
@@ -1351,7 +1538,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R2/07, R11/52, R4/32, R28/23, R9/49'
+
 }, {
     name: " Clouds Go By",
     image: " Clouds go By - IMG_E6294 - r16-28.jpg",
@@ -1360,7 +1548,8 @@
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R8/22, R11/14, R11/15, R12/29, R16/12, R16/28, R18/22'
+
 }, {
     name: " Coallignition",
     image: " Coalignition - IMG_E2465 - r18-45.jpg",
@@ -1369,7 +1558,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R18/45'
+
 }, {
     name: " Color Poker",
     image: " Color Poker - IMG_E5133 - r17-40.jpg",
@@ -1378,7 +1568,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R17/30, R17/40, R18/28, S4/02'
+
 }, {
     name: " Color Spektakel",
     image: " Color Spektakel - IMG_E4266 - r11-46.jpg",
@@ -1387,7 +1578,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R11/46'
+
 }, {
     name: " Colour Bazaar",
     image: " Colour Bazar - IMG_E5701 - r03-35.jpg",
@@ -1396,7 +1588,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R3/35, R27/32'
+
 }, {
     name: " Come To Order",
     image: " Come to Order - IMG_E6186 - r09-56.jpg",
@@ -1405,7 +1598,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R3/42, R9/56'
+
 }, {
     name: " Comes The Dawn",
     image: " Comes the Down - IMG_E5244 - r18-38.jpg",
@@ -1414,7 +1608,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R9/43, R9/60, R15/40, R15/42, R18/38, R30/26, R18/32'
+
 }, {
     name: " Company Red",
     image: " Company Red - IMG_E5950 - r05-45.jpg",
@@ -1423,7 +1618,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R5/45'
+
 }, {
     name: " Competitive Edge",
     image: " Competitive Edge - IMG_E4460 - r13-26.jpg",
@@ -1432,7 +1628,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R13/26'
+
 }, {
     name: " Conjuration",
     image: " Conjuration - IMG_E6215 - r10-47.jpg",
@@ -1441,7 +1638,8 @@
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R10/47, R5/61'
+
 }, {
     name: " Constant Wattez",
     image: " Constant Wattez - IMG_E4233 R22-34.jpg",
@@ -1450,7 +1648,8 @@
     class: " IB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 2
+    cod: 2, rind: 'R22/34'
+
 }, {
     name: " Cookie Crisp",
     image: " Cookie Crisp - IMG_E6181 - r09-51.jpg",
@@ -1459,7 +1658,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R9/51'
+
 }, {
     name: " Corps de Ballet",
     image: " Corps de Ballet - IMG_E5914 - r05-13.jpg",
@@ -1468,7 +1668,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R5/13, R19/23, r24/18, S3/01'
+
 }, {
     name: " Cosmic Voyage",
     image: " Cosmic Voyage - IMG_E5564 - r01-14.jpg",
@@ -1477,7 +1678,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 10
+    cod: 10, rind: 'R1/14'
+
 }, {
     name: " Cote D'Or",
     image: " Cote D'Or - IMG_20230526_135408 - r9_26.jpg",
@@ -1486,7 +1688,8 @@
     class: " TB",
     season: "Înflorire târzie",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R9/26, R9/27'
+
 }, {
     name: " Cover Page",
     image: " Cover Page - IMG_E3374 - r10-05.jpg",
@@ -1495,7 +1698,8 @@
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R10/05, R13/12'
+
 }, {
     name: " Cowboy Joe",
     image: " Cowboy Joe - IMG_E4342 - R29-17.jpg",
@@ -1504,7 +1708,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R29/17'
+
 }, {
     name: " Craftsman",
     image: " Craftsman - IMG_E6130 - r09-03.jpg",
@@ -1513,7 +1718,8 @@
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R9/03'
+
 }, {
     name: " Cranberry Delight",
     image: " Cranberry Delight - IMG_E4966 - r16-27.jpg",
@@ -1522,16 +1728,18 @@
     class: " TB",
     season: "Înflorire foarte târzie",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R16/27, R20/10'
+
 }, {
     name: " Cranberry Sauce",
-    image: " Cranberry Souce -  IMG_E3719 - r11-43.jpg",
+    image: " Cranberry Souce - IMG_E3719 - r11-43.jpg",
     color: "visiniu",
     height: 94,
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R10/41, R11/43'
+
 }, {
     name: " Crash Course",
     image: " Crash Course - IMG_E5239 - r18-37.jpg",
@@ -1540,7 +1748,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R16/17B, R16/18, R18/37, r25/25, R16/11, R19/6'
+
 }, {
     name: " Crazy For You",
     image: " Crazy for You - IMG_E3079 - r08-46.jpg",
@@ -1549,7 +1758,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R8/45'
+
 }, {
     name: " Creative Vision",
     image: " Creative Vision - IMG_20230527_092451 -.jpg",
@@ -1558,7 +1768,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R35/47'
+
 }, {
     name: " Crimson Lights",
     image: " Crinson Lights - IMG_E3448 - r10-56.jpg",
@@ -1567,7 +1778,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R8/40, R10/56'
+
 }, {
     name: " Crimson Tiger",
     image: " Crimson Tiger - IMG_E5619 - r02-46.jpg",
@@ -1576,7 +1788,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R2/46, R29/22, R30/41'
+
 }, {
     name: " Cross My Heart",
     image: " Cross my Heart - IMG_E4146 - R19-08.jpg",
@@ -1585,7 +1798,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R19/8, R19/10'
+
 }, {
     name: " Crowned in Glory",
     image: " Crowned In Glory - IMG_20230526_163938 - r11_54.jpg",
@@ -1603,7 +1817,7 @@
     class: " TB",
     season: "Înflorire timpurie până la târzie",
     rebloom: false,
-    cod: 3
+    cod: 3 
 }, {
     name: " Dad's A Pirate",
     image: " Dad's a Pirate - IMG_E3007 - r07-38.jpg",
@@ -1612,7 +1826,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R7/38'
+
 }, {
     name: " Dama Dworu",
     image: " Dama Dworu - IMG_E4922 - r16-13.jpg",
@@ -1621,7 +1836,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R16/13, R16/25'
+
 }, {
     name: " Dance A Dance",
     image: " Dance A Dance- IMG_E6052 - r07-37.jpg",
@@ -1630,7 +1846,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R7/37'
+
 }, {
     name: " Dance Hall Dandy",
     image: " Dance Hall Dandy - IMG_E4090 - r12-13.jpg",
@@ -1639,7 +1856,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R12/13'
+
 }, {
     name: " Dance Til Dawn",
     image: " Dance Til Dawn - IMG_20220527_101054.jpg",
@@ -1648,7 +1866,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R5/02'
+
 }, {
     name: " Danger Money",
     image: " Danger Money - IMG_E4842 - r15-24.jpg",
@@ -1657,7 +1876,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R11/22, R8/31, S2/02'
+
 }, {
     name: " Dany Coste",
     image: " Dany Coste - IMG_E6298 - r16-48.jpg",
@@ -1666,7 +1886,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 6
+    cod: 6, rind: 'R16/48'
+
 }, {
     name: " Darcy's Choice",
     image: " Darcy's Choice - IMG_E4961 - r16-26.jpg",
@@ -1675,7 +1896,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'S1/02, R16/26, R17/49, R18/43, R21/15, R13/48B, R27/08, R32/29'
+
 }, {
     name: " Daring Deception",
     image: " Daring Deception - IMG_E5120 - r17-39.jpg",
@@ -1684,7 +1906,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 10
+    cod: 10, rind: 'R1/15, R12/01, R17/39, R27/16, R32/28'
+
 }, {
     name: " Davluri",
     image: " Davlury Iacovchuc - IMG_20220523_144133.jpg",
@@ -1693,7 +1916,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R6/49, R27/38, R32/23, R31/23'
+
 }, {
     name: " Dazzling Gold",
     image: " Dazzling Gold - IMG_20220524_190525.jpg",
@@ -1702,7 +1926,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R4/19'
+
 }, {
     name: " Deal Or No Deal",
     image: " Deal Or No Deal - IMG_E5580 - r01-29.jpg",
@@ -1711,7 +1936,8 @@
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'r24/03'
+
 }, {
     name: " Dearie",
     image: " Dearie - IMG_E5598 - r01-47.jpg",
@@ -1720,7 +1946,8 @@
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R1/47'
+
 }, {
     name: " Decadence",
     image: " Decadence - IMG_E5559 - r01-08.jpg",
@@ -1729,7 +1956,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 6
+    cod: 6, rind: 'R1/08, R21/19'
+
 }, {
     name: " Deleon",
     image: " Deleon - IMG_E3905 - r12-02.jpg",
@@ -1738,7 +1966,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R12/02'
+
 }, {
     name: " Delfin I Rusalka",
     image: " Delfin I Rusalka - IMG_20230523_155007 -r5_37.jpg",
@@ -1747,7 +1976,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R5/37, R6/28, R22/30, R22/28, r25/06, R27/15, R32/09'
+
 }, {
     name: " Delirium",
     image: " Delirium - IMG_E2195 - R01-18.jpg",
@@ -1756,7 +1986,8 @@
     class: " IB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R1/18'
+
 }, {
     name: " Delta Blues",
     image: " Delta Blues - IMG_E5054 - r17-08.jpg",
@@ -1765,7 +1996,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R17/8, R8/25'
+
 }, {
     name: " Desert Echo",
     image: " Desert Echo - IMG_E4800 - r15-11.jpg",
@@ -1774,7 +2006,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R4/03, R6/11, R15/11, R15/17, r24/16, R27/26, R27/28, R28/01, R32/42, R33/04'
+
 }, {
     name: " Designer Label",
     image: " Designer Label - IMG_20220530_180944.jpg",
@@ -1783,7 +2016,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R4/04, R4/18, r25/24'
+
 }, {
     name: " Devichya Skromnost",
     image: " Devichya Scromnost - IMG_E3057 - r08-09.jpg",
@@ -1792,7 +2026,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 6
+    cod: 6, rind: 'R8/09, R8/10'
+
 }, {
     name: " Diamond Lake",
     image: " Diamond Lake - IMG_E4681 - r14-36.jpg",
@@ -1801,7 +2036,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 6
+    cod: 6, rind: 'R14/36, R14/48, r24/34'
+
 }, {
     name: " Die Laughing",
     image: " Die Laughing - IMG_E4666 - r14-31.jpg",
@@ -1810,7 +2046,8 @@
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R14/31'
+
 }, {
     name: " Different World",
     image: " Different World - IMG_E6060 - r07-45.jpg",
@@ -1819,7 +2056,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R7/45, r24/31, R22/12, R29/05'
+
 }, {
     name: " Dinner Talk",
     image: " Dinner Talk - IMG_E4116 - r12-23.jpg",
@@ -1828,16 +2066,18 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R1/05, R12/23, R28/19'
+
 }, {
     name: " Distant Fire",
-    image: " Distant Fire -  MG_20230526_135305 - r9_25.jpg",
+    image: " Distant Fire - MG_20230526_135305 - r9_25.jpg",
     color: "visiniu",
     height: 89,
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R9/25'
+
 }, {
     name: " Divergence",
     image: " Divergence - IMG_E3070 - r08-32.jpg",
@@ -1846,7 +2086,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R8/32, R8/30, R20/25, R20/40'
+
 }, {
     name: " Dog And Pony Show",
     image: " Dog and Pony Show - IMG_E3255 - R10-53.jpg",
@@ -1855,7 +2096,8 @@
     class: " IB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R10/53'
+
 }, {
     name: " Dog Days",
     image: " Dog Days - IMG_E6319 - r18-19.jpg",
@@ -1864,7 +2106,8 @@
     class: " TB",
     season: "Înflorire târzie până la foarte târzie",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R10/60, R18/19'
+
 }, {
     name: " Domino Noir",
     image: " Domino Noir - IMG_E5579 - r01-28.jpg",
@@ -1873,7 +2116,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 7
+    cod: 7, rind: 'R1/28'
+
 }, {
     name: " Dotted Swiss",
     image: " Dotted Swiss - R23_3 - IMG_20220523_182407.jpg",
@@ -1882,7 +2126,8 @@
     class: " TB",
     season: "Înflorire timpurie",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R23/3'
+
 }, {
     name: " Dracula's Kiss",
     image: " Dracula's Kiss - IMG_E2668 - r02-33.jpg",
@@ -1891,7 +2136,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 6
+    cod: 6, rind: 'R2/33, R14/4, R16/35, R13/40, R30/38, R31/37, R9/81, R10/76, R12/82, R12/84, R18/39'
+
 }, {
     name: " Dragonborn",
     image: " Dragonborn - IMG_E4133 - r12-27.jpg",
@@ -1900,7 +2146,8 @@
     class: " TB",
     season: "Înflorire târzie",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R12/27'
+
 }, {
     name: " Drama Queen",
     image: " Drama Queen IMG_E2977 - r07-06.jpg",
@@ -1909,7 +2156,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R3/57, R7/06'
+
 }, {
     name: " Dream Lord",
     image: " Dream Lord - IMG_E3392 - r10-19.jpg",
@@ -1918,7 +2166,8 @@
     class: " TB",
     season: "Înflorire foarte timpurie până la începutul sezonului înflorire",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R17/45'
+
 }, {
     name: " Dream Team",
     image: " Dream Team - IMG_E2782 - r04-54.jpg",
@@ -1927,7 +2176,8 @@
     class: " TB",
     season: "Înflorire timpurie",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R4/54, R26/17, R26/39'
+
 }, {
     name: " Dreaming Clown",
     image: " Dreaming Clown - IMG_E3526 - r11-32.jpg",
@@ -1936,7 +2186,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R1/49, R2/36, R3/52, R11/32'
+
 }, {
     name: " Drifting Bubbles",
     image: " Drifting Bubbles - IMG_E5644 - r02-20.jpg",
@@ -1945,7 +2196,8 @@
     class: " TB",
     season: "Înflorire târzie",
     rebloom: false,
-    cod: 6
+    cod: 6, rind: 'R2/20, R5/28, R28/34, R31/30'
+
 }, {
     name: " Drinks At Sunset",
     image: " Drink at Sunset - IMG_E3743 - r11-54.jpg",
@@ -1954,7 +2206,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 6
+    cod: 6, rind: 'R11/33, R11/54'
+
 }, {
     name: " Dude",
     image: " Dude - IMG_E2536 - R11-10.jpg",
@@ -1963,7 +2216,8 @@
     class: " IB",
     season: " Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R11/10'
+
 }, {
     name: " Dusky Challenger",
     image: " Dusky Challenger - IMG_E4958 - R29-19.jpg",
@@ -1972,7 +2226,7 @@
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
-    cod: 6
+    cod: 6, rind: 'R29/19'
 }, {
     name: " Earthborn",
     image: " Earthborn - IMG_20230527_113422 - r14_49.jpg",
@@ -1981,7 +2235,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'S2/11'
+
 }, {
     name: " Écho De France",
     image: " Écho De France - IMG_E4701 - r14-45.jpg",
@@ -1990,7 +2245,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R14/45, R20/42, R17/43'
+
 }, {
     name: " Edge of the World",
     image: " Edge of the World - IMG_E2898 - r06-37.jpg",
@@ -1999,7 +2255,8 @@
     class: " TB",
     season: "Înflorire timpurie la mijlocul sezonului si reinflorire toamna",
     rebloom: true,
-	cod: 7
+	cod: 7, rind: 'R6/37'
+
 }, {
     name: " El Capitan",
     image: " El Capitan - IMG_20230519_185753 - n - r18_2.jpg",
@@ -2008,7 +2265,8 @@
     class : " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 1
+    cod: 1, rind: 'R1/62, R1/63, R1/64, R1/65, R1/66, R2/62, R2/63, R2/64, R2/65, R2/66, R3/62, R3/63, R3/64, R3/65, R3/66, R4/62, R4/63, R4/64, R4/65, R4/66, R11/80, R26/10, R33/05'
+
 }, {
     name: " Electric Candy",
     image: " Electric Candy - IMG_E6156 - r09-31.jpg",
@@ -2017,7 +2275,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R9/31, R9/32, R12/49'
+
 }, {
     name: " Elizabeth Noble",
     image: " Elizabeth Noble - IMG_E5398 - r19-34.jpg",
@@ -2026,7 +2285,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R19/27, R19/34, r25/31'
+
 }, {
     name: " Elizabeth Poldark",
     image: " Elizabeth Poldark - IMG_E5975 - r06-09.jpg",
@@ -2044,7 +2304,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R5/40, R6/19, R3/24, r25/08'
+
 }, {
     name: " Empress Of India",
     image: " Empress of India - IMG_E3365 - R29-31.jpg",
@@ -2053,7 +2314,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 1
+    cod: 1, rind: 'R22/24, R28/10, R29/31'
+
 }, {
     name: " Enchanter",
     image: " Enchanter - IMG_E5266 - S3-06.jpg",
@@ -2062,7 +2324,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R20/01, S3/06'
+
 }, {
     name: " Engaging",
     image: " Engaging - IMG_E6045 - r07-30.jpg",
@@ -2071,7 +2334,7 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4 
 }, {
     name: " Enjoy The Party",
     image: " Enjoy the Party - IMG_20220523_182733.jpg",
@@ -2080,7 +2343,8 @@
     class: " TB",
     season: "Înflorire foarte timpurie până la începutul sezonului înflorire",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'S3/04, R6/17'
+
 }, {
     name: " Epicenter",
     image: " Epicenter - IMG_E3909 - r12-05.jpg",
@@ -2089,7 +2353,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R12/5, R19/48, R4/61'
+
 }, {
     name: " Escape From Boredom",
     image: " Escape From Boredom - IMG_20230523_144149 - r6_15.jpg",
@@ -2098,7 +2363,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'S2/08'
+
 }, {
     name: " Escapee",
     image: " Escapee - IMG_E2861 - R21-43.jpg",
@@ -2107,7 +2373,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R17/16, R21/43'
+
 }, {
     name: " Eternal Summer",
     image: " Eternal Summer - IMG_E2768 - R25-40.jpg",
@@ -2116,7 +2383,8 @@
     class: " SPEC-X",
     season: "Înflorire timpurie si reinflorire toamna",
     rebloom: true,
-	cod: 2
+	cod: 2, rind: 'R21/20, r25/40, R11/70, R18/44'
+
 }, {
     name: " Exactitude",
     image: " Exactitude - IMG_E2250 - r07-47.jpg",
@@ -2125,16 +2393,18 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R7/47'
+
 }, {
     name: " Eye For Style",
-    image: " Eye For Style - IMG_20230523_132517 -  - r3_28.jpg",
+    image: " Eye For Style - IMG_20230523_132517 - - r3_28.jpg",
     color: "visiniu",
     height: 97,
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R3/28'
+
 }, {
     name: " Fabian",
     image: " Fabian - IMG_20220524_180727.jpg",
@@ -2143,7 +2413,8 @@
     class : " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'Alamor'
+
 }, {
     name: " Fabulous Fortune",
     image: " Fabulous Fortune - IMG_E5074 - r17-21.jpg",
@@ -2152,7 +2423,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R15/16, S3/02'
+
 }, {
     name: " Fade To Black",
     image: " Fade To Black - IMG_E6270 - r15-44.jpg",
@@ -2161,7 +2433,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 8
+    cod: 8, rind: 'R15/44, r24/10, R26/36, S1/04'
+
 }, {
     name: " Fakel Lyubvi",
     image: " Fakel Lyubvi - IMG_E6223 - r10-50.jpg",
@@ -2170,7 +2443,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R10/50'
+
 }, {
     name: " Fancy Ideas",
     image: " Fancy Ideas - IMG_E3651 - R8-03.jpg",
@@ -2179,7 +2453,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R8/03'
+
 }, {
     name: " Fashion Diva",
     image: " Fashion Diva - IMG_E6143 - r09- 12.jpg",
@@ -2188,7 +2463,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R3/20, R9/12, R9/15'
+
 }, {
     name: " Fashionably Late",
     image: " Fashionably Late - IMG_E4599 - r14-07.jpg",
@@ -2197,7 +2473,8 @@
     class: " TB",
     season: "Înflorire târzie",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R10/24, R14/07, R14/11, R14/16, R15/5, R22/11, r24/21, r25/21, S2/07'
+
 }, {
     name: " Fairy's Prom Dress",
     image: " Fairy's Prom Dress - IMG_E4783 - R9-42.jpg",
@@ -2206,7 +2483,8 @@
     class: " TB",
     season: "Înflorire târzie",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R9/42'
+
 }, {
     name: " Feather Boa",
     image: " Feather Boa - IMG_E4490 - r13-39 -.jpg",
@@ -2215,7 +2493,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R13/39, R18/21'
+
 }, {
     name: " Fiery Temper",
     image: " Fiery Temper - IMG_20230523_183104 - r10_46.jpg",
@@ -2224,7 +2503,7 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4 
 }, {
     name: " Figure Head",
     image: " Figure Head - IMG_20220523_151131.jpg",
@@ -2233,7 +2512,8 @@
     class: " TB",
     season: "Înflorire timpurie până la târzie",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R7/31, R6/13'
+
 }, {
     name: " Filibuster",
     image: " Filibuster - IMG_E2943 - r15-30.jpg",
@@ -2242,7 +2522,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R15/49'
+
 }, {
     name: " Filip Kirkorov",
     image: " Filip Kirkorou - IMG_20220530_183436.jpg",
@@ -2251,7 +2532,8 @@
     class : " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R7/13'
+
 }, {
     name: " Fire Danger",
     image: " Fire Danger - IMG_E5558 - r01-06.jpg",
@@ -2260,7 +2542,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R1/06, R11/08, R28/25'
+
 }, {
     name: " Fire Fighter",
     image: " Fire Fighter - IMG_20230523_170438 - r8_13.jpg",
@@ -2269,7 +2552,7 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 8
+    cod: 8 
 }, {
     name: " Fit The Bill",
     image: " Fit The Bill - IMG_E6032 - r07-17.jpg",
@@ -2278,7 +2561,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R6/41, R7/17'
+
 }, {
     name: " Flames of Love",
     image: " Flames of Love - IMG_E4960 - R30-23.jpg",
@@ -2287,7 +2571,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R30/23'
+
 }, {
     name: " Flammes D'Enfer",
     image: " Flammes D'Enfer - IMG_E2607 - R17-41.jpg",
@@ -2296,7 +2581,8 @@
     class: " IB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R13/45, R17/41, R16/51'
+
 }, {
     name: " Flashinator",
     image: " Flashinator - IMG_E2594 - r01-26.jpg",
@@ -2305,16 +2591,18 @@
     class: " TB",
     season: "Înflorire foarte, foarte timpurie",
     rebloom: false,
-    cod: 8
+    cod: 8, rind: 'R1/26, R28/29'
+
 }, {
     name: " Flying Circus",
-    image: " Flying Circus - IMG_E2667 -  S1-13.jpg",
+    image: " Flying Circus - IMG_E2667 - S1-13.jpg",
     color: "bicolor, portocaliu, violet",
     height: 61,
     class: " IB",
     season: "Înflorire timpurie",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R33/44, S1/13'
+
 }, {
     name: " Florence My Pet Flamingo",
     image: " Florence My Pet Flamingo - IMG_E5702 - r03-57.jpg",
@@ -2323,7 +2611,8 @@
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R3/37'
+
 }, {
     name: " Fluent Mandarin",
     image: " Fluent Mandarin - IMG_E2992 - r07-25.jpg",
@@ -2332,16 +2621,18 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 6
+    cod: 6, rind: 'R11/26, R12/65, S4/04'
+
 }, {
-    name: " Flutterina (Pina 2)",
+    name: " Flutterina",
     image: " Flutterina - IMG_E5940 - Pina 2 - R12-76.jpg",
     color: "bicolor, violet",
     height: 102,
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 6
+    cod: 6, rind: 'R12/76'
+
 }, {
     name: " Fly Your Colors",
     image: " Fly Your Colors - IMG_E3483 - r11-12.jpg",
@@ -2350,7 +2641,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R11/12'
+
 }, {
     name: " Fondation Van Gogh",
     image: " Fondation Van Gogh - IMG_E5348 - r19-18.jpg",
@@ -2359,7 +2651,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R19/18'
+
 }, {
     name: " Fool's Gold",
     image: " Fool's Gold - IMG_E5892 - r04-43.jpg",
@@ -2368,7 +2661,7 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3 
 }, {
     name: " Footloose",
     image: " Footloose - IMG_E2351 - r23-02.jpg",
@@ -2377,7 +2670,8 @@
     class: " TB",
     season: "Înflorire foarte timpurie",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R23/1, R23/2'
+
 }, {
     name: " Foreigner",
     image: " Foreigner - IMG_E5602 - r01-55.jpg",
@@ -2386,7 +2680,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 6
+    cod: 6, rind: 'R1/55, R20/04, R20/05, R20/06, R8/24'
+
 }, {
     name: " Forest Edge",
     image: " Forest Edge - IMG_E6245 - r12-19.jpg",
@@ -2395,7 +2690,7 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 6
+    cod: 6 
 }, {
     name: " Fortunate Son",
     image: " Fortunate Son - IMG_E5898 - r04-47.jpg",
@@ -2404,7 +2699,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R2/31, R4/47, R16/49, R20/14, R5/38, R7/40, R27/09, R29/30, R30/19, R32/24, S3/13'
+
 }, {
     name: " Frequent Flyer",
     image: " Frequent Flyer - IMG_E6178 - r09-49.jpg",
@@ -2413,7 +2709,7 @@
     class: " TB",
     season: "Înflorire timpurie si reinflorire toamna",
     rebloom: true,
-	cod: 4
+	cod: 4 
 }, {
     name: " Frimousse",
     image: " Frimousse - IMG_E5488 - R22-46.jpg",
@@ -2422,7 +2718,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R22/46'
+
 }, {
     name: " Frisky Frolic",
     image: " Frisky Frolic - IMG_E2673 - r02-35.jpg",
@@ -2431,16 +2728,18 @@
     class: " IB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R1/11, R2/35, R4/44, R6/47'
+
 }, {
     name: " From Within",
-    image: " From Within - IMG_20230527_112805 - - r14_3.jpg",
+    image: " From Within - IMG_20230527_112805 -  - r14_33.jpg",
     color: "violet",
     height: 64,
     class: " BB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R14/25, R14/29, R14/33, R15/2, R15/4, R15/51, R20/18'
+
 }, {
     name: " Fruited Plain",
     image: " Fruited Plain - IMG_E2764 - r04-24.jpg",
@@ -2449,7 +2748,8 @@
     class: " TB",
     season: "Înflorire timpurie până la târzie",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R4/24, R6/31, R18/2, R26/32'
+
 }, {
     name: " Fruitsation",
     image: " Fruitsation - IMG_E5490 - r20-16.jpg",
@@ -2458,7 +2758,7 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4 
 }, {
     name: " Full Disclosure",
     image: " Full Disclosure - IMG_E6194 - r10-09.jpg",
@@ -2467,7 +2767,7 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4 
 }, {
     name: " Full of Magic",
     image: " Full of Magic - IMG_20220608_104936.jpg",
@@ -2476,7 +2776,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R8/38, R8/39, R11/9'
+
 }, {
     name: " Fuori Dal Coro",
     image: " Fuori dal Coro - IMG_E3382 - r10-13.jpg",
@@ -2485,7 +2786,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R7/20, R10/13, R11/24, R12/26'
+
 }, {
     name: " Fusion",
     image: " Fusion - IMG_E3495 - r11-17.jpg",
@@ -2494,7 +2796,8 @@
     class: " TB",
     season: "Înflorire târzie până la foarte târzie",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R11/17, R11/18, R32/07'
+
 }, {
     name: " Gai Luron",
     image: " Gai Luron - IMG_E5854 - r02-59.jpg",
@@ -2503,7 +2806,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 2
+    cod: 2, rind: 'R2/59, R2/60'
+
 }, {
     name: " Gala Madrid",
     image: " Gala Madrid - IMG_E2740 - r03-45.jpg",
@@ -2512,7 +2816,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R3/45, R6/22'
+
 }, {
     name: " Gallery",
     image: " Gallery - IMG_E5705 - r03-40.jpg",
@@ -2521,7 +2826,8 @@
     class : " TB",
     season: "Înflorire târzie",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R3/40, R7/59'
+
 }, {
     name: " Garden Pleasure",
     image: " Garden Pleasure - IMG_E4207 - r12-51.jpg",
@@ -2530,7 +2836,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 7
+    cod: 7, rind: 'R12/51, r24/37'
+
 }, {
     name: " Gaze",
     image: " Gaze - IMG_E2829 - r05-31.jpg",
@@ -2539,7 +2846,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R5/21, R5/31'
+
 }, {
     name: " Genealogy",
     image: " Genealogy - IMG_E3471 - r11-02.jpg",
@@ -2548,7 +2856,8 @@
     class: " TB",
     season: "Înflorire timpurie",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R10/34, R11/2'
+
 }, {
     name: " Georgette Silk",
     image: " Georgette Silk - IMG_E5581 - r01-31.jpg",
@@ -2557,7 +2866,8 @@
     class: " TB",
     season: "Înflorire târzie",
     rebloom: false,
-    cod: 10
+    cod: 10, rind: 'R1/31, R2/44'
+
 }, {
     name: " Geroian Slava",
     image: " Geroian Slava - IMG_20220530_175908.jpg",
@@ -2566,7 +2876,7 @@
     class : " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4 
 }, {
     name: " Get My Heart",
     image: " Get my Heart - IMG_E4485 - r13-38 -.jpg",
@@ -2575,7 +2885,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 7
+    cod: 7, rind: 'R12/9, R13/38'
+
 }, {
     name: " Gifted Heart",
     image: " Gifted Heart - IMG_E5988 - r06-21.jpg",
@@ -2584,7 +2895,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R6/21'
+
 }, {
     name: " Glamazon",
     image: " Glamazon - IMG_E4931 - r16-16.jpg",
@@ -2593,7 +2905,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 7
+    cod: 7, rind: 'R1/43, R11/21, R15/10, R16/16'
+
 }, {
     name: " Glamour Pants",
     image: " Glamour Pants - IMG_E5178 - r18-05.jpg",
@@ -2602,7 +2915,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R18/05, R14/50, R9/80'
+
 }, {
     name: " Glowing Report",
     image: " Glowing Report - IMG_E5264 - S3-05.jpg",
@@ -2611,7 +2925,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'S3/05'
+
 }, {
     name: " Glimmer Of Hope",
     image: " Glimmer Of Hope - IMG_E5661 - r03-03.jpg",
@@ -2620,7 +2935,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 7
+    cod: 7, rind: 'R3/3'
+
 }, {
     name: " Golly Gee Whiz",
     image: " Golly Gee Whiz - IMG_E2777 - r04-52.jpg",
@@ -2629,7 +2945,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R4/52, R6/20, R13/24, R32/44, R17/27'
+
 }, {
     name: " Good Point",
     image: " Good Point - IMG_E5911 - r05-09.jpg",
@@ -2638,7 +2955,8 @@
     class: " TB",
     season: "Înflorire medie spre foarte târzie",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R5/09, R6/10, R14/23, R15/9, R15/13, R15/23, r25/26, R26/13, R26/16, R26/37'
+
 }, {
     name: " Got Milk",
     image: " Got Milk - IMG_E3675 - r02-33.jpg",
@@ -2647,7 +2965,8 @@
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R9/24, R9/30, T1, R26/29, R28/21, R28/41, R30/30, R31/25'
+
 }, {
     name: " Gothic Romance",
     image: " Gothic Romance - IMG_20220530_180129.jpg",
@@ -2656,7 +2975,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 6
+    cod: 6, rind: 'R2/37, R2/34'
+
 }, {
     name: " Grand Canyon Gold",
     image: " Grand Canyon Gold - IMG_E5941 - r05-34.jpg",
@@ -2665,7 +2985,8 @@
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R5/34'
+
 }, {
     name: " Grape Snakez",
     image: " Grape Snakez - IMG_E5739 - r21-36.jpg",
@@ -2674,7 +2995,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R21/36'
+
 }, {
     name: " Grecian Sea",
     image: " Grecian Sea - IMG_E5743 - r22-33.jpg",
@@ -2683,7 +3005,7 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3 
 }, {
     name: " Grenade",
     image: " Grenade - IMG_E5261 - S4-05.jpg",
@@ -2692,7 +3014,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'S4/05'
+
 }, {
     name: " Guardian Angel",
     image: " Guardian Angel - IMG_E5743 - S4-09.jpg",
@@ -2701,7 +3024,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'S4/09'
+
 }, {
     name: " Gypsy Lord",
     image: " Gipsy Lord - IMG_E4953 - r16-22.jpg",
@@ -2710,7 +3034,8 @@
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R5/11, R4/36, R6/30'
+
 }, {
     name: " Gypsy Woman",
     image: " Gypsy Woman - IMG_E5449 - r20-40.jpg",
@@ -2719,7 +3044,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R20/33, R20/37, R20/39, R20/38, R17/11'
+
 }, {
     name: " Handshake",
     image: " Handshake - IMG_20220526_132359.jpg",
@@ -2728,7 +3054,8 @@
     class: " TB",
     season: "Înflorire foarte timpurie până la începutul sezonului înflorire",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R6/08'
+
 }, {
     name: " Happenstance",
     image: " Happenstance - IMG_E5614 - r02-48.jpg",
@@ -2737,7 +3064,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R2/48, R2/48, R27/40, R18/20'
+
 }, {
     name: " Harvest King",
     image: " Harvest King - IMG_E5964 - r05-65.jpg",
@@ -2746,7 +3074,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R5/64, R5/65, r25/13'
+
 }, {
     name: " Haunted Heart",
     image: " Haunted Heart - IMG_E4705 - r14-46.jpg",
@@ -2755,7 +3084,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R14/46'
+
 }, {
     name: " Heart Of Glass",
     image: " Heart Of Glass - IMG_E5409 - r19-43.jpg",
@@ -2764,7 +3094,7 @@
     class: " TB",
     season: "Înflorire târzie",
     rebloom: false,
-    cod: 3
+    cod: 3 
 }, {
     name: " Heart of Africa",
     image: " Heart of Africa - IMG_E4190 - R21-08.jpg",
@@ -2773,7 +3103,8 @@
     class: " BB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R21/08'
+
 }, {
     name: " Heat Is On",
     image: " Heat Is On - IMG_E5641 - r02-23.jpg",
@@ -2782,7 +3113,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 9
+    cod: 9, rind: 'R2/23, R29/23'
+
 }, {
     name: " Here Comes The Night",
     image: " Here Comes The Night - IMG_E5013 - r16-41.jpg",
@@ -2791,7 +3123,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 8
+    cod: 8, rind: 'R5/26, R4/41, R14/41, R16/42, R22/22'
+
 }, {
     name: " Hidden Innocence",
     image: " Hiden Innocence - IMG_E2690 - r02-52.jpg",
@@ -2800,7 +3133,8 @@
     class: " TB",
     season: "Înflorire timpurie până la târzie",
     rebloom: false,
-    cod: 8
+    cod: 8, rind: 'R2/52, R11/31, R10/74'
+
 }, {
     name: " High Master",
     image: " High Master - IMG_E3897 - R13-06.jpg",
@@ -2809,7 +3143,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 6
+    cod: 6, rind: 'R13/06'
+
 }, {
     name: " High Roller",
     image: " High Roller - IMG_E5256 - r18-42.jpg",
@@ -2818,7 +3153,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R2/18, R4/33, R7/26, R13/35, R17/13, R18/27, R27/24, R27/41, R28/33, R28/39, R33/12, R34/47, R23/04, R10/70'
+
 }, {
     name: " Holiday Spirit",
     image: " Holiday Spirit - IMG_E5650 - r02-12.jpg",
@@ -2827,7 +3163,8 @@
     class: " TB",
     season: "Înflorire târzie",
     rebloom: false,
-    cod: 6
+    cod: 6, rind: 'R2/12, R3/17, R2/02, R34/46, R35/46, R16/23, R11/82'
+
 }, {
     name: " Hollywood Lights",
     image: " Hollywood Lights - IMG_20220523_161711.jpg",
@@ -2836,7 +3173,8 @@
     class: " TB",
     season: "Înflorire timpurie",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R4/46, R6/51, R17/02, R17/3, R1/37, R4/39'
+
 }, {
     name: " Hollywood Nights",
     image: " Hollywood Nights - IMG_E5357 - r19-22.jpg",
@@ -2845,7 +3183,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R20/21, R19/22'
+
 }, {
     name: " Homebody",
     image: " Homebody - IMG_20220527_102555.jpg",
@@ -2854,7 +3193,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R9/16, R11/48, R16/50, R21/12, R31/12'
+
 }, {
     name: " Honeykist",
     image: " Honeykist - IMG_E3720 - R9-28.jpg",
@@ -2863,7 +3203,8 @@
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R9/28'
+
 }, {
     name: " Honey Dripper",
     image: " Honey Dripper - IMG_E3110 - r09-22.jpg",
@@ -2872,7 +3213,8 @@
     class: " TB",
     season: "Înflorire foarte timpurie spre mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R9/23, R21/11'
+
 }, {
     name: " Hook",
     image: " Hook - IMG_E4548 - r13-56.jpg",
@@ -2881,7 +3223,8 @@
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R1/21, R6/64, R6/52, R11/62, R23/17, R23/18, R23/14, r24/38, R30/02, R31/06, r24/30, R10/79'
+
 }, {
     name: " Hope Springs Eternal",
     image: " Hope Springs Eternal - IMG_E5990 - r06-25.jpg",
@@ -2890,7 +3233,8 @@
     class: " TB",
     season: "Înflorire târzie",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R6/25'
+
 }, {
     name: " Horské Oko",
     image: " Horse Oko - IMG_20220523_143916.jpg",
@@ -2899,7 +3243,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 9
+    cod: 9, rind: 'R2/45, R31/41, R22/33'
+
 }, {
     name: " Hortensia Rose",
     image: " Hortensia Rose - IMG_E6106 - r08-42.jpg",
@@ -2908,7 +3253,8 @@
     class: " TB",
     season: "Înflorire târzie",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R8/42, R12/42'
+
 }, {
     name: " Hot Secret",
     image: " Hot Secret - IMG_E2653 - r02-06.jpg",
@@ -2917,7 +3263,8 @@
     class: " TB",
     season: "Înflorire foarte timpurie spre mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R28/27, S3/07, R9/44'
+
 }, {
     name: " Hottie",
     image: " Hottie - IMG_20230519_183556 - r13_20.jpg",
@@ -2926,16 +3273,17 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R13/20, R16/19'
+
 }, {
     name: " Huckleberry Fudge",
-    image: " Huckleberry Fudge - IMG_20220526_110822 (DESKTOP-O7A07LK's conflicted copy 2026-01-20).jpg",
+    image: " Huckleberry Fudge - IMG_20220526_110822.jpg",
     color: "visiniu",
     height: 89,
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3 
 }, {
     name: " Huckleberry Sundae",
     image: " Huckleberry Sundae - IMG_E4291 - r11-27.jpg",
@@ -2944,7 +3292,8 @@
     class: " TB",
     season: "Înflorire timpurie",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R11/27, T1'
+
 }, {
     name: " Hysteria",
     image: " Hysteria - IMG_E5674 - r03-09.jpg",
@@ -2953,7 +3302,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 8
+    cod: 8, rind: 'R3/09'
+
 }, {
     name: " Iared Princes",
     image: " Iared Princes - IMG_20220523_183053.jpg",
@@ -2962,7 +3312,7 @@
     class : " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3 
 }, {
     name: " Idol",
     image: " Idol - IMG_E5439 - r20-45.jpg",
@@ -2971,7 +3321,7 @@
     class: " TB",
     season: "Înflorire timpurie până la târzie",
     rebloom: false,
-    cod: 5
+    cod: 5 
 }, {
     name: " I'm Back",
     image: " I'm Back - IMG_E5435 - r20-48.jpg",
@@ -2980,7 +3330,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului si reinflorire toamna",
     rebloom: true,
-	cod: 5
+	cod: 5, rind: 'R20/48'
+
 }, {
     name: " Impressionist",
     image: " Impressionist - IMG_E4926 - R20-26.jpg",
@@ -2989,7 +3340,7 @@
     class: " TB",
     season: "Înflorire târzie până la foarte târzie",
     rebloom: false,
-    cod: 5
+    cod: 5 
 }, {
     name: " Impressions De Jouy",
     image: " Impresion de Jovi - IMG_20220524_190050.jpg",
@@ -2998,7 +3349,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R5/1, R5/08, R9/61, R6/15'
+
 }, {
     name: " In A Kiss",
     image: " In A Kiss - IMG_E5656 - r02-01.jpg",
@@ -3007,7 +3359,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R2/01'
+
 }, {
     name: " In Beauty",
     image: " In Beauty - IMG_E5994 - R22-5.jpg",
@@ -3016,7 +3369,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R22/5'
+
 }, {
     name: " In Living Color",
     image: " In Living Color - IMG_E5603 - r01-56.jpg",
@@ -3025,7 +3379,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R1/56'
+
 }, {
     name: " In The Morning",
     image: " In The Morning - IMG_E6247 - r12-48.jpg",
@@ -3034,7 +3389,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R12/48'
+
 }, {
     name: " In Tune",
     image: " In Tune - IMG_E3132 - r09-59.jpg",
@@ -3043,7 +3399,7 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3 
 }, {
     name: " Indian Chief",
     image: " Indian Chief - IMG_E2230 - R04-61.jpg",
@@ -3052,7 +3408,8 @@
     class : " TB",
     season: "Înflorire timpurie ",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R5/63, R33/14, R15/32, R13/51'
+
 }, {
     name: " Indiscreet",
     image: " Indiscreet - IMG_20220520_150306.jpg",
@@ -3061,7 +3418,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R3/41, R6/57'
+
 }, {
     name: " Indy Magic",
     image: " Indy Magic - IMG_20220526_141147.jpg",
@@ -3070,7 +3428,8 @@
     class : " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'r24/07, r24/27, R29/09, R30/31'
+
 }, {
     name: " Ink Patterns",
     image: " Ink Patterns - IMG_E4238 - r12-62.jpg",
@@ -3079,7 +3438,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R1/22, R9/77, R12/62, R12/68, R15/8, R15/19, R15/20, R15/21, R18/04, r25/35'
+
 }, {
     name: " Insaniac",
     image: " Insaniac - IMG_E5312 - r19-11.jpg",
@@ -3088,7 +3448,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R12/50, R3/14, R27/04, R19/11'
+
 }, {
     name: " Iris pallida Lam",
     image: " Iris pallida Lam - IMG_E2633 - r01-64 -.jpg",
@@ -3097,7 +3458,9 @@
     class: " IB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R1/62, R1/63, R1/64, R1/65, R1/66, R2/62, R2/63, R2/64, R2/65, R2/66, R3/62, R3/63, R3/64, R3/65, R3/66, R4/62, R4/63, R4/64, R4/65, R4/66, R11/80, R26/10, R33/05'
+
+
 }, {
     name: " Island Breeze",
     image: " Island Breeze - IMG_E5035 - r17-01.jpg",
@@ -3106,7 +3469,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 6
+    cod: 6, rind: 'R6/61, R17/1'
+
 }, {
     name: " Ivory Ghost",
     image: " Ivory Ghost - IMG_E4646 - r14-21.jpg",
@@ -3115,7 +3479,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R14/21, R15/06, R16/47'
+
 }, {
     name: " Jadzia",
     image: " Jadzia - IMG_E4156 - r12-34.jpg",
@@ -3124,7 +3489,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R12/34'
+
 }, {
     name: " Jamaica Me Crazy",
     image: " Jamaica Me Crazy - IMG_E5654 - r02-08.jpg",
@@ -3133,7 +3499,8 @@
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
-    cod: 7
+    cod: 7, rind: 'R2/8'
+
 }, {
     name: " Jealous Guy",
     image: " Jealous Guy - IMG_E3785 - R10-42.jpg",
@@ -3142,7 +3509,8 @@
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R10/42'
+
 }, {
     name: " Jeb Stuart",
     image: " Jeb Stuart - IMG_E3142 - Curte.jpg",
@@ -3151,7 +3519,8 @@
     class : " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 2
+    cod: 2, rind: 'curte'
+
 }, {
     name: " Jumping",
     image: " Jumping - IMG_E2968 - R1-40.jpg",
@@ -3160,7 +3529,8 @@
     class: " TB",
     season: "Înflorire timpurie, mijlocul sezonului, târzie",
     rebloom: false,
-    cod: 6
+    cod: 6, rind: 'R1/40'
+
 }, {
     name: " Jane Phillips",
     image: " Jane Philits - IMG_E3088 - r08-60.jpg",
@@ -3169,7 +3539,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 2
+    cod: 2, rind: 'R8/58, R8/59, R8/60, r25/36, R32/17, R8/57'
+
 }, {
     name: " Jaunty Dancer",
     image: " Jaunty Dancer - IMG_20230526_135524 - r9_27.jpg",
@@ -3178,7 +3549,7 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4 
 }, {
     name: " Joyce Terry",
     image: " Joyce Terry - IMG_E4240 - R22-40.jpg",
@@ -3187,7 +3558,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R22/40, R31/03'
+
 }, {
     name: " Juliglut",
     image: " Juliglut - IMG_E5311 - R26-09.jpg",
@@ -3196,7 +3568,8 @@
     class : " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R26/09'
+
 }, {
     name: " Just Witchery",
     image: " Just Witchery - IMG_E5561 - r01-09.jpg",
@@ -3205,7 +3578,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 9
+    cod: 9, rind: 'R1/09, R4/25, R15/43, R28/31, R31/35, R10/45'
+
 }, {
     name: " Karibik",
     image: " Karibik - IMG_20220530_182850.jpg",
@@ -3214,7 +3588,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 6
+    cod: 6, rind: 'R5/41'
+
 }, {
     name: " Katarina",
     image: " Katarina - IMG_E5687 - RS3-11.jpg",
@@ -3223,7 +3598,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'S3/11'
+
 }, {
     name: " Kitty Kay",
     image: " Kitty Kay - IMG_E5674 - R30-13.jpg",
@@ -3232,7 +3608,8 @@
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
-    cod: 8
+    cod: 8, rind: 'R30/13'
+
 }, {
     name: " Kathy's Karnival",
     image: " Kathy's Karnival - IMG_E6009 - S1-11.jpg",
@@ -3241,7 +3618,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 6
+    cod: 6, rind: 'S1/11'
+
 }, {
     name: " Kiss The Night",
     image: " Kiss The Night - IMG_E3284 - R12-08.jpg",
@@ -3250,7 +3628,8 @@
     class: " TB",
     season: "Înflorire timpurie",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R12/08'
+
 }, {
     name: " Kissed at Down",
     image: " Kissed at Down - IMG_E5543 - r21-16.jpg",
@@ -3259,7 +3638,7 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3 
 }, {
     name: " Koldovskiie Chary",
     image: " Koldovskiie Chary - IMG_E3358 - R27-30.jpg",
@@ -3268,7 +3647,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R27/30'
+
 }, {
     name: " Korolivska Mantia",
     image: " Korolivska Mantia - IMG_E6081 - r08-21.jpg",
@@ -3277,7 +3657,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 8
+    cod: 8, rind: 'R8/21, R8/23, R29/15, S4/10'
+
 }, {
     name: " Lacy Linda",
     image: " Lacy Linda - IMG_20220523_160837.jpg",
@@ -3286,7 +3667,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R10/62'
+
 }, {
     name: "Lacy Snowflake",
     image: "Lacy Snowflake - IMG_20220523_160015.jpg",
@@ -3295,7 +3677,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'r25/01, r25/33, R26/19'
+
 }, {
     name: " Lady Jean",
     image: " Lady Jean- IMG_E2647 - r02-03.jpg",
@@ -3304,7 +3687,8 @@
     class: " TB",
     season: "Înflorire timpurie la mijlocul sezonului si reinflorire toamna",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R29/27, R2/03, R31/18, R31/31, R2/4, R1/7, R1/39, R30/36, R29/28'
+
 }, {
     name: " Lakota",
     image: " Lakota - IMG_E2816 - r05-18 -.jpg",
@@ -3313,7 +3697,8 @@
     class: " IB",
     season: "Înflorire timpurie până la sfârșitul mijlocului sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R4/58, R4/59, R4/60, R5/59, R5/60'
+
 }, {
     name: " Land Of Extremes",
     image: " Land Of Extremes - IMG_20220527_101402.jpg",
@@ -3322,7 +3707,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 9
+    cod: 9, rind: 'R3/55, R3/56, R6/32, R32/21'
+
 }, {
     name: " Lark Ascending",
     image: " Lark Ascending - IMG_E3884 - S4-03.jpg",
@@ -3331,7 +3717,8 @@
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'S4/03'
+
 }, {
     name: " Laskovy Liubovnik",
     image: " Laskovy Liubovnik - IMG_E3356 - R26-28.jpg",
@@ -3340,7 +3727,8 @@
     class: " TB",
     season: "Înflorire timpurie",
     rebloom: false,
-    cod: 6
+    cod: 6, rind: 'R26/28'
+
 }, {
     name: " Last Chance",
     image: " Last Chance - IMG_20230525_195653 - r5_31.jpg",
@@ -3349,7 +3737,7 @@
     class: " TB",
     season: "Înflorire foarte târzie",
     rebloom: false,
-    cod: 5
+    cod: 5 
 }, {
     name: " Ledi Nezhnost",
     image: " Ledi Nezhnost - IMG_E3929 - R14-15.jpg",
@@ -3358,7 +3746,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 6
+    cod: 6, rind: 'R14/15'
+
 }, {
     name: " Leeds Castle",
     image: " Leeds Castle - IMG_E5363 - r19-24.jpg",
@@ -3367,7 +3756,8 @@
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R19/24'
+
 }, {
     name: " Lemon Bubbly",
     image: " Lemon Bubbly - IMG_E5591 - r01-41.jpg",
@@ -3376,7 +3766,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 6
+    cod: 6, rind: 'R1/41'
+
 }, {
     name: " Lemon Cove",
     image: " Lemon Cove - IMG_E4165 - r12-36.jpg",
@@ -3385,7 +3776,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R12/36'
+
 }, {
     name: " Lent A. Williamson",
     image: " Lent A. Williamson - IMG_E3325 - R19-50.jpg",
@@ -3394,7 +3786,8 @@
     class : " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 1
+    cod: 1, rind: 'R19/47, R19/50, R12/67'
+
 }, {
     name: " Lightning Streak",
     image: " Lightning Streak - IMG_20220523_151602.jpg",
@@ -3403,7 +3796,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R6/27, R6/66, R7/66, R17/46, R19/39'
+
 }, {
     name: " Little John",
     image: " Little John - IMG_E5908 - r05-05.jpg",
@@ -3412,7 +3806,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R4/20, R9/55, R5/05'
+
 }, {
     name: " Local Hero",
     image: " Local Hero - IMG_E2199 - R01-20.jpg",
@@ -3421,7 +3816,8 @@
     class: " IB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R1/20'
+
 }, {
     name: " Look My Way",
     image: " Look my Way - IMG_E3712 - r11-41.jpg",
@@ -3430,16 +3826,18 @@
     class : " TB",
     season: "Înflorire foarte timpurie până la începutul sezonului înflorire",
     rebloom: false,
-    cod: 7
+    cod: 7, rind: 'R11/41'
+
 }, {
     name: " Loreley",
-    image: " Loreley - galben cu mov striat Presaca - IMG_20220524_180710.jpg",
+    image: " Loreley - galben cu mov striat Presaca - IMG_20220524_180710f701.jpg",
     color: "bicolor, galben, visiniu",
     height:  75 ,
     class : " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 2
+    cod: 2, rind: 'ALAMOR'
+
 }, {
     name: " Lotto Winner",
     image: " Lotto Winer - IMG_E4506 - r13-42.jpg",
@@ -3448,7 +3846,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R13/42'
+
 }, {
     name: " Lotus Land",
     image: " Lotus Land - IMG_20220530_182938.jpg",
@@ -3457,7 +3856,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R6/03'
+
 }, {
     name: " Louisa's Song",
     image: " Lousa`s Song - IMG_E4990 - r16-37.jpg",
@@ -3466,7 +3866,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 6
+    cod: 6, rind: 'R16/37, R13/27'
+
 }, {
     name: " Love For Peach",
     image: " Love For Peach - IMG_E5576 - r01-24.jpg",
@@ -3475,7 +3876,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R8/11, R8/12, R12/25, R1/24, R8/13'
+
 }, {
     name: " Lumarco",
     image: " Lumarco - IMG_E6332 - r20-26.jpg",
@@ -3484,7 +3886,7 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3 
 }, {
     name: " Lux",
     image: " Lux - IMG_E2432 - r21-06.jpg",
@@ -3493,7 +3895,8 @@
     class : " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 1
+    cod: 1, rind: 'R2/28, R28/09, R21/14, R18/9, R21/09, R21/05, R19/5, R30/01, R22/14, R32/20, R19/14, R28/03, R27/27'
+
 }, {
     name: " Just Crazy",
     image: " Just Crazy - IMG_E3276 - R12-44.jpg",
@@ -3502,7 +3905,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R12/44'
+
 }, {
     name: " Machismo",
     image: " Machismo - IMG_E6226 - r10-54.jpg",
@@ -3511,7 +3915,8 @@
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R10/54'
+
 }, {
     name: " Mad World",
     image: " Mad World - IMG_E3727 - r11-47.jpg",
@@ -3520,7 +3925,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R11/47, R12/45'
+
 }, {
     name: " Madame Froth",
     image: " Madame froth - IMG_20220527_102331.jpg",
@@ -3529,7 +3935,7 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5 
 }, {
     name: " Magic Bubbles",
     image: " Magic Bubbles - IMG_20230511_115359 - r7_27.jpg",
@@ -3538,7 +3944,9 @@
     class: " IB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R6/23, R7/27, R7/41, R10/21, R10/83, R12/57, R15/33, R15/34, R15/35, r24/06, r24/11, R26/20, R26/21, R27/42, R32/03, R32/08, R32/19, R32/22, R33/02'
+
+
 }, {
     name: " Magic Lamp",
     image: " Magic Lamp - IMG_E5583 - r01-34.jpg",
@@ -3547,7 +3955,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 7
+    cod: 7, rind: 'R1/34, R29/33'
+
 }, {
     name: " Magic Masquerade",
     image: " Magic Masquerade - IMG_E4584 - r14-03.jpg",
@@ -3556,7 +3965,8 @@
     class: " TB",
     season: "Înflorire târzie până la foarte târzie",
     rebloom: false,
-    cod: 7
+    cod: 7, rind: 'R14/03, R21/10'
+
 }, {
     name: " Magical Encounter",
     image: " Magical Encounter - IMG_E3050 - r08-1.jpg",
@@ -3565,7 +3975,8 @@
     class: " TB",
     season: "Înflorire timpurie până la târzie",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R8/01, R8/02'
+
 }, {
     name: " Magical Glow",
     image: " Magical Grow - IMG_E2891 - r06-34.jpg",
@@ -3574,7 +3985,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R6/34'
+
 }, {
     name: " Magical Realism",
     image: " Magical Realism - IMG_20220523_181758.jpg",
@@ -3583,7 +3995,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R18/06, R18/10'
+
 }, {
     name: " Majestic Ruler",
     image: " Majestic Ruler - IMG_20220526_113906.jpg",
@@ -3592,16 +4005,17 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4 
 }, {
     name: " Make Mine Magic",
-    image: " Make Mine Magic -IMG_20230526_161424 -  r11_5.jpg",
+    image: " Make Mine Magic -IMG_20230526_161424 - r11_5.jpg",
     color: "bicolor, galben, visiniu",
     height: 86,
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 7
+    cod: 7, rind: 'R11/5'
+
 }, {
     name: " Mala Fatra",
     image: " Mala Fatra - IMG_E4193 - r12-46.jpg",
@@ -3610,7 +4024,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 7
+    cod: 7, rind: 'R12/46'
+
 }, {
     name: " Malynovyi Punsh",
     image: " Malynovyi Punsh - IMG_E4113 - r12-22.jpg",
@@ -3619,7 +4034,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R2/5, R12/22'
+
 }, {
     name: " Mandarin Morning",
     image: " Mandarin morning - IMG_E2212 - R02-56.jpg",
@@ -3628,7 +4044,8 @@
     class: " TB",
     season: "Înflorire foarte timpurie până la începutul sezonului înflorire",
     rebloom: false,
-    cod: 8
+    cod: 8, rind: 'R2/56'
+
 }, {
     name: " Mango Passion",
     image: " Mango Passion - IMG_E4957 - r16-23.jpg",
@@ -3637,7 +4054,7 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4 
 }, {
     name: " Mango Tiger",
     image: " Mango Tiger - IMG_E5703 - r03-38.jpg",
@@ -3646,7 +4063,8 @@
     class : " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R3/38, r24/14'
+
 }, {
     name: " Man's Best Friend",
     image: " Man's Best Friend - IMG_E2682 - R4-13.jpg",
@@ -3655,7 +4073,8 @@
     class: " IB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R4/13, R7/22, R3/27'
+
 }, {
     name: " Marcel Turbat",
     image: " Marcel Turbat - IMG_E4437 - r13-14.jpg",
@@ -3664,7 +4083,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R13/14, R13/15, R29/21, R29/43, R30/32, R31/27'
+
 }, {
     name: " Marie's Love",
     image: " Marie's Love - IMG_E5660 - r03-02.jpg",
@@ -3673,7 +4093,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 8
+    cod: 8, rind: 'R3/02, R14/40, R22/36, R30/04, R30/09'
+
 }, {
     name: " Mary Frances",
     image: " Mary Frances - IMG_E5973 - R17-09.jpg",
@@ -3682,7 +4103,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R17/9'
+
 }, {
     name: " Masked Bandit",
     image: " Masked Bandit - IMG_3129 - R09-54.jpg",
@@ -3691,7 +4113,8 @@
     class: " IB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R9/54, R4/01, R26/33'
+
 }, {
     name: " Master Comander",
     image: " Master Comander - IMG_20220527_100533.jpg",
@@ -3700,7 +4123,8 @@
     class : " TB",
     season: "Înflorire târzie",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R1/04, R6/43'
+
 }, {
     name: " Matinata",
     image: " Matinata - IMG_E2758 - R32-27.jpg",
@@ -3709,7 +4133,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R32/27'
+
 }, {
     name: " Matula",
     image: " Matula - IMG_E2317 - r18-33.jpg",
@@ -3718,7 +4143,9 @@
     class : " TB",
     season: "Înflorire târzie",
     rebloom: false,
-    cod: 1
+    cod: 1, rind: 'R35/28, R35/29, R35/30, R35/31, R35/32, R35/33, R35/34, R35/35, R35/36, R35/37, R35/38, R35/39, R35/40, R35/41, R35/42, R35/43, R35/44, R35/45'
+
+
 }, {
     name: " McKellar's Grove",
     image: " McKellar's Grove - IMG_E3108 - r09-21.jpg",
@@ -3727,7 +4154,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R9/21'
+
 }, {
     name: " Megarich",
     image: " Megarich - IMG_E4461 - r13-29.jpg",
@@ -3736,7 +4164,7 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5 
 }, {
     name: " Melodiya Dvokh Serdets",
     image: " Melodiya Dvokh Serdets - IMG_E2595 - r01-30.jpg",
@@ -3745,7 +4173,8 @@
     class: " TB",
     season: "Înflorire târzie",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R1/30, R6/26, R11/36, R34/18'
+
 }, {
     name: " Melody Ruth",
     image: " Melody Ruth - IMG_E6057 - r07-42.jpg",
@@ -3754,7 +4183,8 @@
     class: " TB",
     season: "Înflorire târzie până la foarte târzie",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R7/42'
+
 }, {
     name: " Men Are From Mars",
     image: " Men Are From Mars - IMG_E5697 - r03-30.jpg",
@@ -3763,7 +4193,8 @@
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R3/30'
+
 }, {
     name: " Merry Amigo",
     image: " Mery Amigo - IMG_E2767 - r04-27.jpg",
@@ -3772,7 +4203,8 @@
     class: " TB",
     season: "Înflorire foarte timpurie spre mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R10/17, R18/23, R4/27, R33/45'
+
 }, {
     name: " Miami Beach",
     image: " Miami beach - IMG_E5923 - r05-23.jpg",
@@ -3781,7 +4213,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R5/23'
+
 }, {
     name: " Midnight Passion",
     image: " Midnight Passion - IMG_E2262 - r10-66.jpg",
@@ -3790,7 +4223,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R10/66, r25/15, r25/14'
+
 }, {
     name: " Midnight Revelry",
     image: " Midnight Revelry - IMG_E4814 - r15-15.jpg",
@@ -3799,7 +4233,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R15/15, R27/17, R29/37'
+
 }, {
     name: " Midnight Treat",
     image: " Midnight Treat - IMG_E4718 - r14-50.jpg",
@@ -3808,7 +4243,7 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3 
 }, {
     name: " Midnight Velvet",
     image: " Midnight Velevet - IMG_E3396 - r10-20.jpg",
@@ -3817,7 +4252,8 @@
     class: " TB",
     season: "Înflorire timpurie",
     rebloom: false,
-    cod: 6
+    cod: 6, rind: 'R10/20'
+
 }, {
     name: " Milk in my Coffe",
     image: " Milk in My Cofe - IMG_E2490 - r16-21.jpg",
@@ -3826,7 +4262,8 @@
     class: " TB",
     season: "Înflorire foarte timpurie",
     rebloom: false,
-    cod: 7
+    cod: 7, rind: 'R16/21'
+
 }, {
     name: " Mindful",
     image: " Mindfull - IMG_E4442 - R34-20.jpg",
@@ -3835,7 +4272,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R34/20'
+
 }, {
     name: " Mist On The Mountain",
     image: " Mist On The Mountain - IMG_E5893 - r04-45.jpg",
@@ -3844,7 +4282,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R4/45'
+
 }, {
     name: " Mixed Signal",
     image: " Mixed Signal- IMG_E3749 - r11-58.jpg",
@@ -3853,7 +4292,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 10
+    cod: 10, rind: 'R11/58'
+
 }, {
     name: " Monsoon Moon",
     image: " Monsoon Moon - IMG_E5917 - r05-17.jpg",
@@ -3862,16 +4302,18 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R4/49, R5/17, R1/2, R26/26, R28/15, R29/20, R31/39, R7/34, R29/41'
+
 }, {
     name: " Montmartre",
-    image: " Montmartre - IMG_20230519_140342 -  r5_16.jpg",
+    image: " Montmartre - IMG_20230519_140342 - r5_16.jpg",
     color: "bicolor, visiniu",
     height: 84,
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 7
+    cod: 7, rind: 'S1/09, S3/08'
+
 }, {
     name: " Musician",
     image: " Musician - IMG_E6202 - r10-29.jpg",
@@ -3880,7 +4322,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R4/26, R7/21, R10/30, r24/05, r24/25'
+
 }, {
     name: " My Generation",
     image: " My Generation - IMG_E2859 -R21-40.jpg",
@@ -3889,7 +4332,8 @@
     class: " TB",
     season: "Înflorire timpurie până la târzie și reînflorire toamna",
     rebloom: true,
-	cod: 3
+	cod: 3, rind: 'R21/40'
+
 }, {
     name: " My Cher",
     image: " My Cher - IMG_E2760 - R31-11.jpg",
@@ -3898,7 +4342,8 @@
     class: " SDB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R27/07, R31/11, R32/25'
+
 }, {
     name: " My Darling Scatterbrain",
     image: " My Darling Scatterbrain - IMG_E3452 - r10-61.jpg",
@@ -3907,7 +4352,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R10/61, R7/25'
+
 }, {
     name: " Mysterious Ways",
     image: " Mysterious Ways - IMG_20230518_200116 - r9_41.jpg",
@@ -3916,7 +4362,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R9/41, R31/13'
+
 }, {
     name: " Mystique",
     image: " Mystique - IMG_20220524_181006.jpg",
@@ -3925,7 +4372,8 @@
     class: " TB",
     season: "Înflorire timpurie până la târzie",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'Alamor'
+
 }, {
     name: " Name Game",
     image: " Name Game - IMG_E4689 - r14-39.jpg",
@@ -3934,7 +4382,8 @@
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R14/39, R15/03, r24/22, R26/06, R29/24, R31/40, R12/69'
+
 }, {
     name: " Namisnyk Sultana",
     image: " Namisnyk Sultana - IMG_20230523_153343 - r6_29a.jpg",
@@ -3943,7 +4392,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'r24/24'
+
 }, {
     name: " Naples",
     image: " Naplles - IMG_E3003 - r07-35.jpg",
@@ -3952,7 +4402,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R7/35, R4/37'
+
 }, {
     name: " Navy Waves",
     image: " Navy Waves - IMG_E5512 - R18-50.jpg",
@@ -3961,7 +4412,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R18/50'
+
 }, {
     name: " Never Been Kissed",
     image: " Never Been Kissed - IMG_E4896 - r16-01.jpg",
@@ -3970,7 +4422,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R16/01'
+
 }, {
     name: " Next to Me",
     image: " Next to Me - IMG_E3220 - R5-19.jpg",
@@ -3979,7 +4432,8 @@
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R5/19'
+
 }, {
     name: " Nick Carter",
     image: " Nick Carter - IMG_E6213 - r10-44.jpg",
@@ -3988,7 +4442,8 @@
     class : " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R10/43, R10/44'
+
 }, {
     name: " Night Owl",
     image: " Night Owl - IMG_20230523_172107 - r8_61.jpg",
@@ -3997,7 +4452,7 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 8
+    cod: 8 
 }, {
     name: " No Doubt",
     image: " No Doubt - IMG_E6324 - r18-46.jpg",
@@ -4006,7 +4461,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R18/46'
+
 }, {
     name: " Noble Dragon",
     image: " Noble Dragon - IMG_20220526_133643.jpg",
@@ -4015,7 +4471,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'S3/10'
+
 }, {
     name: " Noble Gesture",
     image: " Noble Gesture - IMG_E2661 - r02-17.jpg",
@@ -4024,7 +4481,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R2/17'
+
 }, {
     name: " Noblisimi Dama",
     image: " Noblisimi Dama - IMG_E3386 - r10-15.jpg",
@@ -4033,7 +4491,8 @@
     class : " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 7
+    cod: 7, rind: 'R10/15, R10/16'
+
 }, {
     name: " Nora Eillen",
     image: " Nora Eillen - IMG_E5587 - r01-38.jpg",
@@ -4042,7 +4501,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R1/38'
+
 }, {
     name: " Nordica",
     image: " Nordica - IMG_E3376 - r10-07.jpg",
@@ -4051,7 +4511,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R10/7, R11/30, R16/24'
+
 }, {
     name: " Novorichna Kazka",
     image: " Novorichna Kazka - IMG_E5725 - r22-50.jpg",
@@ -4060,7 +4521,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R22/50'
+
 }, {
     name: " Now and Then",
     image: " Now and Then - IMG_20220523_144029.jpg",
@@ -4069,7 +4531,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R1/48, R9/46, R29/35, R30/17'
+
 }, {
     name: " Oasis Root Beer",
     image: " Oasis Root Beer - IMG_E2705 - r0307.jpg",
@@ -4078,7 +4541,8 @@
     class: " TB",
     season: "Înflorire timpurie",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R3/7, R4/12, R5/10, R7/28, R10/14, R12/24, R16/31, R1/3, R18/47, R28/22, R31/02, R31/29, R3/01'
+
 }, {
     name: " Oblivion",
     image: " Oblivion - IMG_E2226 - R04-30.jpg",
@@ -4087,7 +4551,8 @@
     class: " IB",
     season: "Înflorire timpurie",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R4/30, R6/33, R12/43, R13/23, R13/48, R22/35, r24/12, R32/12'
+
 }, {
     name: " Obsessed",
     image: " Obsessed - IMG_E5676 - r03-15.jpg",
@@ -4096,7 +4561,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 6
+    cod: 6, rind: 'R3/15, R20/07, R27/18, R30/33'
+
 }, {
     name: " Odna Kalyna",
     image: " Odna Kalyna - IMG_20220526_141928.jpg",
@@ -4105,7 +4571,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R1/54, R3/51, R6/40, R29/07, R29/11, R29/34, R29/39, R30/16, R30/24, R30/43'
+
 }, {
     name: " Oh So Yummy",
     image: " Oh So Yummy - IMG_E5455 - r20-35.jpg",
@@ -4114,7 +4581,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R20/35'
+
 }, {
     name: " Oiseau Lyre",
     image: " Oiseau Lyre - IMG_20210603_153945.jpg",
@@ -4123,7 +4591,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 20
+    cod: 2, rind: 'r24/01'
+
 }, {
     name: " Ola Kala",
     image: " Ola Kala - IMG_20220524_180653.jpg",
@@ -4132,7 +4601,8 @@
     class: " TB",
     season: "Înflorire târzie",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'Alamor'
+
 }, {
     name: " Old Black Magic",
     image: " Old Black Magic - IMG_E5673 - r03-08.jpg",
@@ -4141,7 +4611,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 8
+    cod: 8, rind: 'R3/8'
+
 }, {
     name: " Old Money",
     image: " Old Money - IMG_E5716 - r03-53.jpg",
@@ -4150,7 +4621,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R3/53'
+
 }, {
     name: " One of a Kind",
     image: " One of a Kind - IMG_E3508 - r11-23.jpg",
@@ -4159,7 +4631,7 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R1/35, R2/57, R6/48, R6/55, R8/26, R8/27, R9/47, R10/72, R11/23, R11/76, R14/09, R14/10, R19/09, R14/19, R19/25, R21/18, R22/31, R26/23, R26/24, R27/05, R27/21, R28/04, R28/43, R29/03, R29/32, R30/15, R30/20, R30/37, R31/16, R32/14, R32/35'
 }, {
     name: " Open Sea",
     image: " Open Sea - IMG_20230605_110801 - r5_48.jpg",
@@ -4168,7 +4640,8 @@
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
-    cod: 6
+    cod: 6, rind: 'R5/48, R30/27'
+
 }, {
     name: " Orchid Cloud",
     image: " Orchid Cloud - IMG_E5723 - r03-61.jpg",
@@ -4177,7 +4650,8 @@
     class: " TB",
     season: "Înflorire timpurie la mijlocul sezonului si reinflorire toamna",
     rebloom: true,
-	cod: 3
+	cod: 3, rind: 'R3/61'
+
 }, {
     name: " Organza",
     image: " Organza - IMG_E4452 - r13-25.jpg",
@@ -4186,7 +4660,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R13/25'
+
 }, {
     name: " Ostriv Liubovi",
     image: " Ostriv Liubovi - IMG_E4709 - r14-47.jpg",
@@ -4195,7 +4670,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R14/47, R15/14'
+
 }, {
     name: " Pact Girtin",
     image: " Pact Girtin - IMG_E2539 - R21-39.jpg",
@@ -4204,7 +4680,8 @@
     class : " TB",
     season: "Înflorire timpurie",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R21/39, r25/28'
+
 }, {
     name: " Pagan Knight",
     image: " Pagan Knight - IMG_E4305 - r11-01.jpg",
@@ -4213,7 +4690,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R11/01'
+
 }, {
     name: " Palace Symphony",
     image: " Palace Symphony - IMG_E4409 - r13-08.jpg",
@@ -4222,16 +4700,18 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 6
+    cod: 6, rind: 'R13/08'
+
 }, {
     name: " Pallida Variegata",
-    image: " Pallida Variegata - IMG_E3673 - vargati.jpg",
+    image: " Pallida Variegata  - IMG_E3673 - vargati.jpg",
     color: "albastru",
     height:  90,
     class : " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 2
+    cod: 2, rind: 'R5/66, R33/21'
+
 }, {
     name: " Papeete",
     image: " Papeete - IMG_E5887 - r04-38.jpg",
@@ -4240,7 +4720,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R4/38'
+
 }, {
     name: " Paris Fashion",
     image: " Paris Fashion - IMG_20210531_152832.jpg",
@@ -4249,7 +4730,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R15/01, R16/14'
+
 }, {
     name: " Paris Kiss",
     image: " Paris Kiss - IMG_E5907 - r05-04.jpg",
@@ -4258,7 +4740,8 @@
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R2/21, R4/07, R30/21, R32/37'
+
 }, {
     name: " Party's Over",
     image: " Party's Over - IMG_E5382 - r19-31.jpg",
@@ -4267,7 +4750,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R19/31, R19/35, R19/38'
+
 }, {
     name: " Patina",
     image: " Patina - IMG_E3031 - r07-64.jpg",
@@ -4276,16 +4760,17 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R5/62, R6/62, R6/65, R7/65, R9/62, r25/18, R32/10'
+
 }, {
     name: " Peach Butter",
-    image: " Peach Butter -IMG_20230526_134350 -  r9_16.jpg",
+    image: " Peach Butter -IMG_20230526_134350 - r9_16.jpg",
     color: "portocaliu",
     height: 86,
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5 
 }, {
     name: " Penny Prince",
     image: " Penny Prince - IMG_20230523_163633 - r7_59.jpg",
@@ -4294,7 +4779,7 @@
     class: " TB",
     season: null,
     rebloom: false,
-    cod: 2
+    cod: 2 
 }, {
     name: " Pep Rally",
     image: " Pepp Rally - IMG_E2866 - r06-18.jpg",
@@ -4303,7 +4788,8 @@
     class: " TB",
     season: "Înflorire foarte timpurie până la începutul sezonului înflorire",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R6/18, R6/39'
+
 }, {
     name: " Perfect Wife",
     image: " Perfect Wife - IMG_E5639 - r02-27.jpg",
@@ -4312,7 +4798,8 @@
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
-    cod: 9
+    cod: 9, rind: 'R2/27'
+
 }, {
     name: " Piccadilly Circus",
     image: " Piccadilly Circus - IMG_20220602_171438.jpg",
@@ -4321,7 +4808,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R19/40'
+
 }, {
     name: " Pink Empress",
     image: " Pink Empress - IMG_E5726 - r22-49.jpg",
@@ -4330,7 +4818,8 @@
     class: " IB",
     season: "Înflorire timpurie",
     rebloom: false,
-    cod: 2
+    cod: 2, rind: 'R22/49'
+
 }, {
     name: " Pink Taffeta",
     image: " Pink Taffeta - IMG_20230519_185333 - r15_34.jpg",
@@ -4339,7 +4828,7 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3 
 }, {
     name: " Pirate Ahoy",
     image: " Pirate Ahoy - IMG_E5492 - r20-15.jpg",
@@ -4348,7 +4837,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R20/15, R22/43, S2/04'
+
 }, {
     name: " Plasma",
     image: " Prisma - IMG_E2400 - r21-43.jpg",
@@ -4357,7 +4847,8 @@
     class: " IB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R11/74, R11/81'
+
 }, {
     name: " Play to Win",
     image: " Play to Win - IMG_E5248 - r18-40.jpg",
@@ -4366,7 +4857,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R18/40'
+
 }, {
     name: " Point of Interest",
     image: " Point of Interest - IMG_E5077 - r17-22.jpg",
@@ -4375,7 +4867,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R17/22'
+
 }, {
     name: " Poliarnaia Noch",
     image: " Poliarnaia Noch - IMG_E4391 - R31-07.jpg",
@@ -4384,7 +4877,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R31/07'
+
 }, {
     name: " Polish Princess",
     image: " Polisch Princess - IMG_E2232 - R05-03.jpg",
@@ -4393,7 +4887,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului si reinflorire toamna",
     rebloom: true,
-	cod: 5
+	cod: 5, rind: 'R5/03'
+
 }, {
     name: " Polite Applause",
     image: " Polite Aplause - IMG_E4273 - r11-37.jpg",
@@ -4402,7 +4897,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R20/13'
+
 }, {
     name: " Polka",
     image: " Polka - IMG_E6206 - r10-35.jpg",
@@ -4411,7 +4907,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 6
+    cod: 6, rind: 'R10/36, R10/35'
+
 }, {
     name: " Polski Tancerz",
     image: " Polsky Tankzer - IMG_E5004 - r16-41.jpg",
@@ -4420,7 +4917,8 @@
     class : " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R16/41, R9/79'
+
 }, {
     name: " Polvere Di Stelle",
     image: " Polvere Di Stelle - IMG_E2848 - r07-43.jpg",
@@ -4429,7 +4927,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R4/34, R7/43, R12/33, R14/42, R17/34, R9/7, r24/17, R27/11, R27/37, R34/30'
+
 }, {
     name: " Pond Lily",
     image: " Pond Lily - IMG_E5175 - R3-43b.jpg",
@@ -4438,7 +4937,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R3/43b'
+
 }, {
     name: " Pop Culture",
     image: " Pop Culture - IMG_E3425 - r10-38.jpg",
@@ -4447,7 +4947,8 @@
     class: " IB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R1/32, R10/38, R28/37, R11/20, R14/12, R17/38, R20/45, R10/68'
+
 }, {
     name: " Poppa John",
     image: " Poppa John - IMG_20210603_155136.jpg",
@@ -4456,7 +4957,7 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4   
 }, {
     name: "Power Of One",
     image: " Power de One - IMG_E5411 - v19-45.jpg",
@@ -4465,7 +4966,7 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3 
 }, {
     name: " Prague",
     image: " Prague - IMG_E2864 - r06-16.jpg",
@@ -4474,7 +4975,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R5/15, R6/16'
+
 }, {
     name: " Pratskiie Strasti",
     image: " Pratskie Strasti - IMG_E5686 - r03-19.jpg",
@@ -4483,7 +4985,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 7
+    cod: 7, rind: 'R3/19, R31/21'
+
 }, {
     name: " Preferred Stock",
     image: " Preferred Stock - IMG_E3202 - R2-10.jpg",
@@ -4492,7 +4995,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R2/10'
+
 }, {
     name: " Pretty Edgy",
     image: " Prety Edgy - IMG_E3581 - R5-52.jpg",
@@ -4501,7 +5005,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R5/52, R6/42'
+
 }, {
     name: " Prince Of Earl",
     image: " Prince Of Earl - IMG_E5380 - r19-30.jpg",
@@ -4510,7 +5015,7 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului si reinflorire toamna",
     rebloom: true,
-	cod: 4
+	cod: 4 
 }, {
     name: " Princesse Caroline De Monaco",
     image: " Princesse Caroline De Monaco - IMG_E4537 - r13-54.jpg",
@@ -4519,7 +5024,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R14/51, R11/67'
+
 }, {
     name: " Provençal",
     image: " Provençal - IMG_E2641 - r01-65a.jpg",
@@ -4528,7 +5034,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R9/63'
+
 }, {
     name: " Psychic Reader",
     image: " Psychic Reader - IMG_E3907 - r12-04.jpg",
@@ -4537,7 +5044,8 @@
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R12/04, S2/06'
+
 }, {
     name: " P. T. Barnum",
     image: " P. T. Barnum - IMG_E3888 - S1-12.jpg",
@@ -4546,7 +5054,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'S1/12'
+
 }, {
     name: " Pu Abi",
     image: " Pu Agi - IMG_20220523_144427.jpg",
@@ -4555,16 +5064,18 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R18/17'
+
 }, {
     name: " Pure As Gold",
-    image: " Pure as Gold  IMG_20210527_133251.jpg",
+    image: " Pure as Gold IMG_20210527_133251.jpg",
     color: "galben",
     height: 86,
     class: " TB",
     season: "Înflorire târzie și reînflorire",
     rebloom: true,
-	cod: 4
+	cod: 4, rind: 'R10/08, R10/10, R10/11, R18/34, R32/04, R32/05, S1/10'
+
 }, {
     name: " Pure-As-The",
     image: " Pure as the - IMG_E4555 - r13-55.jpg",
@@ -4573,7 +5084,8 @@
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R9/78, R11/68'
+
 }, {
     name: " Purple Ritz",
     image: " Purple Ritz - IMG_E5286 - r19-04.jpg",
@@ -4582,7 +5094,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R19/04'
+
 }, {
     name: " Purrfectly Peachy",
     image: " Purrfectly Peachy - IMG_E5395 - r19-33.jpg",
@@ -4591,7 +5104,7 @@
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
-    cod: 3
+    cod: 3 
 }, {
     name: " Pustynny Zar",
     image: " Pustiny Zar - IMG_E3916 - r12-07.jpg",
@@ -4600,7 +5113,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 6
+    cod: 6, rind: 'R12/07, R12/47'
+
 }, {
     name: " Queen Anne's Lace",
     image: " Queen Anne's Lace - IMG_E5734 - r22-42.jpg",
@@ -4609,7 +5123,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R22/42'
+
 }, {
     name: " Queen Eleanor Of Aquitaine",
     image: " Queen Eleonor of Aquitane - IMG_E3717 - r11-42.jpg",
@@ -4618,7 +5133,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R11/42'
+
 }, {
     name: " Queen Of Angels",
     image: " Queen Of Angels - IMG_E5952 - r05-46.jpg",
@@ -4627,7 +5143,8 @@
     class: " TB",
     season: "Înflorire târzie",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R5/46, R7/09'
+
 }, {
     name: " Queen's Circle",
     image: " Queen's Circle - IMG_E4465 - r13-33.jpg",
@@ -4636,7 +5153,8 @@
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R3/33, R3/47, R4/23, R4/42, R5/22, R32/34, R17/29, R27/39, R8/5, R5/6'
+
 }, {
     name: " Queen's Ransom",
     image: " Queen's Ransom - IMG_20230525_204611 - r9_12.jpg",
@@ -4645,7 +5163,7 @@
     class: " TB",
     season: "Înflorire timpurie",
     rebloom: false,
-    cod: 4
+    cod: 4 
 }, {
     name: " Queen's Velvet Cape",
     image: " Queen's Velvet Cape - IMG_E5243 - R10-39.jpg",
@@ -4654,7 +5172,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R10/39'
+
 }, {
     name: " Rainbow Hues",
     image: " Rainbow Hues - IMG_E5306 - R26-31.jpg",
@@ -4663,7 +5182,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'r25/16, R26/31'
+
 }, {
     name: " Rainbow Sunset",
     image: " Rainbow Sunset - IMG_E6243 - r12-03.jpg",
@@ -4672,16 +5192,18 @@
     class: " TB",
     season: "Înflorire târzie",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R12/03'
+
 }, {
     name: " Rameses",
-    image: " Rameses - IMG_20230519_143937 -  r7_60.jpg",
+    image: " Rameses - IMG_20230519_143937 - r7_60.jpg",
     color: "bicolor, maro, visiniu",
     height:  100,
     class : " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
-    cod: 1
+    cod: 1, rind: 'R18/30, R32/26, R35/20, R35/21, R35/22, R35/23'
+
 }, {
     name: " Rare Blend",
     image: " Rare Blend - IMG_E3652 - R8-04.jpg",
@@ -4690,7 +5212,8 @@
     class: " TB",
     season: "Înflorire târzie",
     rebloom: false,
-    cod: 10
+    cod: 10, rind: 'R8/04'
+
 }, {
     name: " Rare Coin",
     image: " Rare Coin - IMG_E4643 - r14-20.jpg",
@@ -4699,7 +5222,8 @@
     class: " TB",
     season: "Înflorire târzie",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R14/20'
+
 }, {
     name: " Rare Edition",
     image: " Rare Edition - IMG_20230519_184721 - r13_62.jpg",
@@ -4708,7 +5232,8 @@
     class: " IB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R9/73'
+
 }, {
     name: " Rare Treat",
     image: " Rare Treat - IMG_E3118 - r09-36.jpg",
@@ -4717,7 +5242,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R9/35, R9/36, R9/38, R32/39'
+
 }, {
     name: " Rarer Than Rubies",
     image: " Rarer Than Rubies - IMG_E6059 - r07-44.jpg",
@@ -4726,7 +5252,8 @@
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R1/23, R7/44, R22/26, r24/29, r25/07'
+
 }, {
     name: " Raspberry Snow",
     image: " Raspberry Snow - IMG_E2841 - r05-44.jpg",
@@ -4735,7 +5262,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R5/44, r25/19'
+
 }, {
     name: " Rasputin",
     image: " Rasputin - IMG_E4887 - r15-48.jpg",
@@ -4744,7 +5272,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R15/48, R18/15'
+
 }, {
     name: " Ratatuj",
     image: " Ratatuj - IMG_E3353 - S1-05.jpg",
@@ -4753,7 +5282,8 @@
     class: " SDB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'S1/05, S4/06'
+
 }, {
     name: " Raven Girl",
     image: " Raven Girl - IMG_E6295 - r16-44.jpg",
@@ -4762,7 +5292,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R16/44'
+
 }, {
     name: " Ré La Blanche",
     image: " Re La Blanche - IMG_E2742 - r03-50.jpg",
@@ -4771,7 +5302,8 @@
     class: " TB",
     season: "Înflorire timpurie",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R3/50, R4/35'
+
 }, {
     name: " Reason To Smile",
     image: " Reason To Smile - IMG_E5649 - r02-13.jpg",
@@ -4780,7 +5312,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R2/13, R28/28, R31/33'
+
 }, {
     name: " Reckless Abandon",
     image: " Recklles Abandon - IMG_E4081 - r12-10.jpg",
@@ -4789,7 +5322,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 6
+    cod: 6, rind: 'R3/06, R3/10, R13/19, R12/10, R16/36, R22/13, R31/01, R34/21, R34/23'
+
 }, {
     name: " Red Canyon Glow",
     image: " Red Canyon Glow - IMG_E5585 - 01-36.jpg",
@@ -4798,7 +5332,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R1/36, R9/39'
+
 }, {
     name: " Red Chieftain",
     image: " Red Chieftain - IMG_E4214 - R23-11.jpg",
@@ -4807,16 +5342,17 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R23/11, R30/10'
+
 }, {
     name: " Red Rock Canyon",
-    image: " Red Rock Canyon - IMG_20230527_170850 -  r23_5.jpg",
+    image: " Red Rock Canyon - IMG_20230527_170850 - r23_5.jpg",
     color: "bicolor, galben, visiniu",
     height: 86,
     class: " TB",
     season: "Înflorire timpurie la mijlocul sezonului si reinflorire toamna",
     rebloom: true,
-	cod: 5
+	cod: 5 
 }, {
     name: " Red Skies",
     image: " Red Skies -IMG_3106 - R09-17 -.jpg",
@@ -4825,7 +5361,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R9/17'
+
 }, {
     name: " Red Velvet Nights",
     image: " Red Velvet Nights - IMG_20230522_185204 - r5_19.jpg",
@@ -4834,7 +5371,7 @@
     class: " TB",
     season: "Înflorire timpurie la mijlocul sezonului si reinflorire toamna",
     rebloom: true,
-	cod: 5
+	cod: 5 
 }, {
     name: " Regal Knave",
     image: " Regal Knave - IMG_E3681 - rp01-06.jpg",
@@ -4843,7 +5380,7 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4 
 }, {
     name: " Repertoire",
     image: " Repertoire - IMG_E5594 - r01-45.jpg",
@@ -4852,7 +5389,8 @@
     class: " TB",
     season: "Înflorire târzie",
     rebloom: false,
-    cod: 6
+    cod: 6, rind: 'R1/45, R8/44, R28/44'
+
 }, {
     name: " Revere",
     image: " Revere - IMG_20210521_145213.jpg",
@@ -4861,7 +5399,8 @@
     class: " TB",
     season: "Înflorire foarte timpurie până la începutul sezonului înflorire",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R17/44'
+
 }, {
     name: " Rise Like A Phoenix",
     image: " Rise Like A Phoenix - IMG_E4909 - r16-06.jpg",
@@ -4870,7 +5409,8 @@
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
-    cod: 7
+    cod: 7, rind: 'R16/06, R16/07, R16/08'
+
 }, {
     name: " Ritzy",
     image: " Ritzy - IMG_E5159 - r17-50.jpg",
@@ -4879,7 +5419,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R17/50'
+
 }, {
     name: " Rocky Rogue",
     image: " Rocky Rogue - IMG_20230525_203404 - r7_44.jpg",
@@ -4888,7 +5429,7 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5 
 }, {
     name: " Rogue Ghio",
     image: " Rogue - IMG_E5217 - r18-24.jpg",
@@ -4897,7 +5438,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R18/24, S2/01, R21/04'
+
 }, {
     name: " Romantic Evening",
     image: " Romantic Evening - IMG_E2811 - r05-14.jpg",
@@ -4906,7 +5448,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R3/46, R5/14'
+
 }, {
     name: " Romantic Gentlemen",
     image: " Romantic Gentlemen - IMG_E4914 - R18-25.jpg",
@@ -4915,7 +5458,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R18/25, R19/28'
+
 }, {
     name: " Rough Sketch",
     image: " Rough Sketch - IMG_E5732 - r22-44.jpg",
@@ -4924,7 +5468,8 @@
     class : " TB",
     season: "Înflorire târzie",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R22/44'
+
 }, {
     name: " Royal Orders",
     image: " Royal Orders - IMG_E5232 - r18-31.jpg",
@@ -4933,16 +5478,18 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R10/18'
+
 }, {
     name: " Royal Sunset",
-    image: " Royal Sunset  - IMG_E3736 - r11-51.jpg",
+    image: " Royal Sunset - IMG_E3736 - r11-51.jpg",
     color: "bicolor, alb, visiniu",
     height: 99,
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R11/51'
+
 }, {
     name: " Ruban Bleu",
     image: " Ruban Bleu - IMG_E5115 - r17-38.jpg",
@@ -4951,7 +5498,7 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4,  
 }, {
     name: " Ruby Morn",
     image: " Ruby Morn - IMG_20230527_094223 -.jpg",
@@ -4960,7 +5507,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'S4/13'
+
 }, {
     name: " Ruffle Copper Sunset",
     image: " Ruffle Copper Sunset - IMG_E5258 - S4-12.jpg",
@@ -4969,7 +5517,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 7
+    cod: 7, rind: 'S4/12'
+
 }, {
     name: " Rumor Has It",
     image: " Rumor has It - IMG_E4673 - r14-34.jpg",
@@ -4978,7 +5527,8 @@
     class: " TB",
     season: "Înflorire târzie până la foarte târzie",
     rebloom: false,
-    cod: 6
+    cod: 6, rind: 'R9/37, R14/37, R14/34, R16/20, R9/22, R8/51'
+
 }, {
     name: " Rustle of Spring",
     image: " Rustle of Spring - IMG_E4171 - r12-39.jpg",
@@ -4987,7 +5537,8 @@
     class: " TB",
     season: "Înflorire timpurie până la târzie",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R12/39'
+
 }, {
     name: " Rustic Royalty",
     image: " Rustic Royalty - IMG_E4210 - R23-05.jpg",
@@ -4996,7 +5547,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R23/5'
+
 }, {
     name: " Saffron Drift",
     image: " Saffron Drift - IMG_E5922 - r05-20.jpg",
@@ -5005,7 +5557,8 @@
     class: " TB",
     season: "Înflorire foarte, foarte timpurie",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R5/20, R6/06'
+
 }, {
     name: " Sambucina",
     image: " Sambucina - IMG_20230519_184804 - r13_66.jpg",
@@ -5014,7 +5567,7 @@
     class : " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 2
+    cod: 2 
 }, {
     name: " Sangete",
     image: " Sangetee - IMG_20220523_144738.jpg",
@@ -5023,7 +5576,8 @@
     class : " TB",
     season: null,
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R11/71'
+
 }, {
     name: " Sans Souci",
     image: " Sans Souci - IMG_E4316 - R27-43.jpg",
@@ -5032,7 +5586,8 @@
     class : " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R27/43'
+
 }, {
     name: " Santorini",
     image: " Santorini - IMG_E5476 - v20-22.jpg",
@@ -5041,7 +5596,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R20/22, R22/07, R30/35'
+
 }, {
     name: " Sargasove More",
     image: " Sargasove More - IMG_E4219 - r12-56.jpg",
@@ -5050,7 +5606,8 @@
     class : " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 6
+    cod: 6, rind: 'R12/56'
+
 }, {
     name: " Sassy Sister",
     image: " Sassy Sister - IMG_20230526_164845 - r12_2.jpg",
@@ -5059,7 +5616,7 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5 
 }, {
     name: " Saturn",
     image: " Saturn - IMG_E3578 - R5-49.jpg",
@@ -5068,7 +5625,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R5/49'
+
 }, {
     name: " Savannah Sunset",
     image: " Savannah Sunset - IMG_E4525 - R4-40.jpg",
@@ -5077,7 +5635,8 @@
     class: " TB",
     season: "Înflorire timpurie până la târzie",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R4/40, R19/45'
+
 }, {
     name: " Scared Stiff",
     image: " Scared Stiff - IMG_E2623 - r01-51.jpg",
@@ -5086,7 +5645,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 8
+    cod: 8, rind: 'R1/51'
+
 }, {
     name: " Scented Wonder",
     image: " Scented Wonder - IMG_E5043 - r17-04.jpg",
@@ -5095,7 +5655,8 @@
     class: " TB",
     season: "Înflorire târzie",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R7/32, R12/28, R18/01, R7/16, R7/18, R29/04, R30/34, R31/42, R20/08, R11/78'
+
 }, {
     name: " Scrivener",
     image: " Scrivener - IMG_E3740 - r 11-53.jpg",
@@ -5104,7 +5665,8 @@
     class: " IB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R1/50, R2/38, R11/53, R13/49'
+
 }, {
     name: " Sea Power",
     image: " Sea Power - IMG_E6249 - r12-52.jpg",
@@ -5113,7 +5675,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R1/13, R12/52'
+
 }, {
     name: " Second Helping",
     image: " Second Helping - IMG_E5934 - 05-29.jpg",
@@ -5122,7 +5685,7 @@
     class: " TB",
     season: "Înflorire timpurie până la târzie și reînflorire toamna",
     rebloom: true,
-	cod: 4
+	cod: 4 
 }, {
     name: " Secret Recipe",
     image: " Secret Recipe - IMG_E2693 - r02-53.jpg",
@@ -5131,7 +5694,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R2/53'
+
 }, {
     name: " Secret Service",
     image: " Secret Service - IMG_E3094 - r09-02.jpg",
@@ -5140,7 +5704,8 @@
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R9/02, R16/43, R17/47, R9/04, R28/38'
+
 }, {
     name: " Secret Weekend",
     image: " Secret Weekend - IMG_E5195 - r18-11.jpg",
@@ -5149,7 +5714,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R8/36, R8/37, R14/27, R18/11, R34/17'
+
 }, {
     name: " Sharp Dressed Man",
     image: " Sharp Dresed Man - IMG_E5750 - r22-29.jpg",
@@ -5158,7 +5724,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R2/25, R4/05, R4/06, R5/53, R7/46, R10/25, R10/40, R10/48, R13/01, R17/06, R18/36, R20/47, R22/29, r25/11, R28/24, R31/15, R32/01, R34/24'
+
 }, {
     name: " Sharp Edge",
     image: " Sharp Edge - IMG_20230527_124830 - r18_7.jpg",
@@ -5167,7 +5734,8 @@
     class: " TB",
     season: "Înflorire timpurie până la târzie",
     rebloom: false,
-    cod: 6
+    cod: 6, rind: 'R18/07'
+
 }, {
     name: " Sherbert",
     image: " Sherbert - IMG_20230527_130440 - r18_32.jpg",
@@ -5176,7 +5744,7 @@
     class : " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 2
+    cod: 2 
 }, {
     name: " Shine On Me Sunshine",
     image: " Shine On Me Sunshine - IMG_E4415 - r13-10.jpg",
@@ -5185,7 +5753,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R13/10'
+
 }, {
     name: " Shipboard Romance",
     image: " Shipboard Romance - IMG_E5731 - r22-45.jpg",
@@ -5194,7 +5763,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R22/45'
+
 }, {
     name: " Sign Of Leo",
     image: " Sign Of Leo - R21_20 - IMG_20220523_182826a.jpg",
@@ -5203,7 +5773,7 @@
     class: " TB",
     season: "Înflorire timpurie si reinflorire toamna",
     rebloom: true,
-	cod: 2
+	cod: 2 
 }, {
     name: " Silent Fire",
     image: " Silent Fire - IMG_20230525_161539 - r2_14.jpg",
@@ -5212,7 +5782,7 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 8
+    cod: 8 
 }, {
     name: " Silk Romance",
     image: " Silk Romance - IMG_E2848 - r05-54.jpg",
@@ -5221,7 +5791,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R5/54, R9/40, R3/36, r25/17, R26/18, R27/22, R32/38'
+
 }, {
     name: " Silverado",
     image: " Silverado - IMG_E5876 - r04-21.jpg",
@@ -5230,7 +5801,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R4/21, R29/08, R31/08'
+
 }, {
     name: " Sing Out",
     image: " Sing Out - IMG_20230519_183503 - r13_9.jpg",
@@ -5239,7 +5811,7 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3 
 }, {
     name: " Sizzlin' Hot",
     image: " Sizzlin Hot - IMG_E4108 - r12-20.jpg",
@@ -5248,7 +5820,8 @@
     class: " TB",
     season: "Înflorire târzie",
     rebloom: false,
-    cod: 8
+    cod: 8, rind: 'R12/20'
+
 }, {
     name: " Skifskoe Tsarstvo",
     image: " Skifskoe Tsarstvo - IMG_E4663 - r14-28.jpg",
@@ -5257,7 +5830,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 8
+    cod: 8, rind: 'R1/10, R14/28, R28/30, R31/20'
+
 }, {
     name: " Skirting The Issue",
     image: " Skirting The Issue - IMG_E5090 - r17-26.jpg",
@@ -5266,7 +5840,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R17/26'
+
 }, {
     name: " Skoricovy Special",
     image: " Skoricovy Special - IMG_E5747 - r22-32.jpg",
@@ -5275,7 +5850,8 @@
     class : " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R22/32'
+
 }, {
     name: " Skyfire",
     image: " Skyfire - IMG_E6135 - r09-09.jpg",
@@ -5284,7 +5860,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 6
+    cod: 6, rind: 'R2/43, R9/10'
+
 }, {
     name: " Sladke Mameni",
     image: " Sladke Mameni - IMG_20230527_112855 - r14_35.jpg",
@@ -5293,7 +5870,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R14/18, R14/35, R14/43, R14/44'
+
 }, {
     name: " Slonce Jazwinu",
     image: " Slonce Jazwinu - IMG_E2628 - r0-58.jpg",
@@ -5302,7 +5880,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R1/58, R1/59, R1/60, R12/54, R12/55, R13/50, r25/37, R29/40, R31/09, R31/26, R10/67, R10/77'
+
 }, {
     name: " Slovak Prince",
     image: " Slovac Prince - IMG_E3754 - r11-60.jpg",
@@ -5311,7 +5890,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R1/1, R3/26, R3/48, R11/60, R11/66, R12/61, R22/04, R5/07, R6/14, R26/41, R28/20, R30/29, R32/06, R22/02'
+
 }, {
     name: " Snaparazzi",
     image: " Snaparazzi - IMG_E6009 - r06-54.jpg",
@@ -5320,7 +5900,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R6/54'
+
 }, {
     name: " Sneezy",
     image: " Sneezy - IMG_E2259 - r09-50.jpg",
@@ -5329,7 +5910,8 @@
     class: " IB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R9/50'
+
 }, {
     name: " Social Graces",
     image: " Social Graces - IMG_E4515 - r13-46.jpg",
@@ -5338,7 +5920,7 @@
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
-    cod: 3
+    cod: 3 
 }, {
     name: " Sofia",
     image: " Sofia - IMG_20230518_195610 - r9_37.jpg",
@@ -5347,7 +5929,8 @@
     class: " TB",
     season: "Înflorire foarte timpurie până la începutul sezonului înflorire",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R17/48, R18/16'
+
 }, {
     name: " Solo Flight",
     image: " Solo Flight - IMG_E4211 - r12-53.jpg",
@@ -5356,7 +5939,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R12/53'
+
 }, {
     name: " Some Like It Hot",
     image: " Some Like it Hot - IMG_E3126 - r09-52.jpg",
@@ -5365,7 +5949,8 @@
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R4/57, R9/52, R22/27'
+
 }, {
     name: " Somsee Somsigh",
     image: " Somsee Somsigh - IMG_E4887 - R16-17.jpg",
@@ -5374,7 +5959,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R16/17'
+
 }, {
     name: " Sonet Shekspira",
     image: " Sonet Shekspira - IMG_E5953 - r05-47.jpg",
@@ -5383,7 +5969,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R5/47, r25/10'
+
 }, {
     name: " Sooner Serenade",
     image: " Sooner Serenade - IMG_E2773 - r04-48.jpg",
@@ -5392,7 +5979,7 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5 
 }, {
     name: " Sordid Lives",
     image: " Sordid Lives - IMG_E5169 - r18-03.jpg",
@@ -5401,7 +5988,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R20/19'
+
 }, {
     name: " Soul Mate",
     image: " Soul Mate - IMG_E4559 - r13-59.jpg",
@@ -5411,6 +5999,7 @@
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
     cod: 4
+
 }, {
     name: " Soul Singer",
     image: " Soul Singer - IMG_20220526_134049.jpg",
@@ -5419,7 +6008,8 @@
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
-    cod: 6
+    cod: 6, rind: 'R5/36, R6/45'
+
 }, {
     name: " Speculator",
     image: " Speculator - IMG_E5770 - r23-04.jpg",
@@ -5428,7 +6018,7 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5 
 }, {
     name: " Spice Lord",
     image: " Spice Lord - IMG_E6077 - r08-19.jpg",
@@ -5437,7 +6027,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R8/17, R8/20, R8/18, R8/56, R11/83, R15/30, R29/42, R31/10'
+
 }, {
     name: " Spice Traded",
     image: " Spice Trader - IMG_E3473 - r11-06.jpg",
@@ -5446,7 +6037,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 6
+    cod: 6, rind: 'R11/06, R11/07, R11/73, R16/02, R28/13'
+
 }, {
     name: " Spivochyi Fontan",
     image: " Spirocnyi Fontan - IMG_E6241 - r11-39.jpg",
@@ -5455,7 +6047,8 @@
     class: " TB",
     season: "Înflorire târzie",
     rebloom: false,
-    cod: 8
+    cod: 8, rind: 'R11/39'
+
 }, {
     name: " Spring Madness",
     image: " Spring Madness - IMG_20230526_133704 - r9_14.jpg",
@@ -5464,7 +6057,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R9/14, R9/18, R12/15, R14/24, R5/55, R27/35, R28/08, R34/26, R34/16'
+
 }, {
     name: " Stage Presence",
     image: " Stage Presence - IMG_E3710 - r11-40.jpg",
@@ -5473,7 +6067,7 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 7
+    cod: 7 
 }, {
     name: " Standing Proud",
     image: " Standing Proud - IMG_E6003 - r06-46.jpg",
@@ -5482,7 +6076,8 @@
     class: " TB",
     season: "Înflorire târzie",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R11/40, R12/40'
+
 }, {
     name: " Stardock",
     image: " Stardock - IMG_E5423 - r20-50.jpg",
@@ -5491,7 +6086,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului si reinflorireing",
     rebloom: true,
-	cod: 4
+	cod: 4, rind: 'R20/46, R20/50'
+
 }, {
     name: " Starwoman",
     image: " Starwoman - IMG_E3026 - r07-61.jpg",
@@ -5500,7 +6096,8 @@
     class: " IB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R7/61, R2/58, R3/58, R3/59, R3/60, R6/63, R3/34, R26/40, R32/15, R27/23'
+
 }, {
     name: " Strange Brew",
     image: " Strange Brew - IMG_E4589 - r14-05.jpg",
@@ -5509,7 +6106,8 @@
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R14/5, R14/6, r25/20, r25/22, r25/23, R9/76'
+
 }, {
     name: " Strut",
     image: " Strut - IMG_E3537 - r11-34.jpg",
@@ -5518,7 +6116,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R11/34'
+
 }, {
     name: " Study In Black",
     image: " Study In Black - IMG_E4177 - R21-28.jpg",
@@ -5527,7 +6126,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R21/44, R21/28, R21/24'
+
 }, {
     name: " Sultan's Palace",
     image: " Sultan's Palace - IMG_E3090 - r08-66.jpg",
@@ -5536,7 +6136,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R23/10, R8/66, R9/64, R28/18'
+
 }, {
     name: " Summertime Show",
     image: " Summertime Show - IMG_E4110 - r12-21.jpg",
@@ -5545,7 +6146,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 8
+    cod: 8, rind: 'R12/6, R12/21, R28/05'
+
 }, {
     name: " Sun Brown Bubling",
     image: " Sun Brown Bubling - IMG_E4395 - r13-03.jpg",
@@ -5554,7 +6156,8 @@
     class : " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R13/2, R13/3, S2/03'
+
 }, {
     name: " Sunshine On My Shoulders",
     image: " Sunshine On My Shoulders - IMG_E5960 - r05-57.jpg",
@@ -5563,7 +6166,8 @@
     class: " TB",
     season: "Înflorire târzie și reînflorire",
     rebloom: true,
-	cod: 4
+	cod: 4, rind: 'R5/57'
+
 }, {
     name: " Superstition",
     image: " Superstition - IMG_E4439 - R34-29.jpg",
@@ -5572,7 +6176,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R34/29'
+
 }, {
     name: " Supreme Sultan",
     image: " Supreme Sultan - IMG_20230526_161331 - r11_4.jpg",
@@ -5581,7 +6186,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R11/3, R11/4, R12/37, R27/10, R30/22'
+
 }, {
     name: " Susan Bliss",
     image: " Susan Bliss - IMG_E6114 - r08-54.jpg",
@@ -5590,7 +6196,8 @@
     class : " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R8/53, R8/54, R8/55, R10/22, r24/33, R7/36'
+
 }, {
     name: " Svedisky Laukry",
     image: " Svedisky Laukry - IMG_E5189 - r18-08.jpg",
@@ -5599,7 +6206,8 @@
     class : " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R12/12, R18/8, R18/14, R17/12'
+
 }, {
     name: " Synergy",
     image: " Synergy - IMG_E2579 - R7-55.jpg",
@@ -5608,7 +6216,8 @@
     class: " IB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R7/55, R7/54, r24/20'
+
 }, {
     name: " Sweetly Sung",
     image: " Sweetly Sung - IMG_E2442 - r21-01.jpg",
@@ -5617,7 +6226,8 @@
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R21/01'
+
 }, {
     name: " Swivel Hips",
     image: " Swivel Hips - IMG_E4420 - r13-11.jpg",
@@ -5626,7 +6236,8 @@
     class: " TB",
     season: "Înflorire târzie",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R12/17, R13/21, R13/11'
+
 }, {
     name: " Table Time",
     image: " Table Time - IMG_E2584 - r01-19.jpg",
@@ -5635,7 +6246,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 8
+    cod: 8, rind: 'R1/19'
+
 }, {
     name: " Tall Cool One'",
     image: " Tall Cool One - IMG_E5925 - r05-24.jpg",
@@ -5644,7 +6256,8 @@
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R5/24'
+
 }, {
     name: " Tango Amigo",
     image: " Tango Amigo - IMG_E4859 - r15-37.jpg",
@@ -5653,7 +6266,8 @@
     class: " TB",
     season: "Înflorire timpurie",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R15/37'
+
 }, {
     name: " Tashkent",
     image: " Tashkent - IMG_E6155 - r09-29.jpg",
@@ -5662,7 +6276,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'r24/26, R32/41'
+
 }, {
     name: " Taste the Magic",
     image: " Taste the Magic - IMG_E6105 - r08-41.jpg",
@@ -5671,7 +6286,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R7/24'
+
 }, {
     name: " Teenybopper",
     image: " Teenybopper - IMG_20220530_191250.jpg",
@@ -5680,7 +6296,7 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4 
 }, {
     name: " Temporal Anomaly",
     image: " Temporal Anomaly - IMG_20220526_141108.jpg",
@@ -5689,7 +6305,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 6
+    cod: 6, rind: 'R13/22, R9/72, R9/75, R12/71'
+
 }, {
     name: " Ten All Round",
     image: " Ten All Round - IMG_E3691 - r11-10.jpg",
@@ -5698,7 +6315,7 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 7
+    cod: 7 
 }, {
     name: " Tennison Ridge",
     image: " Tennson Ridge - IMG_E2607 - R01-39.jpg",
@@ -5707,7 +6324,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului si reinflorire toamna",
     rebloom: true,
-	cod: 4
+	cod: 4, rind: 'R27/20, R29/36'
+
 }, {
     name: " Terra Cotta Surprise",
     image: " Terra Cotta Surprise - IMG_E2359 - r22-08.jpg",
@@ -5716,7 +6334,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R22/8'
+
 }, {
     name: " Terra Del Fuoco",
     image: " Terra del Fuoco - IMG_E2837 - r05-42.jpg",
@@ -5725,7 +6344,8 @@
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R3/4, R5/42, R30/11'
+
 }, {
     name: " That Song",
     image: " That Song - IMG_E3135 - r09-61.jpg",
@@ -5734,7 +6354,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R20/3'
+
 }, {
     name: " That's All Folks",
     image: " That's All Folks - IMG_E4338 - R29-06.jpg",
@@ -5743,7 +6364,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R29/06'
+
 }, {
     name: " Thornbird",
     image: " Thornbird - IMG_E6124 - r08-64.jpg",
@@ -5752,7 +6374,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R8/64'
+
 }, {
     name: " Thundering Ovation",
     image: " Thundering Ovation - IMG_E4511 - r13-43.jpg",
@@ -5761,16 +6384,18 @@
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R13/43, R27/31, R28/11'
+
 }, {
     name: " Tiger expert",
-    image: " Tiger expert - IMG_20230526_171636 -  r13_7.jpg",
+    image: " Tiger expert - IMG_20230526_171636 - r13_7.jpg",
     color: "bicolor, galben, visiniu",
     height:  92,
     class : " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R13/7'
+
 }, {
     name: " Tiger Honey",
     image: " Tiger Honey - IMG_20230518_183528 - r2_9.jpg",
@@ -5779,7 +6404,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R2/9'
+
 }, {
     name: " Tiger Stripe",
     image: " Tiger Stripe - IMG_E4620 - r14-13.jpg",
@@ -5788,7 +6414,7 @@
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
-    cod: 4
+    cod: 4 
 }, {
     name: " Tintinara",
     image: " Tintinara - IMG_E2859 - r06-07.jpg",
@@ -5797,7 +6423,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R6/7, R6/24'
+
 }, {
     name: " Toréro",
     image: " Toréro - IMG_E6023 - r07-08.jpg",
@@ -5806,7 +6433,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R7/8, R7/23'
+
 }, {
     name: " Tour de France",
     image: " Tour de France - IMG_20230526_170520 - r12_32.jpg",
@@ -5815,7 +6443,7 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4 
 }, {
     name: " Trails West",
     image: " Trails West - IMG_E4873 - R15-25.jpg",
@@ -5824,7 +6452,8 @@
     class : " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 6
+    cod: 6, rind: 'R15/25'
+
 }, {
     name: " Treasure Trader",
     image: " Treasure Trader - IMG_E2715 - r03-18.jpg",
@@ -5833,7 +6462,8 @@
     class: " TB",
     season: "Înflorire foarte, foarte timpurie",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R3/18, R30/28'
+
 }, {
     name: " Triple Dip",
     image: " Triple Dip - IMG_E2985 - r07-15.jpg",
@@ -5842,7 +6472,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului si reinflorire toamna",
     rebloom: true,
-	cod: 4
+	cod: 4, rind: 'R7/15, R22/9, R22/15, R31/24'
+
 }, {
     name: " Tripod",
     image: " Tripod - IMG_E2203 - R01-61.jpg",
@@ -5851,7 +6482,8 @@
     class: " IB",
     season: "Înflorire timpurie la mijlocul sezonului si reinflorire toamna",
     rebloom: true,
-	cod: 2
+	cod: 2, rind: 'R1/61, R13/32, R12/78, R28/45, R30/44, S3/12'
+
 }, {
     name: " Tropical Passion",
     image: " Tropical Passion - IMG_20230523_154807 - r6_38.jpg",
@@ -5860,7 +6492,7 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3 
 }, {
     name: " Truly Wicked",
     image: " Truly Wicked - IMG_E6073 - r08-13.jpg",
@@ -5869,7 +6501,7 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 8
+    cod: 8 
 }, {
     name: " Tunnel Vision",
     image: " Tunel Vision - IMG_E4879 - r15-45.jpg",
@@ -5878,7 +6510,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R4/15, R12/18, R15/45, R16/46, R28/14, S1/06'
+
 }, {
     name: " Tuscan Summer",
     image: " Tuscan Summer - IMG_20230526_161910 - r11_13.jpg",
@@ -5887,7 +6520,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 6
+    cod: 6, rind: 'R11/13'
+
 }, {
     name: " Tuxedo",
     image: " Tuxedo - IMG_E5567 - r01-17.jpg",
@@ -5896,7 +6530,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R1/17, R6/50, R18/33, R9/65'
+
 }, {
     name: " UllaDulla",
     image: " Ulladulla - IMG_20210607_123858.jpg",
@@ -5905,7 +6540,7 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4 
 }, {
     name: " Unstable Gene",
     image: " Unstable Gene - IMG_E4314 - r13-30.jpg",
@@ -5914,7 +6549,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 6
+    cod: 6, rind: 'R13/30, R32/40'
+
 }, {
     name: " Up In Flames",
     image: " Up in Flame - IMG_E4579 - r14-02.jpg",
@@ -5923,7 +6559,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R8/28, R11/55, R14/2, R14/14, r24/15'
+
 }, {
     name: " Uptown Lady",
     image: " Uptown Lady - IMG_E6244 - r12-14.jpg",
@@ -5932,7 +6569,8 @@
     class: " TB",
     season: "Înflorire târzie până la foarte târzie",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R12/14'
+
 }, {
     name: " Uzhithony Vinky",
     image: " Uzhithony Vinky - IMG_E4529 - R4-43.jpg",
@@ -5941,7 +6579,8 @@
     class : " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R4/43'
+
 }, {
     name: " V Ozhidanii Chuda",
     image: " V Ozhidanii Chuda - IMG_E4184 - r12-43.jpg",
@@ -5950,7 +6589,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R12/35, R9/13'
+
 }, {
     name: " Vague À L'Âme",
     image: " Vague À L'Âme- IMG_E6066 - r07-64.jpg",
@@ -5959,7 +6599,8 @@
     class: " TB",
     season: "Înflorire foarte târzie",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R7/64'
+
 }, {
     name: " Val De Loire",
     image: " Val De Loire - IMG_20230519_185715 - r18_1.jpg",
@@ -5968,7 +6609,7 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4 
 }, {
     name: " Vals Kokhannia",
     image: " Vals Kokhannia - IMG_E6327 - r20-23.jpg",
@@ -5977,7 +6618,8 @@
     class: " TB",
     season: "Înflorire foarte târzie",
     rebloom: false,
-    cod: 6
+    cod: 6, rind: 'R20/23, r24/39'
+
 }, {
     name: " Vanilla Berry",
     image: " Vanilla Berry - IMG_E3909 - R13-41.jpg",
@@ -5986,7 +6628,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 7
+    cod: 7, rind: 'R13/41'
+
 }, {
     name: " Vanilla Frappe",
     image: " Vanilla Frappe - IMG_E2848 - r02-15.jpg",
@@ -5995,7 +6638,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 7
+    cod: 7, rind: 'R2/15, R6/44, R5/25, R19/16, R19/19, R19/20, R20/12, R27/25, R28/32, R29/10, R29/13, R31/38'
+
 }, {
     name: " Vento Di Maggio",
     image: " Vento di Maggio - IMG_E4362 - R29-02.jpg",
@@ -6004,7 +6648,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R21/29, R29/02, R30/06, R31/19'
+
 }, {
     name: " Vesiolaya Karusel",
     image: " Vesiolaya Karusel - IMG_E4083 - r12-11.jpg",
@@ -6013,7 +6658,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R12/11'
+
 }, {
     name: " Veter Pustyni",
     image: " Veter Pustiny - IMG_E2755 - r04-08.jpg",
@@ -6022,7 +6668,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R4/8, R6/53, R4/9, R27/34'
+
 }, {
     name: " Vienna Waltz",
     image: " Vienna Waltz - IMG_E6308 - r17-19.jpg",
@@ -6031,7 +6678,8 @@
     class: " TB",
     season: "Înflorire medie spre foarte târzie",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R17/19, R1/42'
+
 }, {
     name: " Viking Dancer",
     image: " Viking Dancer - IMG_E5316 - r19-12.jpg",
@@ -6040,7 +6688,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R23/19, R19/12, R19/13, R27/02, R27/12, R27/13, R30/08'
+
 }, {
     name: " Ville De Sancerre",
     image: " Ville De Sancerre - IMG_E2845 - r5-51.jpg",
@@ -6049,7 +6698,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R3/22, R5/51, R26/27, R27/03, R28/06, R5/52b'
+
 }, {
     name: " Vintage Charm",
     image: " Vintage Charm - IMG_E3725 - r11-45.jpg",
@@ -6058,7 +6708,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului si reinflorire toamna",
     rebloom: true,
-	cod: 4
+	cod: 4, rind: 'R11/45'
+
 }, {
     name: " Violet Turner",
     image: " Violet Turner - IMG_20230527_121732 - r17_18.jpg",
@@ -6067,7 +6718,7 @@
     class: " TB",
     season: "Înflorire timpurie la mijlocul sezonului si reinflorire toamna",
     rebloom: true,
-	cod: 5
+	cod: 5 
 }, {
     name: " Vitrail",
     image: " Vitrail - IMG_E2278 - r11-61.jpg",
@@ -6076,7 +6727,8 @@
     class: " IB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 6
+    cod: 6, rind: 'R11/61, r25/09'
+
 }, {
     name: " Vizier",
     image: " Vizier - IMG_E2371 - r22-16.jpg",
@@ -6085,7 +6737,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R22/16, R23/15, R23/16, R27/06, R30/07'
+
 }, {
     name: " Voltigeur",
     image: " Voltigeur - IMG_E2385 - r22-23.jpg",
@@ -6094,7 +6747,8 @@
     class: " TB",
     season: "Înflorire timpurie",
     rebloom: false,
-    cod: 2
+    cod: 2, rind: 'R1/25, R10/82, R15/29, R15/39, R15/47, R16/29, R16/40, R16/45, R18/35, R19/26, R22/3, R22/23, r24/40, R26/08, R32/16, R33/03, R33/06, R33/07, R33/08, R33/09, R33/10'
+
 }, {
     name: " Voshichenie Krasatoy",
     image: " Voshichenie Krasatoy - IMG_E6339 - r21-37.jpg",
@@ -6103,16 +6757,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 6
-}, {
-    name: " V Oshidanii Chuda",
-    image: " Voshidanyi Chuda - IMG_E4158 - r12-35.jpg",
-    color: "maro",
-    height: 99,
-    class: " TB",
-    season: "Înflorire la mijlocul sezonului",
-    rebloom: false,
-    cod: 4
+    cod: 6, rind: 'R21/03, R21/37, R21/38, r25/29, R26/12'
+
 }, {
     name: " Vyshnevyi Dessert",
     image: " Vyshnevyi Dessert - IMG_E2479 - r17-07 a.jpg",
@@ -6121,7 +6767,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 8
+    cod: 8, rind: 'R8/6, R8/7, R8/8, R17/7, S2/05'
+
 }, {
     name: " Vyshyvka Osinnim Lystiam",
     image: " Vyshyvka Osinnim Lystiam - IMG_20230523_161538 -r7_10.jpg",
@@ -6130,7 +6777,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R7/10'
+
 }, {
     name: " Wabash",
     image: " Wabash - IMG_E6065 - r07-53.jpg",
@@ -6139,7 +6787,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R7/51, R7/52, R7/53, R9/11, T1, r24/35, R26/38, R26/34'
+
 }, {
     name: " Walking on Air",
     image: " Walking on Air - IMG_E5563 - r01-12.jpg",
@@ -6148,7 +6797,8 @@
     class: " TB",
     season: "Înflorire târzie",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R1/12'
+
 }, {
     name: " War Chief",
     image: " War Chief - IMG_E4565 - R6-01.jpg",
@@ -6157,7 +6807,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R6/01, R7/5, R19/3, R19/15, R34/15'
+
 }, {
     name: " Washing light",
     image: " Washing light - IMG_E5410 - r19-44.jpg",
@@ -6166,7 +6817,8 @@
     class : " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R19/44'
+
 }, {
     name: " Wearing Rubies",
     image: " Wearing Aubies - IMG_E4890 - r15-50.jpg",
@@ -6175,7 +6827,8 @@
     class: " TB",
     season: "Înflorire timpurie până la târzie",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R15/50'
+
 }, {
     name: " Well Endowed",
     image: " Well Endowed - IMG_E5983 - R18-48.jpg",
@@ -6184,7 +6837,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R18/48'
+
 }, {
     name: " Wench",
     image: " Wench - IMG_E5728 - r22-47.jpg",
@@ -6193,16 +6847,18 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R22/47'
+
 }, {
     name: " Whisper Her Name",
-    image: " Whisper Her Name - IMG_20230529_175813 -  r7_4.jpg",
+    image: " Whisper Her Name - IMG_20230529_175813 - r7_4.jpg",
     color: "roz",
     height: 97,
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R7/3, R15/38, R20/32, R20/44'
+
 }, {
     name: " Whispering Spirits",
     image: " Whispering Spirits - IMG_E5071 - r17-20.jpg",
@@ -6211,7 +6867,8 @@
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R15/27, R17/20, R17/24, R17/25'
+
 }, {
     name: " White Iceberg",
     image: " White Iceberg - IMG_E3631 - R7-57.jpg",
@@ -6220,7 +6877,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R7/56, R7/57, R7/58, R33/01'
+
 }, {
     name: " Who Did It",
     image: " Who Did It - IMG_E3765 - r11-65.jpg",
@@ -6229,7 +6887,8 @@
     class: " TB",
     season: "Înflorire timpurie",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R11/65'
+
 }, {
     name: " Who's Your Daddy",
     image: " Who's Your Daddy - IMG_20230527_121416 - r17_14.jpg",
@@ -6238,16 +6897,18 @@
     class: " TB",
     season: "Înflorire timpurie până la târzie",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R16/30, R17/14'
+
 }, {
     name: " Wink And A Smile",
-    image: " Wink And A Smile - IMG_20230518_200917 - r10_26.jpg",
+    image: " Wink And A Smile - IMG_20230518_200917 - r10_26f701.jpg",
     color: "visiniu",
     height: 91,
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 6
+    cod: 6, rind: 'R10/26, R10/27, R10/28'
+
 }, {
     name: " Winter Waltz",
     image: " Winter Waltz - IMG_20220527_102357.jpg",
@@ -6256,7 +6917,8 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R4/53, R9/57'
+
 }, {
     name: " Wishful Thinking",
     image: " Wishful Thinking - IMG_E4829 - r15-18.jpg",
@@ -6265,7 +6927,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R6/12, R6/35, R15/18'
+
 }, {
     name: " Wizard Of Odds",
     image: " Wizard Of Odds - IMG_E2664 - r02-26.jpg",
@@ -6274,7 +6937,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R3/25, R7/1, R29/12, R29/29, R30/18, R31/36, R2/26'
+
 }, {
     name: " Wonderful World",
     image: " Wonderful World - IMG_E5500 - r20-11.jpg",
@@ -6283,7 +6947,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod: 3, rind: 'R14/32, R20/11'
+
 }, {
     name: " Wonders Never Cease",
     image: " Wonders Never Cease - IMG_E4882 - r15-46.jpg",
@@ -6292,16 +6957,8 @@
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    cod: 6
-}, {
-    name: " Wyshirka Osinnia Listions",
-    image: " Wyshirka Osinnia Listions - IMG_20230529_175142 - r4_38.jpg",
-    color: "bicolor, galben, maro",
-    height:  null ,
-    class : " TB",
-    season: null,
-    rebloom: false,
-    cod: 3
+    cod: 6, rind: 'R15/46'
+
 }, {
     name: " Yaquina Blue",
     image: " Yaquina Blue - IMG_E4294 - r11-11.jpg",
@@ -6310,7 +6967,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 4
+    cod: 4, rind: 'R11/11, R3/44'
+
 }, {
     name: " Yasna Dibrova",
     image: " Yasna Dibrova - IMG_20220526_142023.jpg",
@@ -6319,7 +6977,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 40
+    cod: 4, rind: 'R19/30'
+
 }, {
     name: " Yes",
     image: " Yess - IMG_E2218 - R03-13.jpg",
@@ -6328,7 +6987,8 @@
     class: " TB",
     season: "Înflorire foarte timpurie până la începutul sezonului înflorire",
     rebloom: false,
-    cod: 3
+    cod:  3, rind: 'R6/5, R15/31, r24/09'
+
 }, {
     name: " Yuppy Puppy",
     image: " Yuppy Puppy - IMG_E3707 - r11-38.jpg",
@@ -6337,7 +6997,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 3
+    cod:  3, rind: 'R11/38, R34/28'
+
 }, {
     name: " Zagadka Petry",
     image: " Zagadka Petry - IMG_E6148 - R5-33.jpg",
@@ -6346,7 +7007,8 @@
     class: " TB",
     season: "Înflorire timpurie, mijlocul sezonului, târzie",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R5/33, R3/11'
+
 }, {
     name: " Zazovory Liker",
     image: " Zazovory Liker - IMG_E4603 - r14-08.jpg",
@@ -6355,7 +7017,8 @@
     class : " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R14/1, R14/8, R14/17, R28/17, R29/18, R30/42, R29/37'
+
 }, {
     name: " Zhenskoe Iskushenie",
     image: " Zhenskoe Iskushenie - IMG_20230526_134851 - r9_20.jpg",
@@ -6364,7 +7027,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 5
+    cod: 5, rind: 'R9/20'
+
 }, {
     name: " Zhinocha Nizhnist",
     image: " Zhinocha Nizhnist - IMG_E6159 - r09-34.jpg",
@@ -6373,7 +7037,8 @@
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    cod: 10
+    cod: 10, rind: 'R9/34'
+
 }, {
     name: " Zimnie Urzory",
     image: " Zimnie Urzory - IMG_E5617 - r02-47.jpg",
@@ -6382,7 +7047,8 @@
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
-    cod: 10
+    cod: 10, rind: 'R2/47'
+
 }, {
     name: " Zolotoi Piedestal",
     image: " Zolotoi Piedestal - IMG_E5424 - r20-49.jpg",
@@ -6391,111 +7057,131 @@
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    cod: 7
-}, {
-    name: " Zoloty Diuk",
+    cod: 7, rind: 'R16/3, R16/4, R20/41, R22/38'
+
+},  {
+    name: "Zoloty Diuk",
     image: " Zoloty Diuk - IMG_20230605_104923 - r2_24.jpg",
     color: "galben",
     height: 95,
     class: " TB",
     season: "Înflorire foarte timpurie",
     rebloom: false,
-    cod: 4
-},
- ];
-    
-    function renderGallery(data) {
-      const gallery = document.getElementById("gallery");
-      gallery.innerHTML = "";
+    cod: 4,
+    rind: 'R2/24, R5/43'
 
-      data.forEach(f => {
-        const card = document.createElement("div");
-        card.className = "card";
+  },
+];
 
-        card.innerHTML = `
-          <img src="${f.image}" alt="${f.name}">
-          ${f.rebloom ? '<span class="rebloom-badge">REÎNFLORITOR</span>' : ''}
-          <strong>${f.name}</strong>
-          <p>Înălțime: ${f.height || "N/A"} cm</p>
-          <p>Clasă: ${f.class} | Sezon: ${f.season}</p>
-          <p class="cod hidden"><strong>cod:</strong> ${f.cod ?? "—"}</p>
-        `;
+function renderGallery(data) {
+  const gallery = document.getElementById("gallery");
+  gallery.innerHTML = "";
 
-        gallery.appendChild(card);
-      });
+  data.forEach(f => {
+    const card = document.createElement("div");
+    card.className = "card";
 
-      document.getElementById("counter").textContent = `${data.length} iriși găsiți`;
+    card.innerHTML = `
+      <a href="${f.image}" data-lightbox="galerie" data-title="${f.name}">
+        <img src="${f.image}" alt="${f.name}">
+      </a>
+      ${f.rebloom ? '<span class="rebloom-badge">REÎNFLORITOR</span>' : ''}
+      <strong>${f.name}</strong>
+      <p>Înălțime: ${f.height || "N/A"} cm</p>
+      <p>Clasă: ${f.class} | Sezon: ${f.season}</p>
+      <p class="cod hidden"><strong>cod:</strong> ${f.cod ?? "—"}</p>
+    `;
+
+    gallery.appendChild(card);
+  });
+
+  document.getElementById("counter").textContent = `${data.length} iriși găsiți`;
+}
+
+function applyFilters() {
+  const nameVal = document.getElementById("search").value.toLowerCase();
+  const letterVal = document.getElementById("searchLetter").value.toLowerCase();
+  const colorVal = document.getElementById("colorFilter").value;
+  const seasonVal = document.getElementById("seasonFilter").value;
+  const rebloomVal = document.getElementById("rebloomFilter").value;
+  const classVal = document.getElementById("classFilter").value;
+  const minH = parseInt(document.getElementById("minHeight").value) || 0;
+  const maxH = parseInt(document.getElementById("maxHeight").value) || 999;
+
+  let filtered = flowers.filter(f => {
+    const h = parseInt(f.height) || 0;
+
+    return (
+      f.name.toLowerCase().includes(nameVal) &&
+      (!letterVal || f.name.trim().toLowerCase().startsWith(letterVal)) &&
+      (!colorVal || f.color.toLowerCase().includes(colorVal)) &&
+      (!seasonVal || f.season.toLowerCase().includes(seasonVal.toLowerCase())) &&
+      (!classVal || f.class.trim().toLowerCase() === classVal.trim().toLowerCase()) &&
+      (!rebloomVal || (rebloomVal === "rebloom" ? f.rebloom : !f.rebloom)) &&
+      h >= minH && h <= maxH
+    );
+  });
+
+  const alphaSort = document.getElementById("sortAlpha").value;
+  const hSort = document.getElementById("sortHeight").value;
+
+  filtered.sort((a, b) => {
+    if (hSort) {
+      const A = parseInt(a.height) || 0;
+      const B = parseInt(b.height) || 0;
+      if (A !== B) return hSort === "asc" ? A - B : B - A;
     }
+    if (alphaSort === "za") return b.name.localeCompare(a.name);
+    return a.name.localeCompare(b.name);
+  });
 
-    function applyFilters() {
-      const nameVal = document.getElementById("search").value.toLowerCase();
-      const letterVal = document.getElementById("searchLetter").value.toLowerCase();
-      const colorVal = document.getElementById("colorFilter").value;
-      const seasonVal = document.getElementById("seasonFilter").value;
-      const rebloomVal = document.getElementById("rebloomFilter").value;
-      const classVal = document.getElementById("classFilter").value;
-      const minH = parseInt(document.getElementById("minHeight").value) || 0;
-      const maxH = parseInt(document.getElementById("maxHeight").value) || 999;
+  renderGallery(filtered);
 
-      let filtered = flowers.filter(f => {
-        const h = parseInt(f.height) || 0;
+  if (codVisible) {
+    document.querySelectorAll(".cod").forEach(el => el.classList.remove("hidden"));
+  }
+}
 
-        return (
-          f.name.toLowerCase().includes(nameVal) &&
-          (!letterVal || f.name.trim().toLowerCase().startsWith(letterVal)) &&
-          (!colorVal || f.color.toLowerCase().includes(colorVal)) &&
-          (!seasonVal || f.season.toLowerCase().includes(seasonVal.toLowerCase())) &&
-          (!classVal || f.class.trim().toLowerCase() === classVal.trim().toLowerCase()) &&
-          (!rebloomVal || (rebloomVal === "rebloom" ? f.rebloom : !f.rebloom)) &&
-          h >= minH && h <= maxH
-        );
-      });
+document.querySelectorAll(".filters input, .filters select")
+  .forEach(el => el.addEventListener("input", applyFilters));
 
-      const alphaSort = document.getElementById("sortAlpha").value;
-      const hSort = document.getElementById("sortHeight").value;
+document.getElementById("resetBtn").onclick = () => {
+  document.querySelectorAll(".filters input, .filters select")
+    .forEach(el => el.value = "");
+  applyFilters();
+};
 
-      filtered.sort((a, b) => {
-        if (hSort) {
-          const A = parseInt(a.height) || 0;
-          const B = parseInt(b.height) || 0;
-          if (A !== B) return hSort === "asc" ? A - B : B - A;
-        }
-        if (alphaSort === "za") return b.name.localeCompare(a.name);
-        return a.name.localeCompare(b.name);
-      });
+const topBtn = document.getElementById("backToTop");
+window.onscroll = () => {
+  topBtn.style.display = window.scrollY > 400 ? "block" : "none";
+};
+topBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
-      renderGallery(filtered);
+let codVisible = false;
+document.getElementById("secretCod").onclick = () => {
+  codVisible = !codVisible;
+  document.querySelectorAll(".cod").forEach(el =>
+    codVisible ? el.classList.remove("hidden") : el.classList.add("hidden")
+  );
+};
 
-      if (codVisible) {
-        document.querySelectorAll(".cod").forEach(el => el.classList.remove("hidden"));
-      }
-    }
+renderGallery(flowers);
+</script>
 
-    document.querySelectorAll(".filters input, .filters select")
-      .forEach(el => el.addEventListener("input", applyFilters));
+<!-- LIGHTBOX JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
 
-    document.getElementById("resetBtn").onclick = () => {
-      document.querySelectorAll(".filters input, .filters select")
-        .forEach(el => el.value = "");
-      applyFilters();
-    };
+<script>
+document.addEventListener("click", function(e) {
+  const overlay = document.querySelector(".lightbox");
+  if (!overlay) return;
 
-    const topBtn = document.getElementById("backToTop");
-    window.onscroll = () => {
-      topBtn.style.display = window.scrollY > 400 ? "block" : "none";
-    };
-    topBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+  // dacă dai clic pe overlay sau pe imagine → închide
+  if (e.target.classList.contains("lb-image") ||
+      e.target.classList.contains("lightbox")) {
+    const closeBtn = document.querySelector(".lb-close");
+    if (closeBtn) closeBtn.click();
+  }
+});
+</script>
 
-    let codVisible = false;
-    document.getElementById("secretCod").onclick = () => {
-      codVisible = !codVisible;
-      document.querySelectorAll(".cod").forEach(el =>
-        codVisible ? el.classList.remove("hidden") : el.classList.add("hidden")
-      );
-    };
-
-    renderGallery(flowers);
-  </script>
-
-</body>
-</html>
