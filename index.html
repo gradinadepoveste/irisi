@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="ro">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Grădina de poveste</title>
+  
+  <!-- LIGHTBOX CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
 
   <style>
     body {
@@ -146,7 +148,6 @@
     <div id="secretRind">rind</div>
 </div>
 
-
   <!-- BARA DE FILTRE -->
   <div class="filters">
     <input type="text" id="search" placeholder="Caută nume...">
@@ -235,7 +236,24 @@
   <button id="backToTop">↑ TOP</button>
 
   <script>
-    const flowers = [
+/* --- 1. Reparare nume imagini --- */
+function fixImagePath(path) {
+  return path.trim().replace(/ /g, "%20");
+}
+
+/* --- 2. Normalizare sezon --- */
+function normalizeSeason(text) {
+  return text
+    .toLowerCase()
+    .replace(/înflorire/g, "")
+    .replace(/inflorire/g, "")
+    .replace(/,/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+/* 3. LISTA DE FLORI */
+const flowers = [
 {
     name: " Aber Wrac'h",
     image: " Aber Wrac'h - IMG_E5136 - r17-42.jpg",
@@ -6358,7 +6376,7 @@
 }, {
     name: " Terra Cotta Surprise",
     image: " Terra Cotta Surprise - IMG_E2359 - r22-08.jpg",
-    color: "bicolor, visiniu, negru",
+    color: "bicolor, visiniu, galben",
     height: 84,
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
@@ -7088,40 +7106,30 @@
     rebloom: false,
     cod: 7, rind: 'R16/3, R16/4, R20/41, R22/38'
 
-},  {
-    name: "Zoloty Diuk",
-    image: " Zoloty Diuk - IMG_20230605_104923 - r2_24.jpg",
-    color: "galben",
-    height: 95,
-    class: " TB",
-    season: "Înflorire foarte timpurie",
-    rebloom: false,
-    cod: 4,
-    rind: 'R2/24, R5/43'
-
-  },
-];
-
+   }
+]; 
+/* --- 4. Generare galerie + Lightbox --- */
 function renderGallery(data) {
   const gallery = document.getElementById("gallery");
   gallery.innerHTML = "";
 
   data.forEach(f => {
+    const fixedImg = fixImagePath(f.image);
     const card = document.createElement("div");
     card.className = "card";
 
     card.innerHTML = `
-      <img src="${f.image}" alt="${f.name}">
+      <a href="${fixedImg}" data-lightbox="galerie" data-title="${f.name}">
+        <img src="${fixedImg}" alt="${f.name}">
+      </a>
+
       ${f.rebloom ? '<span class="rebloom-badge">REÎNFLORITOR</span>' : ''}
       <strong>${f.name}</strong>
-      <p>Înălțime: ${f.height || "N/A"} cm</p>
-      <p>Clasă: ${f.class} | Sezon: ${f.season}</p>
+      <p>Înălțime: ${f.height} cm</p>
+      <p>Clasă: ${f.class} | ${f.season}</p>
 
-      <!-- COD -->
-      <p class="cod hidden"><strong>cod:</strong> ${f.cod ?? "—"}</p>
-
-      <!-- RIND -->
-      <p class="rind hidden"><strong>rind:</strong> ${f.rind ?? "—"}</p>
+      <p class="cod hidden"><strong>cod:</strong> ${f.cod}</p>
+      <p class="rind hidden"><strong>rind:</strong> ${f.rind}</p>
     `;
 
     gallery.appendChild(card);
@@ -7130,85 +7138,95 @@ function renderGallery(data) {
   document.getElementById("counter").textContent = `${data.length} iriși găsiți`;
 }
 
+/* --- 5. Filtre + sortări --- */
 function applyFilters() {
-  const nameVal = document.getElementById("search").value.toLowerCase();
-  const letterVal = document.getElementById("searchLetter").value.toLowerCase();
-  const colorVal = document.getElementById("colorFilter").value;
-  const seasonVal = document.getElementById("seasonFilter").value;
-  const rebloomVal = document.getElementById("rebloomFilter").value;
-  const classVal = document.getElementById("classFilter").value;
-  const minH = parseInt(document.getElementById("minHeight").value) || 0;
-  const maxH = parseInt(document.getElementById("maxHeight").value) || 999;
+  const nameVal    = search.value.toLowerCase();
+  const letterVal  = searchLetter.value.toLowerCase();
+  const colorVal   = colorFilter.value.toLowerCase();
+  const seasonVal  = seasonFilter.value.toLowerCase();
+  const rebloomVal = rebloomFilter.value;
+  const classVal   = classFilter.value.toLowerCase();
+  const minH       = parseInt(minHeight.value) || 0;
+  const maxH       = parseInt(maxHeight.value) || 999;
 
   let filtered = flowers.filter(f => {
-    const h = parseInt(f.height) || 0;
+    const h       = parseInt(f.height) || 0;
+    const fColor  = (f.color || "").toLowerCase();
+    const fClass  = (f.class || "").toLowerCase();
+    const fSeason = (f.season || "").toLowerCase();
+
+    /* --- transformăm culorile în listă curată --- */
+    const colorList = fColor
+      .split(",")
+      .map(c => c.trim().toLowerCase().replace(/-/g, " ").replace(/\s+/g, " "))
+      .filter(c => c.length > 0);
 
     return (
       f.name.toLowerCase().includes(nameVal) &&
       (!letterVal || f.name.trim().toLowerCase().startsWith(letterVal)) &&
-      (!colorVal || f.color.toLowerCase().includes(colorVal)) &&
-      (!seasonVal || f.season.toLowerCase().includes(seasonVal.toLowerCase())) &&
-      (!classVal || f.class.trim().toLowerCase() === classVal.trim().toLowerCase()) &&
+
+      /* --- FILTRARE CULOARE PERFECTĂ --- */
+      (!colorVal || colorList.includes(colorVal)) &&
+
+      /* --- FILTRARE SEZON --- */
+      (!seasonVal || fSeason.includes(seasonVal)) &&
+
+      (!classVal || fClass === classVal) &&
       (!rebloomVal || (rebloomVal === "rebloom" ? f.rebloom : !f.rebloom)) &&
       h >= minH && h <= maxH
     );
   });
 
-  const alphaSort = document.getElementById("sortAlpha").value;
-  const hSort = document.getElementById("sortHeight").value;
+  /* sortare alfabetică */
+  const alphaSort = sortAlpha.value;
+  if (alphaSort === "az")  filtered.sort((a, b) => a.name.localeCompare(b.name));
+  if (alphaSort === "za")  filtered.sort((a, b) => b.name.localeCompare(a.name));
 
-  filtered.sort((a, b) => {
-    if (hSort) {
-      const A = parseInt(a.height) || 0;
-      const B = parseInt(b.height) || 0;
-      if (A !== B) return hSort === "asc" ? A - B : B - A;
-    }
-    if (alphaSort === "za") return b.name.localeCompare(a.name);
-    return a.name.localeCompare(b.name);
-  });
+  /* sortare înălțime */
+  const hSort = sortHeight.value;
+  if (hSort === "asc")  filtered.sort((a, b) => a.height - b.height);
+  if (hSort === "desc") filtered.sort((a, b) => b.height - a.height);
 
   renderGallery(filtered);
 
-  if (codVisible) {
-    document.querySelectorAll(".cod").forEach(el => el.classList.remove("hidden"));
-  }
-  if (rindVisible) {
-    document.querySelectorAll(".rind").forEach(el => el.classList.remove("hidden"));
-  }
+  if (codVisible)  document.querySelectorAll(".cod").forEach(el => el.classList.remove("hidden"));
+  if (rindVisible) document.querySelectorAll(".rind").forEach(el => el.classList.remove("hidden"));
 }
 
+/* --- 6. Evenimente filtre --- */
 document.querySelectorAll(".filters input, .filters select")
   .forEach(el => el.addEventListener("input", applyFilters));
 
-document.getElementById("resetBtn").onclick = () => {
+resetBtn.onclick = () => {
   document.querySelectorAll(".filters input, .filters select")
     .forEach(el => el.value = "");
   applyFilters();
 };
 
-const topBtn = document.getElementById("backToTop");
-window.onscroll = () => {
-  topBtn.style.display = window.scrollY > 400 ? "block" : "none";
-};
-topBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+/* --- 7. Buton TOP --- */
+window.addEventListener("scroll", () => {
+  backToTop.style.display = window.scrollY > 400 ? "block" : "none";
+});
+backToTop.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
-/* --- BUTON TEXT (cod) --- */
+/* --- 8. Cod + Rind --- */
 let codVisible = false;
-document.getElementById("secretCod").onclick = () => {
+let rindVisible = false;
+
+secretCod.onclick = () => {
   codVisible = !codVisible;
   document.querySelectorAll(".cod").forEach(el =>
     codVisible ? el.classList.remove("hidden") : el.classList.add("hidden")
   );
 };
 
-/* --- BUTON RIND --- */
-let rindVisible = false;
-document.getElementById("secretRind").onclick = () => {
+secretRind.onclick = () => {
   rindVisible = !rindVisible;
   document.querySelectorAll(".rind").forEach(el =>
     rindVisible ? el.classList.remove("hidden") : el.classList.add("hidden")
   );
 };
 
+/* --- 9. Inițializare --- */
 renderGallery(flowers);
 </script>
