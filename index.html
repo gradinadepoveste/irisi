@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="ro">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Grădina de poveste</title>
-
-  <!-- LIGHTBOX CSS -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
 
   <style>
     body {
@@ -28,6 +26,7 @@
       display: block;
     }
 
+    /* --- BARA DE FILTRE OPTIMIZATĂ --- */
     .filters {
       display: flex;
       flex-wrap: wrap;
@@ -50,9 +49,11 @@
       font-size: 0.9rem;
     }
 
+    /* câmpuri mici */
     #searchLetter { width: 45px; text-align: center; }
     #minHeight, #maxHeight { width: 60px; text-align: center; }
 
+    /* câmpuri mari */
     #seasonFilter,
     #colorFilter,
     #rebloomFilter,
@@ -62,6 +63,7 @@
       max-width: 130px;
     }
 
+    /* --- GALERIE --- */
     .gallery {
       display: flex;
       flex-wrap: wrap;
@@ -85,7 +87,6 @@
       height: 200px;
       object-fit: cover;
       border-radius: 4px;
-      cursor: zoom-in;
     }
 
     .rebloom-badge {
@@ -114,6 +115,7 @@
       font-weight: bold;
     }
 
+    /* --- OPTIMIZARE MOBIL --- */
     @media (max-width: 600px) {
       .filters {
         gap: 0.3rem;
@@ -138,9 +140,12 @@
     <img src="aIMG_E4385.jpg" alt="Imagine decorativă">
   </header>
 
-  <div id="secretCod" style="text-align:center; opacity:0.3; cursor:pointer; margin-bottom:10px;">
-    text
-  </div>
+<!-- TEXT + RIND pe același rând -->
+<div style="display:flex; justify-content:center; gap:25px; margin-bottom:10px; opacity:0.3; cursor:pointer;">
+    <div id="secretCod">text</div>
+    <div id="secretRind">rind</div>
+</div>
+
 
   <!-- BARA DE FILTRE -->
   <div class="filters">
@@ -169,7 +174,7 @@
       <option value="bicolor">Bicolor</option>
     </select>
 
-    <select id="seasonFilter">
+        <select id="seasonFilter">
       <option value="">Orice perioadă</option>
       <option value="Înflorire foarte, foarte timpurie">Înflorire foarte, foarte timpurie </option>
       <option value="Înflorire foarte timpurie">Înflorire foarte timpurie </option>
@@ -7106,14 +7111,17 @@ function renderGallery(data) {
     card.className = "card";
 
     card.innerHTML = `
-      <a href="${f.image}" data-lightbox="galerie" data-title="${f.name}">
-        <img src="${f.image}" alt="${f.name}">
-      </a>
+      <img src="${f.image}" alt="${f.name}">
       ${f.rebloom ? '<span class="rebloom-badge">REÎNFLORITOR</span>' : ''}
       <strong>${f.name}</strong>
       <p>Înălțime: ${f.height || "N/A"} cm</p>
       <p>Clasă: ${f.class} | Sezon: ${f.season}</p>
+
+      <!-- COD -->
       <p class="cod hidden"><strong>cod:</strong> ${f.cod ?? "—"}</p>
+
+      <!-- RIND -->
+      <p class="rind hidden"><strong>rind:</strong> ${f.rind ?? "—"}</p>
     `;
 
     gallery.appendChild(card);
@@ -7164,6 +7172,9 @@ function applyFilters() {
   if (codVisible) {
     document.querySelectorAll(".cod").forEach(el => el.classList.remove("hidden"));
   }
+  if (rindVisible) {
+    document.querySelectorAll(".rind").forEach(el => el.classList.remove("hidden"));
+  }
 }
 
 document.querySelectorAll(".filters input, .filters select")
@@ -7181,6 +7192,7 @@ window.onscroll = () => {
 };
 topBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
+/* --- BUTON TEXT (cod) --- */
 let codVisible = false;
 document.getElementById("secretCod").onclick = () => {
   codVisible = !codVisible;
@@ -7189,29 +7201,14 @@ document.getElementById("secretCod").onclick = () => {
   );
 };
 
+/* --- BUTON RIND --- */
+let rindVisible = false;
+document.getElementById("secretRind").onclick = () => {
+  rindVisible = !rindVisible;
+  document.querySelectorAll(".rind").forEach(el =>
+    rindVisible ? el.classList.remove("hidden") : el.classList.add("hidden")
+  );
+};
+
 renderGallery(flowers);
-</script>
-
-<!-- LIGHTBOX JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js">
-</script>
-
-<script>
-document.addEventListener("click", function(e) {
-  const outer = document.querySelector(".lb-outerContainer");
-  const overlay = document.querySelector(".lb-overlay");
-
-  // dacă Lightbox nu e deschis, ieșim
-  if (!outer || !overlay) return;
-
-  // clic pe imagine sau pe containerul imaginii
-  if (outer.contains(e.target)) {
-    document.querySelector(".lb-close")?.click();
-  }
-
-  // clic pe fundalul negru
-  if (e.target === overlay) {
-    document.querySelector(".lb-close")?.click();
-  }
-});
 </script>
