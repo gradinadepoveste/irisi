@@ -116,6 +116,24 @@
       display: none;
       font-weight: bold;
     }
+	
+	.header-img-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.secret-button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80px;   /* zona invizibilă */
+  height: 80px;
+  background: rgba(0,0,0,0); /* complet invizibil */
+  cursor: pointer;
+  z-index: 10;
+}
+
 
     /* --- OPTIMIZARE MOBIL --- */
     @media (max-width: 600px) {
@@ -137,10 +155,15 @@
 <body>
 
   <header>
-    <h1>Grădina de poveste</h1>
-    <p>Catalog interactiv de iriși</p>
-    <img src="aIMG_E4385.jpg" alt="Imagine decorativă">
-  </header>
+  <h1>Grădina de poveste</h1>
+  <p>Catalog interactiv de iriși</p>
+
+  <div class="header-img-container">
+      <a href="index 3 - cu sortare dupa rinduri.html" class="secret-button"></a>
+      <img src="aIMG_E4385.jpg" alt="Imagine decorativă">
+  </div>
+</header>
+
 
 <!-- TEXT + RIND pe același rând -->
 <div style="display:flex; justify-content:center; gap:25px; margin-bottom:10px; opacity:0.3; cursor:pointer;">
@@ -7124,7 +7147,8 @@ const flowers = [
 
    }
 ]; 
-/* --- 4. Generare galerie + Lightbox --- */
+
+/* --- 3. Generare galerie + Lightbox --- */
 function renderGallery(data) {
   const gallery = document.getElementById("gallery");
   gallery.innerHTML = "";
@@ -7154,7 +7178,7 @@ function renderGallery(data) {
   document.getElementById("counter").textContent = `${data.length} iriși găsiți`;
 }
 
-/* --- 5. Filtre + sortări --- */
+/* --- 4. Filtre + sortări --- */
 function applyFilters() {
   const nameVal    = search.value.toLowerCase();
   const letterVal  = searchLetter.value.toLowerCase();
@@ -7168,10 +7192,9 @@ function applyFilters() {
   let filtered = flowers.filter(f => {
     const h       = parseInt(f.height) || 0;
     const fColor  = (f.color || "").toLowerCase();
-    const fClass  = (f.class || "").toLowerCase();
+    const fClass  = (f.class || "").trim().toLowerCase();
     const fSeason = (f.season || "").toLowerCase();
 
-    /* --- transformăm culorile în listă curată --- */
     const colorList = fColor
       .split(",")
       .map(c => c.trim().toLowerCase().replace(/-/g, " ").replace(/\s+/g, " "))
@@ -7180,25 +7203,18 @@ function applyFilters() {
     return (
       f.name.toLowerCase().includes(nameVal) &&
       (!letterVal || f.name.trim().toLowerCase().startsWith(letterVal)) &&
-
-      /* --- FILTRARE CULOARE PERFECTĂ --- */
       (!colorVal || colorList.includes(colorVal)) &&
-
-      /* --- FILTRARE SEZON --- */
       (!seasonVal || fSeason.includes(seasonVal)) &&
-
       (!classVal || fClass === classVal) &&
       (!rebloomVal || (rebloomVal === "rebloom" ? f.rebloom : !f.rebloom)) &&
       h >= minH && h <= maxH
     );
   });
 
-  /* sortare alfabetică */
   const alphaSort = sortAlpha.value;
   if (alphaSort === "az")  filtered.sort((a, b) => a.name.localeCompare(b.name));
   if (alphaSort === "za")  filtered.sort((a, b) => b.name.localeCompare(a.name));
 
-  /* sortare înălțime */
   const hSort = sortHeight.value;
   if (hSort === "asc")  filtered.sort((a, b) => a.height - b.height);
   if (hSort === "desc") filtered.sort((a, b) => b.height - a.height);
@@ -7209,7 +7225,7 @@ function applyFilters() {
   if (rindVisible) document.querySelectorAll(".rind").forEach(el => el.classList.remove("hidden"));
 }
 
-/* --- 6. Evenimente filtre --- */
+/* --- 5. Evenimente filtre --- */
 document.querySelectorAll(".filters input, .filters select")
   .forEach(el => el.addEventListener("input", applyFilters));
 
@@ -7219,13 +7235,13 @@ resetBtn.onclick = () => {
   applyFilters();
 };
 
-/* --- 7. Buton TOP --- */
+/* --- 6. Buton TOP --- */
 window.addEventListener("scroll", () => {
   backToTop.style.display = window.scrollY > 400 ? "block" : "none";
 });
 backToTop.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
-/* --- 8. Cod + Rind --- */
+/* --- 7. Cod + Rind --- */
 let codVisible = false;
 let rindVisible = false;
 
@@ -7243,14 +7259,6 @@ secretRind.onclick = () => {
   );
 };
 
-/* --- 9. Inițializare --- */
+/* --- 8. Inițializare --- */
 renderGallery(flowers);
 </script>
-
-
-
-
-
-
-
-
