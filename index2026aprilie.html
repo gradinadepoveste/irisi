@@ -8068,7 +8068,7 @@ renderSavedList();
   let y = 10;
 
   doc.setFontSize(16);
-  doc.text("Lista mea de selecții", 10, y);
+  doc.text("Lista mea de selectii", 10, y);
   y += 10;
 
   const items = loadSavedList();
@@ -8080,21 +8080,37 @@ renderSavedList();
     return;
   }
 
+  let totalGeneral = 0;
+  let totalBucati = 0;
+
   doc.setFontSize(12);
 
   items.forEach(item => {
-    const line = `${item.nume} — pret euro: ${item.cod} × ${item.cantitate} = ${item.cod * item.cantitate}`;
+    const total = item.cod * item.cantitate;
+    totalGeneral += total;
+    totalBucati += item.cantitate;
+
+    const line = `${item.nume} — pret euro: ${item.cod} × ${item.cantitate} = ${total}`;
     doc.text(line, 10, y);
     y += 8;
 
-    if (y > 280) { 
+    if (y > 280) {
       doc.addPage();
       y = 10;
     }
   });
 
+  // Spațiu înainte de totaluri
+  y += 10;
+
+  doc.setFontSize(14);
+  doc.text(`Total bucati: ${totalBucati}`, 10, y);
+  y += 8;
+  doc.text(`Total suma: ${totalGeneral} euro`, 10, y);
+
   doc.save("lista.pdf");
 }
+
 
 </script>
 
