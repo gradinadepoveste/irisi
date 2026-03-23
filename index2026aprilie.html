@@ -8,6 +8,51 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
   <style>
+  
+
+/* 🔹 1. Regulile tale existente */
+
+/* 🔹 2. Aici adaugi noile reguli */
+
+/* Ascundem câmpurile inutile */
+#sortAlpha,
+#minHeight,
+#maxHeight,
+#sortHeight {
+  display: none !important;
+}
+
+/* Bara de filtre optimizată pentru mobil */
+@media (max-width: 600px) {
+  .filters {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    padding: 0.8rem;
+  }
+
+  .filters input,
+  .filters select,
+  .filters button {
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.6rem;
+  }
+
+  #resetBtn,
+  #totalAddBtn {
+    grid-column: span 2;
+  }
+}
+
+/* Carduri responsive pe mobil */
+@media (max-width: 600px) {
+  .card {
+    width: 100% !important;
+    max-width: none;
+  }
+}
+
     body { font-family: sans-serif; background: #f9f9f9; margin: 0; padding: 1rem; }
     header { text-align: center; margin-bottom: 2rem; }
     header img { width: 100%; height: auto; display: block; }
@@ -101,32 +146,67 @@
 }
 
 @media print {
+
+  /* Stil general PDF */
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  /* Ascundem tot ce nu trebuie în PDF */
   body * {
     display: none !important;
     visibility: hidden !important;
   }
 
-  /* Afișăm doar titlul, lista și totalurile */
+  /* Afișăm doar lista și totalurile */
   #lista-titlu,
   #lista-selectii,
   #lista-selectii li,
-  #lista-selectii li *:not(button):not(small),
   #totaluri {
     display: block !important;
     visibility: visible !important;
   }
 
-  /* Ascundem explicit butoanele */
-  button {
-    display: none !important;
-    visibility: hidden !important;
+  /* Stil pentru titlu */
+  #lista-titlu {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
   }
 
-  /* Ascundem explicit și câmpul "clasă:" */
+  /* Transformăm lista într-un tabel vizual */
+  #lista-selectii {
+    margin-top: 20px;
+    padding: 0;
+  }
+
+  #lista-selectii li {
+    list-style: none;
+    padding: 8px 0;
+    border-bottom: 1px solid #ccc;
+    display: grid;
+    grid-template-columns: 1fr 80px 80px 100px;
+    gap: 10px;
+  }
+
+  /* Ascundem câmpul "clasă" */
   #lista-selectii small {
     display: none !important;
-    visibility: hidden !important;
   }
+
+  /* Evidențiem totalurile */
+  #totaluri {
+    margin-top: 25px;
+    padding: 15px;
+    border-top: 2px solid #000;
+    font-size: 18px;
+    font-weight: bold;
+  }
+}
+
   
   </style>
 </head>
@@ -8061,7 +8141,7 @@ qs("#resetBtn").onclick = () => {
 renderGallery(flowers.filter(f => f.active === 1));
 renderSavedList();
 
-	function salveazaPDF() {
+function salveazaPDF() {
   const { jsPDF } = window.jspdf;
   const doc = new jsPDF();
 
