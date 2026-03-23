@@ -182,6 +182,10 @@
     display: block !important;
     visibility: visible !important;
   }
+  #totaluri br {
+    display: block !important;
+    visibility: visible !important;
+  }
 
   /* Stil pentru titlu */
   #lista-titlu {
@@ -8094,7 +8098,8 @@ function renderSavedList() {
 
 totalBox.innerHTML = `
   Total bucati: ${totalBucati}<br>
-  Pret total in euro: ${totalGeneral}
+  Pret total in euro: ${totalGeneral}<br>
+  Pret total în lei (×5): ${totalGeneral * 5} lei
 `;
 
 // 🔥 Actualizăm și Total adăugări pe baza cantităților reale
@@ -8171,6 +8176,8 @@ function salveazaPDF() {
   doc.setFontSize(16);
   doc.text("Lista mea de selectii", 10, y);
   y += 10;
+  
+  
 
   const items = loadSavedList();
 
@@ -8205,9 +8212,12 @@ function salveazaPDF() {
   y += 10;
 
   doc.setFontSize(14);
-  doc.text(`Total bucati: ${totalBucati}`, 10, y);
-  y += 8;
-  doc.text(`Total suma: ${totalGeneral} euro`, 10, y);
+doc.text(`Total bucati: ${totalBucati}`, 10, y);
+y += 8;
+doc.text(`Total suma: ${totalGeneral} euro`, 10, y);
+y += 8;
+doc.text(`Total în lei (×5): ${totalGeneral * 5} lei`, 10, y);
+
 
   doc.save("lista.pdf");
 }
