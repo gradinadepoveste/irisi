@@ -8086,7 +8086,7 @@ function renderSavedList() {
       <button class="no-print" onclick="deleteItem(${item.cod}, '${item.rind}')">Șterge</button>
       <button class="no-print" onclick="updateItem(${item.cod}, '${item.rind}', +1)">+</button>
       <button class="no-print" onclick="updateItem(${item.cod}, '${item.rind}', -1)">-</button>
-      ${item.nume} — pret euro: ${item.cod} × ${item.cantitate} = ${total}
+      ${item.nume} — pret euro: ${item.cod} × ${item.cantitate} buc = ${total}
       <br><small>clasă: ${item.irisClass}</small>
     `;
     lista.appendChild(li);
@@ -8191,7 +8191,7 @@ function salveazaPDF() {
     totalGeneral += total;
     totalBucati += item.cantitate;
 
-    const line = `${item.nume} — pret euro: ${item.cod} × ${item.cantitate} = ${total}`;
+    const line = `${item.nume} — pret euro: ${item.cod} × ${item.cantitate} buc = ${total}`;
     doc.text(line, 10, y);
     y += 8;
 
