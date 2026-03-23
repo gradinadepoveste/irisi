@@ -25,33 +25,36 @@
 #filterClassList {
   display: none !important;
 }
+#searchLetter {
+  display: none !important;
+}
 
 /* Bara de filtre optimizată pentru mobil */
-@media (max-width: 600px) {
+/* Dacă e desktop (mouse), păstrează 2 coloane chiar dacă e îngust */
+@media (pointer: fine) and (max-width: 600px) {
   .filters {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.4rem;
-    padding: 0.6rem;
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 0.25rem !important;
   }
 
   .filters input,
   .filters select,
   .filters button {
-    width: 100%;
-    font-size: 0.9rem;
-    padding: 0.45rem;
-  }
-
-  /* Butoanele mari pe toată lățimea */
-  #resetBtn,
-  #totalAddBtn {
-    grid-column: span 2;
+    min-width: 0 !important;
+    width: 100% !important;
+    height: 32px !important;
+    font-size: 0.75rem !important;
+    padding: 0.25rem 0.3rem !important;
   }
 }
 
-
   #resetBtn,
+  grid-column: 1 / 4; /* ocupă toate cele 3 coloane */
+    order: 4;           /* îl trimitem pe linia 2 */
+    height: 36px;
+  }
+}
   #totalAddBtn {
     grid-column: span 2;
   }
@@ -8004,7 +8007,7 @@ function renderGallery(data) {
    FILTRE
 ------------------------------ */
 function applyFilters() {
-  const filters = {
+const filters = {
     name: qs("#search").value.toLowerCase(),
     letter: qs("#searchLetter").value.toLowerCase(),
     color: qs("#colorFilter").value.toLowerCase(),
@@ -8015,7 +8018,11 @@ function applyFilters() {
     maxH: parseInt(qs("#maxHeight").value) || 999,
     alpha: qs("#sortAlpha").value,
     heightSort: qs("#sortHeight").value
-  };
+};
+
+// 🔥 dezactivăm complet filtrul literei
+filters.letter = "";
+
 
   let filtered = flowers.filter(f => f.active === 1);
 
@@ -8146,6 +8153,8 @@ qs("#resetBtn").onclick = () => {
   qsa(".filters input, .filters select").forEach(el => el.value = "");
   applyFilters();
 };
+qs("#search").addEventListener("input", applyFilters);
+
 
 /* -----------------------------
    START
