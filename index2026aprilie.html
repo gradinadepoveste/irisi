@@ -20,30 +20,41 @@
 #maxHeight,
 #sortHeight {
   display: none !important;
+  }
+#sortList,
+#filterClassList {
+  display: none !important;
 }
 
 /* Bara de filtre optimizată pentru mobil */
 @media (max-width: 600px) {
   .filters {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.5rem;
-    padding: 0.8rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.4rem;
+    padding: 0.6rem;
   }
 
   .filters input,
   .filters select,
   .filters button {
     width: 100%;
-    font-size: 1rem;
-    padding: 0.6rem;
+    font-size: 0.9rem;
+    padding: 0.45rem;
   }
 
+  /* Butoanele mari pe toată lățimea */
   #resetBtn,
   #totalAddBtn {
     grid-column: span 2;
   }
 }
+
+
+  #resetBtn,
+  #totalAddBtn {
+    grid-column: span 2;
+  }
 
 /* Carduri responsive pe mobil */
 @media (max-width: 600px) {
@@ -179,17 +190,18 @@
 
   /* Transformăm lista într-un tabel vizual */
   #lista-selectii {
-    margin-top: 20px;
+    margin-top: 0;
     padding: 0;
   }
 
   #lista-selectii li {
     list-style: none;
-    padding: 8px 0;
-    border-bottom: 1px solid #ccc;
+    padding: 2px 0;
+    border-bottom: 1.1px solid #ccc;
     display: grid;
-    grid-template-columns: 1fr 80px 80px 100px;
-    gap: 10px;
+    grid-template-columns: 1fr 70px 70px 90px;
+    gap: 4px;
+	font-size: 12px;
   }
 
   /* Ascundem câmpul "clasă" */
@@ -8075,7 +8087,7 @@ function renderSavedList() {
 
 totalBox.innerHTML = `
   Total bucati: ${totalBucati}<br>
-  Total general: ${totalGeneral}
+  Pret total in euro: ${totalGeneral}
 `;
 
 // 🔥 Actualizăm și Total adăugări pe baza cantităților reale
