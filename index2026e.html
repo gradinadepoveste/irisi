@@ -714,8 +714,8 @@ const flowers = [
     cod: 3, 
 	rind: 'Alamor'
 }, {
-    name: "Autumn Circus",
-    image: "Autumn Circus - IMG_E2446 - r20-36.jpg",
+    name: " Autumn Circus",
+    image: " Autumn Circus - IMG_E2446 - r20-36.jpg",
     color: "bicolor, alb, violet",
     height: 86,
     class: " TB",
@@ -4190,8 +4190,8 @@ const flowers = [
     cod: 4, rind: 'R10/62'
 
 }, {
-    name: "Lacy Snowflake",
-    image: "Lacy Snowflake - IMG_20220523_160015.jpg",
+    name: " Lacy Snowflake",
+    image: " Lacy Snowflake - IMG_20220523_160015.jpg",
     color: "alb",
     height: 97,
     class: " TB",
@@ -8692,6 +8692,8 @@ qs("#search").addEventListener("input", applyFilters);
 /* -----------------------------
    START
 ------------------------------ */
+// sortare implicită A–Z
+flowers.sort((a, b) => a.name.localeCompare(b.name));
 applyFilters();
 renderSavedList();
 
