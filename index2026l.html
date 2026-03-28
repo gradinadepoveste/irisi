@@ -8046,53 +8046,64 @@ function renderGallery(data) {
    FILTRE
 ------------------------------ */
 function applyFilters() {
-const filters = {
-    name: qs("#search").value.toLowerCase(),
-    letter: qs("#searchLetter").value.toLowerCase(),
-    color: qs("#colorFilter").value.toLowerCase(),
-    season: qs("#seasonFilter").value.toLowerCase(),
-    rebloom: qs("#rebloomFilter").value,
-    class: qs("#classFilter").value.toLowerCase(),
-    minH: parseInt(qs("#minHeight").value) || 0,
-    maxH: parseInt(qs("#maxHeight").value) || 999,
-    alpha: qs("#sortAlpha").value,
-    heightSort: qs("#sortHeight").value
-};
-
-// 🔥 dezactivăm complet filtrul literei
-filters.letter = "";
-
+  const filters = {
+    name: qs("#search")?.value.toLowerCase() || "",
+    color: qs("#colorFilter")?.value.toLowerCase() || "",
+    season: qs("#seasonFilter")?.value.toLowerCase() || "",
+    rebloom: qs("#rebloomFilter")?.value || "",
+    irisClass: qs("#classFilter")?.value.toUpperCase() || "",
+    alpha: qs("#sortAlpha")?.value || ""
+  };
 
   let filtered = flowers.filter(f => {
     if (!showAll && f.active !== 1) return false;
     return true;
-});
-
-
-  filtered = filtered.filter(f => {
-    const h = parseInt(f.height) || 0;
-    const fColor = (f.color || "").toLowerCase().split(",").map(c => c.trim());
-    const fClass = (f.class || "").trim().toLowerCase();
-    const fSeason = (f.season || "").toLowerCase();
-
-    return (
-      f.name.toLowerCase().includes(filters.name) &&
-      (!filters.letter || f.name.toLowerCase().startsWith(filters.letter)) &&
-      (!filters.color || fColor.includes(filters.color)) &&
-      (!filters.season || fSeason.includes(filters.season)) &&
-      (!filters.class || fClass === filters.class) &&
-      (!filters.rebloom || (filters.rebloom === "rebloom" ? f.rebloom : !f.rebloom)) &&
-      h >= filters.minH && h <= filters.maxH
-    );
   });
 
-  if (filters.alpha === "az") filtered.sort((a, b) => a.name.localeCompare(b.name));
-  if (filters.alpha === "za") filtered.sort((a, b) => b.name.localeCompare(a.name));
+  // 🔹 Filtru: nume
+  filtered = filtered.filter(f =>
+    f.name.toLowerCase().includes(filters.name)
+  );
 
-  if (filters.heightSort === "asc") filtered.sort((a, b) => a.height - b.height);
-  if (filters.heightSort === "desc") filtered.sort((a, b) => b.height - a.height);
+  // 🔹 Filtru: culoare
+  if (filters.color) {
+    filtered = filtered.filter(f =>
+      f.color.toLowerCase().includes(filters.color)
+    );
+  }
+
+  // 🔹 Filtru: sezon
+  if (filters.season) {
+    filtered = filtered.filter(f =>
+      f.season.toLowerCase().includes(filters.season)
+    );
+  }
+
+  // 🔹 Filtru: rebloom
+  if (filters.rebloom === "rebloom") {
+    filtered = filtered.filter(f => f.rebloom === true);
+  }
+  if (filters.rebloom === "normal") {
+    filtered = filtered.filter(f => f.rebloom === false);
+  }
+
+  // 🔹 Filtru: clasă
+  if (filters.irisClass) {
+    filtered = filtered.filter(f =>
+      (f.class || "").trim().toUpperCase() === filters.irisClass
+    );
+  }
+
+  // 🔹 Sortare A–Z
+  if (filters.alpha === "az") {
+    filtered.sort((a, b) => a.name.localeCompare(b.name));
+  }
+  if (filters.alpha === "za") {
+    filtered.sort((a, b) => b.name.localeCompare(a.name));
+  }
 
   renderGallery(filtered);
+
 }
 
 /* -----------------------------
@@ -8189,6 +8200,32 @@ qs("#lightbox").onclick = () => qs("#lightbox").classList.add("hidden");
 /* -----------------------------
    FILTRE — EVENIMENTE
 ------------------------------ */
+qs("#resetBtn").addEventListener("click", () => {
+  // Resetăm toate filtrele reale
+  const ids = [
+    "#search",
+    "#sortAlpha",
+    "#colorFilter",
+    "#seasonFilter",
+    "#rebloomFilter",
+    "#classFilter"
+  ];
+
+  ids.forEach(id => {
+    const el = qs(id);
+    if (el) el.value = "";
+  });
+
+  // Revenim la modul implicit
+  showAll = false;
+  qs("#toggleDisponibil").textContent = "Disponibili";
+
+  // Reafișăm galeria
+  applyFilters();
+});
+
+
+
 qsa(".filters input, .filters select").forEach(el =>
   el.addEventListener("input", applyFilters)
 );
