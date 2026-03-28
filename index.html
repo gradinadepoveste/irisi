@@ -159,17 +159,14 @@
   <p>Catalog interactiv de iriși</p>
 
   <div class="header-img-container">
-      <a href="index 3 - cu sortare dupa rinduri.html" class="secret-button"></a>
+      <a href="<a href="index2026l.html" class="secret-button"></a>
       <img src="aIMG_E4385.jpg" alt="Imagine decorativă">
   </div>
 </header>
 
 
 <!-- TEXT + RIND pe același rând -->
-<div style="display:flex; justify-content:center; gap:25px; margin-bottom:10px; opacity:0.3; cursor:pointer;">
-    <div id="secretCod">t</div>
-    <div id="secretRind">r</div>
-</div>
+
 
   <!-- BARA DE FILTRE -->
   <div class="filters">
@@ -279,12 +276,13 @@ function normalizeSeason(text) {
 const flowers = [
 {
     name: " Aber Wrac'h",
-    image: " Aber Wrac'h - IMG_E5136 - r17-42.jpg",
+    image: "Aber Wrac'h - IMG_E5136 - r17-42.jpg",
     color: "violet",
     height: 85,
     class: " TB",
     season: "Înflorire timpurie",
     rebloom: false,
+    active: 0,
     cod:  5,
 	rind: 'R17/42'
 }, {
@@ -295,6 +293,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+	active: 1,
     cod:  4,
 	rind: 'R12/58, R22/25, r25/03, R32/02'
 	
@@ -306,6 +305,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod:  6,
 	rind: 'R3/23'
 }, {
@@ -316,16 +316,18 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod:  4,
 	rind: 'S1/03'
 }, {
-    name: "Admiral Nelson",
+    name: " Admiral Nelson",
     image: " Admiral Nelson - IMG_E2806 - R1-53.jpg",
     color: "bicolor, violet, alb",
     height: 106,
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod:  4,
 	rind: 'R1/53'
 }, {
@@ -336,6 +338,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod:  5
 }, {
     name: " Adorator",
@@ -345,6 +348,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod:  5, 
 	rind: 'r25/38'
 }, {
@@ -355,6 +359,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod:  4,
 	rind: 'R21/13'
 }, {
@@ -365,6 +370,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod:  3, 
 	rind: 'S3/03'
 }, {
@@ -375,6 +381,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod:   5,
 	rind: 'R3/31, R4/55, R7/19, R27/33, R31/28, R22/21, R9/74, R9/83, R12/72'
 }, {
@@ -385,6 +392,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la târzie",
     rebloom: false,
+    active: 0,
     cod: 7, 
 	rind: 'R13/28'
 }, {
@@ -395,6 +403,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 4, 
 	rind: 'R3/43'
 }, {
@@ -405,6 +414,7 @@ const flowers = [
     class : " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 2, 
 	rind: 'R7/62, R7/63, R26/15' 
 }, {
@@ -415,6 +425,7 @@ const flowers = [
     class: " IB",
     season: "Înflorire timpurie la mijlocul sezonului până la foarte târzie",
     rebloom: false,
+    active: 1,
     cod: 4, 
 	rind: 'R33/15, R33/16, R33/17, R33/18, R33/19, R33/20'
 }, {
@@ -425,6 +436,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la începutul sezonului",
     rebloom: false,
+    active: 0,
     cod:  3, 
 	rind: 'R14/49, R17/32, R19/41, R19/42, R22/39'
 }, {
@@ -435,6 +447,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, 
 	rind: 'R17/15'
 }, {
@@ -445,6 +458,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
+    active: 0,
     cod:  3, 
 	rind: 'R9/1'
 }, {
@@ -455,6 +469,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la târzie",
     rebloom: false,
+    active: 1,
     cod:  3, 
 	rind: 'R20/28, R20/29, R20/30, R27/44'
 }, {
@@ -465,6 +480,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 7
 }, {
     name: " Andro",
@@ -474,6 +490,7 @@ const flowers = [
     class: " IB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 3
 }, {
     name: " Another Woman",
@@ -483,6 +500,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire foarte, foarte timpurie",
     rebloom: false,
+    active: 0,
     cod: 7
 }, {
     name: " Antarctique",
@@ -492,6 +510,7 @@ const flowers = [
     class: " IB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 3, 
 	rind: 'R4/10, R6/56, R9/66, R10/59, R21/46, R10/51, R14/26, R21/45, r24/23, R7/30, R5/30'
 }, {
@@ -502,6 +521,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 3, 
 	rind: 'R23/7, R10/79, R11/69'
 }, {
@@ -512,6 +532,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, 
 	rind: 'R9/06, R13/34'
 }, {
@@ -522,6 +543,7 @@ const flowers = [
     class: " IB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 2, 
 	rind: 'R8/49, R8/50, R8/52, R21/41, r25/27, R26/11, R26/42, R34/25'
 }, {
@@ -532,6 +554,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, 
 	rind: 'R21/25'
 }, {
@@ -542,6 +565,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie",
     rebloom: false,
+    active: 0,
     cod: 5, 
 	rind: 'R17/10'
 }, {
@@ -552,6 +576,7 @@ const flowers = [
     class: " TB",
     season: " Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, 
 	rind: 'R9/53'
 }, {
@@ -562,6 +587,7 @@ const flowers = [
     class: " TB",
     season: " Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 6, 
 	rind: 'R22/10, R12/60'
 }, {
@@ -572,6 +598,7 @@ const flowers = [
     class: " TB",
     season: " Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4
 }, {
     name: " Australis",
@@ -581,16 +608,18 @@ const flowers = [
     class : " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
+    active: 0,
     cod: 3, 
 	rind: 'Alamor'
 }, {
-    name: "Autumn Circus",
-    image: "Autumn Circus - IMG_E2446 - r20-36.jpg",
+    name: " Autumn Circus",
+    image: " Autumn Circus - IMG_E2446 - r20-36.jpg",
     color: "bicolor, alb, violet",
     height: 86,
     class: " TB",
     season: "Înflorire timpurie si reinflorire toamna",
-    rebloom: true, 
+    rebloom: true,
+    active: 1,
 	cod: 4, 
 	rind: 'R19/32, R20/36, R20/43, R26/44'
 }, {
@@ -601,6 +630,7 @@ const flowers = [
     class: " BB",
     season: "Înflorire la mijlocul sezonului si reinflorire toamna",
     rebloom: true,
+    active: 0,
     cod: 5, 
 	rind: 'R4/56'
 
@@ -612,6 +642,7 @@ const flowers = [
     class: " TB",
     season: " Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 7, 
 	rind: 'R10/1, R10/2, R10/3, R10/4, R29/01'
 
@@ -623,6 +654,7 @@ const flowers = [
     class: " TB",
     season: " Înflorire medie spre târzie",
     rebloom: false,
+    active: 1,
     cod: 5, 
 	rind: 'R12/31, R17/21, R27/29'
 
@@ -634,6 +666,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la târzie",
     rebloom: false,
+    active: 0,
     cod: 5,
 	rind: 'R10/58'
 
@@ -645,6 +678,7 @@ const flowers = [
     class: " IB",
     season: "Înflorire după mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 3
 }, {
     name: " Baltic Sea",
@@ -654,6 +688,7 @@ const flowers = [
     class: " TB",
     season: " Înflorire târzie",
     rebloom: false,
+    active: 0,
     cod: 6, 
 	rind: 'R2/39'
 
@@ -665,6 +700,7 @@ const flowers = [
     class: " TB",
     season: " Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 4, 
 	rind: 'R26/30, R31/14'
 
@@ -676,6 +712,7 @@ const flowers = [
     class: " TB",
     season: " Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, 
 	rind: 'R6/36, R9/58'
 
@@ -687,6 +724,7 @@ const flowers = [
     class: " SDB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
+    active: 0,
     cod: 4, 
 	rind: 'S1/07'
 
@@ -698,6 +736,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la târzie",
     rebloom: false,
+    active: 0,
     cod: 3, 
 	rind: 'R10/52'
 
@@ -709,6 +748,7 @@ const flowers = [
     class: " TB",
     season: " Înflorire târzie",
     rebloom: false,
+    active: 0,
     cod: 5, 
 	rind: 'R17/23'
 
@@ -720,6 +760,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la târzie",
     rebloom: false,
+    active: 0,
     cod: 5
 }, {
     name: " Beguine",
@@ -729,6 +770,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie",
     rebloom: false,
+    active: 0,
     cod: 5, 
 	rind: 'R22/6, R13/9'
 
@@ -740,6 +782,7 @@ const flowers = [
     class: " TB",
     season: " Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 4, 
 	rind: 'R5/27, S4/07, R14/22, R33/11'
 
@@ -751,6 +794,7 @@ const flowers = [
     class: " TB",
     season: " Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 5, 
 	rind: 'R16/15, r24/08, R32/18'
 
@@ -762,6 +806,7 @@ const flowers = [
     class: " TB",
     season: " Înflorire medie spre foarte târzie",
     rebloom: false,
+    active: 1,
     cod: 5, 
 	rind: 'R3/5, R7/12, R28/16, R32/43'
 
@@ -773,6 +818,7 @@ const flowers = [
     class: " SDB",
     season: "Înflorire timpurie până la târzie",
     rebloom: false,
+    active: 0,
     cod: 2, 
 	rind: 'R22/37'
 
@@ -784,6 +830,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la târzie",
     rebloom: false,
+    active: 0,
     cod: 5, 
 	rind: 'R10/23'
 
@@ -795,6 +842,7 @@ const flowers = [
     class: " TB",
     season: " Înflorire târzie",
     rebloom: false,
+    active: 0,
     cod: 4, 
 	rind: 'R1/46, R7/7'
 
@@ -806,6 +854,7 @@ const flowers = [
     class: " IB",
     season: "Înflorire timpurie până la târzie",
     rebloom: false,
+    active: 0,
     cod: 3,
 	rind: 'R21/50, R21/49'
 
@@ -817,6 +866,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, 
 	rind: 'R2/6'
 
@@ -828,6 +878,7 @@ const flowers = [
     class: " TB",
     season: " Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 4, 
 	rind: 'R29/14'
 
@@ -839,6 +890,7 @@ const flowers = [
     class: " TB",
     season: " Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, 
 	rind: 'R11/16'
 
@@ -850,6 +902,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 3, 
 	rind: 'R5/12'
 
@@ -861,6 +914,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la târzie",
     rebloom: false,
+    active: 0,
     cod: 3, 
 	rind: 'R10/81'
 
@@ -872,6 +926,7 @@ const flowers = [
     class: " TB",
     season: " Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 2, 
 	rind: 'R5/58, R6/58, R6/59, R26/35, R6/60'
 
@@ -883,6 +938,7 @@ const flowers = [
     class: " TB",
     season: " Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 5,
 	rind: 'R3/21, R31/32'
 
@@ -894,6 +950,7 @@ const flowers = [
     class: " IB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, 
 	rind: 'R2/11, R2/32, R5/32, R4/22'
 
@@ -905,6 +962,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, 
 	rind: 'R18/41'
 
@@ -916,6 +974,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie",
     rebloom: false,
+    active: 0,
     cod: 3, 
 	rind: 'R8/35'
 
@@ -927,6 +986,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie",
     rebloom: false,
+    active: 1,
     cod: 4, 
 	rind: 'R28/12'
 
@@ -938,6 +998,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5 
 }, {
     name: " Bottle Rocket",
@@ -946,7 +1007,8 @@ const flowers = [
     height: 89,
     class: " TB",
     season: "Înflorire timpurie la mijlocul sezonului si reinflorire toamna",
-    rebloom: true, 
+    rebloom: true,
+    active: 1, 
 	cod: 7, 
 	rind: 'R1/44, R3/12, R31/22, R12/81'
 
@@ -958,6 +1020,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 3, 
 	rind: 'R2/55, R8/14, R8/15, R8/16, R8/48, R10/49, R13/13, R16/32, R28/42'
 
@@ -968,7 +1031,8 @@ const flowers = [
     height: 89,
     class: " TB",
     season: "Înflorire târzie și reînflorire",
-    rebloom: true, 
+    rebloom: true,
+    active: 0, 
 	cod: 3, 
 	rind: 'R4/2'
 
@@ -980,6 +1044,7 @@ const flowers = [
     class: " IB",
     season: "Înflorire foarte timpurie până la începutul sezonului înflorire",
     rebloom: false,
+    active: 0,
     cod: 3, 
 	rind: 'R1/16'
 }, {
@@ -990,6 +1055,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
+    active: 1,
     cod: 4, 
 	rind: 'R8/33, R8/34, R13/37, R21/07, R31/17'
 
@@ -1001,6 +1067,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
+    active: 1,
     cod: 8, 
 	rind: 'R3/39, r24/13, R32/13'
 
@@ -1012,6 +1079,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
+    active: 0,
     cod: 3 
 }, {
     name: " Brazen Beauty",
@@ -1021,6 +1089,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 4, 
 	rind: 'R17/36, R18/18, R19/46, R19/49, R20/09, r24/32'
 
@@ -1032,6 +1101,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 4, 
 	rind: 'R1/57, R3/54, R5/35, R9/45, R12/38, R14/38, R4/28, R4/31, R4/51, r25/12, R28/36, R17/17'
 
@@ -1043,6 +1113,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 3, 
 	rind: 'R13/31'
 
@@ -1054,6 +1125,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 3
 }, {
     name: " Brilliant Idea",
@@ -1063,6 +1135,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 8, 
 	rind: 'R1/33, R2/54, R4/14, R11/35, R11/57, R28/35, R32/32'
 
@@ -1074,6 +1147,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, 
 	rind: 'R4/50'
 
@@ -1085,6 +1159,7 @@ const flowers = [
     class: " IB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 3, 
 	rind: 'R7/48, R7/49, R7/50, R9/19, R9/33, R8/19, R23/21'
 
@@ -1096,6 +1171,7 @@ const flowers = [
     class : " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 7, 
 	rind: 'R29/16, R32/30, R18/29, R10/12, R2/30, R2/14, R4/17, R4/16, R2/19, R2/22, R13/36'
 
@@ -1107,6 +1183,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 4, 
 	rind: 'R2/42, R2/49, R29/26, R30/39'
 
@@ -1118,6 +1195,7 @@ const flowers = [
     class: " IB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, 
 	rind: 'R5/18, R12/79'
 
@@ -1129,6 +1207,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 3, 
 	rind: 'R21/31, R22/1'
 
@@ -1140,6 +1219,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 6
 }, {
     name: " Café D'Amour",
@@ -1149,6 +1229,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, 
 	rind: 'R13/4, R13/5'
 
@@ -1160,6 +1241,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 3, 
 	rind: 'R8/65'
 
@@ -1171,6 +1253,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, 
 	rind: 'R16/38, R16/39, R18/49'
 
@@ -1182,6 +1265,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 4, 
 	rind: 'S1/08'
 
@@ -1193,6 +1277,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, 
 	rind: 'R2/51'
 
@@ -1204,6 +1289,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, 
 	rind: 'R1/27'
 
@@ -1215,6 +1301,7 @@ const flowers = [
     class: " IB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, 
 	rind: 'R23/9, R23/12'
 
@@ -1226,6 +1313,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 6, 
 	rind: 'R10/09'
 
@@ -1237,6 +1325,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, 
 	rind: 'R20/24'
 
@@ -1248,6 +1337,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
+    active: 0,
     cod: 5, 
 	rind: 'R15/27, R11/75'
 
@@ -1259,6 +1349,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, 
 	rind: 'R19/36, R19/29, R19/37'
 
@@ -1270,6 +1361,7 @@ const flowers = [
     class: " IB",
     season: "Înflorire medie spre foarte târzie",
     rebloom: false,
+    active: 1,
     cod: 3, 
 	rind: 'R17/28, r25/32, R32/33, R22/22, R18/51'
 
@@ -1281,6 +1373,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
+    active: 1,
     cod: 4, 
 	rind: 'R19/07, R28/40'
 
@@ -1292,6 +1385,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 2, 
 	rind: 'R10/64, R12/64, R12/66, R9/68'
 
@@ -1303,6 +1397,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 6, 
 	rind: 'S2/10, R15/07, r24/19'
 
@@ -1314,6 +1409,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la târzie",
     rebloom: false,
+    active: 0,
     cod: 3, 
 	rind: 'R11/63'
 
@@ -1325,6 +1421,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, 
 	rind: 'R2/16'
 
@@ -1336,6 +1433,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, 
 	rind: 'R16/22'
 
@@ -1347,6 +1445,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 4, 
 	rind: 'r24/28, S4/11, R21/22'
 
@@ -1358,6 +1457,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 5, 
 	rind: 'R27/14'
 
@@ -1369,6 +1469,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
+    active: 0,
     cod: 4, 
 	rind: 'R7/02, R18/26'
 
@@ -1380,6 +1481,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, 
 	rind: 'R7/33'
 
@@ -1391,6 +1493,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, 
 	rind: 'R2/50'
 
@@ -1402,6 +1505,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, 
 	rind: 'R9/05'
 
@@ -1413,6 +1517,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie",
     rebloom: false,
+    active: 1,
     cod: 12, 
 	rind: 'R9/8, R32/36'
 
@@ -1424,6 +1529,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la târzie",
     rebloom: false,
+    active: 1,
     cod: 4, 
 	rind: 'R6/02, R6/4, R3/49, R26/22, R28/02'
 
@@ -1435,6 +1541,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
+    active: 1,
     cod: 4, 
 	rind: 'R8/47, R10/32, R10/33, R14/30, R15/12, R17/4, R19/1, R19/2, R20/17, R21/02, R23/8, R22/17, R23/13, R10/31, R3/32, R26/25, R27/19, R28/07, R29/38, R30/12, R31/43, R16/5, R16/10'
 
@@ -1446,6 +1553,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 3, 
 	rind: 'R21/33, R21/34, R21/30, R21/32, R27/36, R31/05'
 
@@ -1457,6 +1565,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie",
     rebloom: false,
+    active: 0,
     cod: 3, 
 	rind: 'R5/39, R5/56'
 
@@ -1468,6 +1577,7 @@ const flowers = [
     class : " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, 
 	rind: 'R21/21'
 
@@ -1479,6 +1589,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului si reinflorire toamna",
     rebloom: true,
+    active: 0,
 	cod: 3, rind: 'R11/64'
 
 }, {
@@ -1489,6 +1600,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 4, rind: 'R3/13, R4/11, R31/04'
 
 }, {
@@ -1499,6 +1611,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 4, rind: 'R2/41, R11/59, R30/14, R31/34'
 
 }, {
@@ -1509,6 +1622,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
+    active: 1,
     cod: 4, rind: 'R18/12, r24/02'
 
 }, {
@@ -1519,6 +1633,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R1/52, R10/65'
 
 }, {
@@ -1529,6 +1644,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 4, rind: 'R3/16, R23/06, R30/03, R32/31'
 
 }, {
@@ -1539,6 +1655,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie",
     rebloom: false,
+    active: 0,
     cod: 3
 }, {
     name: " Chromatography",
@@ -1548,6 +1665,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie",
     rebloom: false,
+    active: 1,
     cod: 5, rind: 'R11/56, R22/48, r25/04'
 
 }, {
@@ -1558,6 +1676,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R11/25, R11/44'
 
 }, {
@@ -1568,6 +1687,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R13/16, R13/17'
 
 }, {
@@ -1578,6 +1698,7 @@ const flowers = [
     class: " IB",
     season: "Înflorire timpurie",
     rebloom: false,
+    active: 0,
     cod: 3, rind: 'R21/47'
 
 }, {
@@ -1588,6 +1709,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie până la foarte târzie",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R11/28'
 
 }, {
@@ -1598,6 +1720,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 3, rind: 'R21/23, R21/26, R27/01, R30/05, R11/84'
 
 }, {
@@ -1608,6 +1731,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 5, rind: 'R2/07, R11/52, R4/32, R28/23, R9/49'
 
 }, {
@@ -1618,6 +1742,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R8/22, R11/14, R11/15, R12/29, R16/12, R16/28, R18/22'
 
 }, {
@@ -1628,6 +1753,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R18/45'
 
 }, {
@@ -1638,6 +1764,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 5, rind: 'R17/30, R17/40, R18/28, S4/02'
 
 }, {
@@ -1648,6 +1775,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R11/46'
 
 }, {
@@ -1658,6 +1786,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 5, rind: 'R3/35, R27/32'
 
 }, {
@@ -1668,6 +1797,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R3/42, R9/56'
 
 }, {
@@ -1678,6 +1808,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 5, rind: 'R9/43, R9/60, R15/40, R15/42, R18/38, R30/26, R18/32'
 
 }, {
@@ -1688,6 +1819,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R5/45'
 
 }, {
@@ -1698,6 +1830,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R13/26'
 
 }, {
@@ -1708,6 +1841,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R10/47, R5/61'
 
 }, {
@@ -1718,6 +1852,7 @@ const flowers = [
     class: " IB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 2, rind: 'R22/34'
 
 }, {
@@ -1728,6 +1863,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R9/51'
 
 }, {
@@ -1738,6 +1874,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 4, rind: 'R5/13, R19/23, r24/18, S3/01'
 
 }, {
@@ -1748,6 +1885,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 10, rind: 'R1/14'
 
 }, {
@@ -1758,6 +1896,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R9/26, R9/27'
 
 }, {
@@ -1768,6 +1907,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
+    active: 0,
     cod: 3, rind: 'R10/05, R13/12'
 
 }, {
@@ -1778,6 +1918,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 4, rind: 'R29/17'
 
 }, {
@@ -1788,6 +1929,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R9/03'
 
 }, {
@@ -1798,16 +1940,18 @@ const flowers = [
     class: " TB",
     season: "Înflorire foarte târzie",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R16/27, R20/10'
 
 }, {
     name: " Cranberry Sauce",
-    image: " Cranberry Sauce - IMG_20230518_201005 - r10_41 a.jpg",
+    image: " Cranberry Sauce - IMG_E3719 - r11-43.jpg",
     color: "visiniu",
     height: 94,
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R10/41, R11/43'
 
 }, {
@@ -1818,6 +1962,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 4, rind: 'R16/17B, R16/18, R18/37, r25/25, R16/11, R19/6'
 
 }, {
@@ -1828,6 +1973,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R8/45'
 
 }, {
@@ -1838,6 +1984,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 5, rind: 'R35/47'
 
 }, {
@@ -1848,6 +1995,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R8/40, R10/56'
 
 }, {
@@ -1858,6 +2006,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 3, rind: 'R2/46, R29/22, R30/41'
 
 }, {
@@ -1868,6 +2017,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R19/8, R19/10'
 
 }, {
@@ -1878,6 +2028,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5
 }, {
     name: " Curly Zlatovlaska",
@@ -1887,6 +2038,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la târzie",
     rebloom: false,
+    active: 0,
     cod: 3 
 }, {
     name: " Dad's A Pirate",
@@ -1896,6 +2048,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R7/38'
 
 }, {
@@ -1906,6 +2059,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R16/13, R16/25'
 
 }, {
@@ -1916,6 +2070,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R7/37'
 
 }, {
@@ -1926,6 +2081,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R12/13'
 
 }, {
@@ -1936,6 +2092,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R5/02'
 
 }, {
@@ -1946,6 +2103,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 4, rind: 'R11/22, R8/31, S2/02'
 
 }, {
@@ -1956,6 +2114,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 6, rind: 'R16/48'
 
 }, {
@@ -1966,6 +2125,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 5, rind: 'S1/02, R16/26, R17/49, R18/43, R21/15, R13/48B, R27/08, R32/29'
 
 }, {
@@ -1976,6 +2136,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 10, rind: 'R1/15, R12/01, R17/39, R27/16, R32/28'
 
 }, {
@@ -1986,6 +2147,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 3, rind: 'R6/49, R27/38, R32/23, R31/23'
 
 }, {
@@ -1996,6 +2158,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 3, rind: 'R4/19'
 
 }, {
@@ -2006,6 +2169,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
+    active: 1,
     cod: 5, rind: 'r24/03'
 
 }, {
@@ -2016,6 +2180,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R1/47'
 
 }, {
@@ -2026,6 +2191,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 6, rind: 'R1/08, R21/19'
 
 }, {
@@ -2036,6 +2202,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R12/02'
 
 }, {
@@ -2046,6 +2213,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 5, rind: 'R5/37, R6/28, R22/30, R22/28, r25/06, R27/15, R32/09'
 
 }, {
@@ -2056,6 +2224,7 @@ const flowers = [
     class: " IB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R1/18'
 
 }, {
@@ -2066,6 +2235,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R17/8, R8/25'
 
 }, {
@@ -2076,6 +2246,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 4, rind: 'R4/03, R6/11, R15/11, R15/17, r24/16, R27/26, R27/28, R28/01, R32/42, R33/04'
 
 }, {
@@ -2086,6 +2257,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 5, rind: 'R4/04, R4/18, r25/24'
 
 }, {
@@ -2096,6 +2268,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 6, rind: 'R8/09, R8/10'
 
 }, {
@@ -2106,6 +2279,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 6, rind: 'R14/36, R14/48, r24/34'
 
 }, {
@@ -2116,6 +2290,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R14/31'
 
 }, {
@@ -2126,6 +2301,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 3, rind: 'R7/45, r24/31, R22/12, R29/05'
 
 }, {
@@ -2136,16 +2312,18 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 5, rind: 'R1/05, R12/23, R28/19'
 
 }, {
     name: " Distant Fire",
-    image: " Distant Fire -  MG_20230526_135305 - r9_25.jpg",
+    image: " Distant Fire - MG_20230526_135305 - r9_25.jpg",
     color: "visiniu",
     height: 89,
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R9/25'
 
 }, {
@@ -2156,6 +2334,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R8/32, R8/30, R20/25, R20/40'
 
 }, {
@@ -2166,6 +2345,7 @@ const flowers = [
     class: " IB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 3, rind: 'R10/53'
 
 }, {
@@ -2176,6 +2356,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie până la foarte târzie",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R10/60, R18/19'
 
 }, {
@@ -2186,6 +2367,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 7, rind: 'R1/28'
 
 }, {
@@ -2196,6 +2378,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie",
     rebloom: false,
+    active: 0,
     cod: 3, rind: 'R23/3'
 
 }, {
@@ -2206,6 +2389,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 6, rind: 'R2/33, R14/4, R16/35, R13/40, R30/38, R31/37, R9/81, R10/76, R12/82, R12/84, R18/39'
 
 }, {
@@ -2216,6 +2400,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R12/27'
 
 }, {
@@ -2226,6 +2411,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R3/57, R7/06'
 
 }, {
@@ -2236,6 +2422,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire foarte timpurie până la începutul sezonului înflorire",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R17/45'
 
 }, {
@@ -2246,6 +2433,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie",
     rebloom: false,
+    active: 1,
     cod: 3, rind: 'R4/54, R26/17, R26/39'
 
 }, {
@@ -2256,6 +2444,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R1/49, R2/36, R3/52, R11/32'
 
 }, {
@@ -2266,6 +2455,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie",
     rebloom: false,
+    active: 1,
     cod: 6, rind: 'R2/20, R5/28, R28/34, R31/30'
 
 }, {
@@ -2276,6 +2466,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 6, rind: 'R11/33, R11/54'
 
 }, {
@@ -2286,6 +2477,7 @@ const flowers = [
     class: " IB",
     season: " Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 3, rind: 'R11/10'
 
 }, {
@@ -2296,6 +2488,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
+    active: 1,
     cod: 6, rind: 'R29/19'
 }, {
     name: " Earthborn",
@@ -2305,6 +2498,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 5, rind: 'S2/11'
 
 }, {
@@ -2315,6 +2509,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R14/45, R20/42, R17/43'
 
 }, {
@@ -2325,6 +2520,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie la mijlocul sezonului si reinflorire toamna",
     rebloom: true,
+    active: 0,
 	cod: 7, rind: 'R6/37'
 
 }, {
@@ -2335,6 +2531,7 @@ const flowers = [
     class : " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 1, rind: 'R1/62, R1/63, R1/64, R1/65, R1/66, R2/62, R2/63, R2/64, R2/65, R2/66, R3/62, R3/63, R3/64, R3/65, R3/66, R4/62, R4/63, R4/64, R4/65, R4/66, R11/80, R26/10, R33/05'
 
 }, {
@@ -2345,6 +2542,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R9/31, R9/32, R12/49'
 
 }, {
@@ -2355,6 +2553,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 3, rind: 'R19/27, R19/34, r25/31'
 
 }, {
@@ -2365,6 +2564,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4
 }, {
     name: " Elizabethan Age",
@@ -2374,6 +2574,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 3, rind: 'R5/40, R6/19, R3/24, r25/08'
 
 }, {
@@ -2384,6 +2585,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 1, rind: 'R22/24, R28/10, R29/31'
 
 }, {
@@ -2394,6 +2596,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 6, rind: 'R20/01, S3/06'
 
 }, {
@@ -2404,6 +2607,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4 
 }, {
     name: " Enjoy The Party",
@@ -2413,6 +2617,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire foarte timpurie până la începutul sezonului înflorire",
     rebloom: false,
+    active: 1,
     cod: 5, rind: 'S3/04, R6/17'
 
 }, {
@@ -2423,6 +2628,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R12/5, R19/48, R4/61'
 
 }, {
@@ -2433,6 +2639,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 5, rind: 'S2/08'
 
 }, {
@@ -2443,6 +2650,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 3, rind: 'R17/16, R21/43'
 
 }, {
@@ -2453,6 +2661,7 @@ const flowers = [
     class: " SPEC-X",
     season: "Înflorire timpurie si reinflorire toamna",
     rebloom: true,
+    active: 1,
 	cod: 2, rind: 'R21/20, r25/40, R11/70, R18/44'
 
 }, {
@@ -2463,16 +2672,18 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R7/47'
 
 }, {
     name: " Eye For Style",
-    image: " Eye For Style - IMG_20230523_132517 -  - r3_28.jpg",
+    image: " Eye For Style - IMG_20230523_132517 - - r3_28.jpg",
     color: "visiniu",
     height: 97,
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R3/28'
 
 }, {
@@ -2483,6 +2694,7 @@ const flowers = [
     class : " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 3, rind: 'Alamor'
 
 }, {
@@ -2493,6 +2705,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 4, rind: 'R15/16, S3/02'
 
 }, {
@@ -2503,6 +2716,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 8, rind: 'R15/44, r24/10, R26/36, S1/04'
 
 }, {
@@ -2513,6 +2727,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R10/50'
 
 }, {
@@ -2523,6 +2738,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 7, rind: 'R8/03'
 
 }, {
@@ -2533,6 +2749,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R3/20, R9/12, R9/15'
 
 }, {
@@ -2543,6 +2760,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie",
     rebloom: false,
+    active: 1,
     cod: 4, rind: 'R10/24, R14/07, R14/11, R14/16, R15/5, R22/11, r24/21, r25/21, S2/07'
 
 }, {
@@ -2553,6 +2771,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R9/42'
 
 }, {
@@ -2563,6 +2782,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R13/39, R18/21'
 
 }, {
@@ -2573,6 +2793,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4 
 }, {
     name: " Figure Head",
@@ -2582,6 +2803,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la târzie",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R7/31, R6/13'
 
 }, {
@@ -2592,6 +2814,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R15/49'
 
 }, {
@@ -2602,6 +2825,7 @@ const flowers = [
     class : " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R7/13'
 
 }, {
@@ -2612,6 +2836,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 5, rind: 'R1/06, R11/08, R28/25'
 
 }, {
@@ -2622,6 +2847,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 8 
 }, {
     name: " Fit The Bill",
@@ -2631,6 +2857,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R6/41, R7/17'
 
 }, {
@@ -2641,6 +2868,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 5, rind: 'R30/23'
 
 }, {
@@ -2651,6 +2879,7 @@ const flowers = [
     class: " IB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R13/45, R17/41, R16/51'
 
 }, {
@@ -2661,16 +2890,18 @@ const flowers = [
     class: " TB",
     season: "Înflorire foarte, foarte timpurie",
     rebloom: false,
+    active: 1,
     cod: 8, rind: 'R1/26, R28/29'
 
 }, {
     name: " Flying Circus",
-    image: " Flying Circus - IMG_E2667 -  S1-13.jpg",
+    image: " Flying Circus - IMG_E2667 - S1-13.jpg",
     color: "bicolor, portocaliu, violet",
     height: 61,
     class: " IB",
     season: "Înflorire timpurie",
     rebloom: false,
+    active: 1,
     cod: 5, rind: 'R33/44, S1/13'
 
 }, {
@@ -2681,6 +2912,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R3/37'
 
 }, {
@@ -2691,6 +2923,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 6, rind: 'R11/26, R12/65, S4/04'
 
 }, {
@@ -2701,6 +2934,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 6, rind: 'R12/76'
 
 }, {
@@ -2711,6 +2945,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R11/12'
 
 }, {
@@ -2721,6 +2956,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R19/18'
 
 }, {
@@ -2731,6 +2967,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 3 
 }, {
     name: " Footloose",
@@ -2740,6 +2977,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire foarte timpurie",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R23/1, R23/2'
 
 }, {
@@ -2750,6 +2988,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 6, rind: 'R1/55, R20/04, R20/05, R20/06, R8/24'
 
 }, {
@@ -2760,6 +2999,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 6 
 }, {
     name: " Fortunate Son",
@@ -2769,6 +3009,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 5, rind: 'R2/31, R4/47, R16/49, R20/14, R5/38, R7/40, R27/09, R29/30, R30/19, R32/24, S3/13'
 
 }, {
@@ -2779,6 +3020,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie si reinflorire toamna",
     rebloom: true,
+    active: 0,
 	cod: 4 
 }, {
     name: " Frimousse",
@@ -2788,6 +3030,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R22/46'
 
 }, {
@@ -2798,6 +3041,7 @@ const flowers = [
     class: " IB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R1/11, R2/35, R4/44, R6/47'
 
 }, {
@@ -2808,6 +3052,7 @@ const flowers = [
     class: " BB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 3, rind: 'R14/25, R14/29, R14/33, R15/2, R15/4, R15/51, R20/18'
 
 }, {
@@ -2818,6 +3063,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la târzie",
     rebloom: false,
+    active: 1,
     cod: 4, rind: 'R4/24, R6/31, R18/2, R26/32'
 
 }, {
@@ -2828,6 +3074,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4 
 }, {
     name: " Full Disclosure",
@@ -2837,6 +3084,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4 
 }, {
     name: " Full of Magic",
@@ -2846,6 +3094,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R8/38, R8/39, R11/9'
 
 }, {
@@ -2856,6 +3105,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R7/20, R10/13, R11/24, R12/26'
 
 }, {
@@ -2866,6 +3116,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie până la foarte târzie",
     rebloom: false,
+    active: 1,
     cod: 5, rind: 'R11/17, R11/18, R32/07'
 
 }, {
@@ -2876,6 +3127,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 2, rind: 'R2/59, R2/60'
 
 }, {
@@ -2886,6 +3138,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 3, rind: 'R3/45, R6/22'
 
 }, {
@@ -2896,6 +3149,7 @@ const flowers = [
     class : " TB",
     season: "Înflorire târzie",
     rebloom: false,
+    active: 0,
     cod: 3, rind: 'R3/40, R7/59'
 
 }, {
@@ -2906,6 +3160,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 7, rind: 'R12/51, r24/37'
 
 }, {
@@ -2916,6 +3171,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R5/21, R5/31'
 
 }, {
@@ -2926,6 +3182,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R10/34, R11/2'
 
 }, {
@@ -2936,6 +3193,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie",
     rebloom: false,
+    active: 0,
     cod: 10, rind: 'R1/31, R2/44'
 
 }, {
@@ -2946,6 +3204,7 @@ const flowers = [
     class : " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4 
 }, {
     name: " Get My Heart",
@@ -2955,6 +3214,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 7, rind: 'R12/9, R13/38'
 
 }, {
@@ -2965,6 +3225,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R6/21'
 
 }, {
@@ -2975,6 +3236,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 7, rind: 'R1/43, R11/21, R15/10, R16/16'
 
 }, {
@@ -2985,6 +3247,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R18/05, R14/50, R9/80'
 
 }, {
@@ -2995,6 +3258,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 4, rind: 'S3/05'
 
 }, {
@@ -3005,6 +3269,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 7, rind: 'R3/3'
 
 }, {
@@ -3015,6 +3280,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 4, rind: 'R4/52, R6/20, R13/24, R32/44, R17/27'
 
 }, {
@@ -3025,6 +3291,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire medie spre foarte târzie",
     rebloom: false,
+    active: 1,
     cod: 3, rind: 'R5/09, R6/10, R14/23, R15/9, R15/13, R15/23, r25/26, R26/13, R26/16, R26/37'
 
 }, {
@@ -3035,6 +3302,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
+    active: 1,
     cod: 4, rind: 'R9/24, R9/30, T1, R26/29, R28/21, R28/41, R30/30, R31/25'
 
 }, {
@@ -3045,6 +3313,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 6, rind: 'R2/37, R2/34'
 
 }, {
@@ -3055,6 +3324,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R5/34'
 
 }, {
@@ -3065,6 +3335,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R21/36'
 
 }, {
@@ -3075,6 +3346,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 3 
 }, {
     name: " Grenade",
@@ -3084,6 +3356,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 4, rind: 'S4/05'
 
 }, {
@@ -3094,6 +3367,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 4, rind: 'S4/09'
 
 }, {
@@ -3104,6 +3378,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R5/11, R4/36, R6/30'
 
 }, {
@@ -3114,6 +3389,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 3, rind: 'R20/33, R20/37, R20/39, R20/38, R17/11'
 
 }, {
@@ -3124,6 +3400,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire foarte timpurie până la începutul sezonului înflorire",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R6/08'
 
 }, {
@@ -3134,6 +3411,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 5, rind: 'R2/48, R2/48, R27/40, R18/20'
 
 }, {
@@ -3144,6 +3422,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 3, rind: 'R5/64, R5/65, r25/13'
 
 }, {
@@ -3154,6 +3433,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R14/46'
 
 }, {
@@ -3164,6 +3444,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie",
     rebloom: false,
+    active: 0,
     cod: 3 
 }, {
     name: " Heart of Africa",
@@ -3173,6 +3454,7 @@ const flowers = [
     class: " BB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R21/08'
 
 }, {
@@ -3183,6 +3465,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 9, rind: 'R2/23, R29/23'
 }, {
     name: " Hello Darling",
@@ -3192,6 +3475,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R11/29'
 }, {
     name: " Here Comes The Night",
@@ -3201,6 +3485,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 8, rind: 'R5/26, R4/41, R14/41, R16/42, R22/22'
 
 }, {
@@ -3211,6 +3496,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la târzie",
     rebloom: false,
+    active: 0,
     cod: 8, rind: 'R2/52, R11/31, R10/74'
 
 }, {
@@ -3221,6 +3507,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 6, rind: 'R13/06'
 
 }, {
@@ -3231,6 +3518,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 4, rind: 'R2/18, R4/33, R7/26, R13/35, R17/13, R18/27, R27/24, R27/41, R28/33, R28/39, R33/12, R34/47, R23/04, R10/70'
 
 }, {
@@ -3241,6 +3529,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie",
     rebloom: false,
+    active: 1,
     cod: 6, rind: 'R2/12, R3/17, R2/02, R34/46, R35/46, R16/23, R11/82'
 
 }, {
@@ -3251,6 +3540,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R4/46, R6/51, R17/02, R17/3, R1/37, R4/39'
 
 }, {
@@ -3261,6 +3551,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R20/21, R19/22'
 
 }, {
@@ -3271,6 +3562,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 5, rind: 'R9/16, R11/48, R16/50, R21/12, R31/12'
 
 }, {
@@ -3281,6 +3573,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R9/28'
 
 }, {
@@ -3291,6 +3584,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire foarte timpurie spre mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R9/23, R21/11'
 
 }, {
@@ -3301,6 +3595,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
+    active: 1,
     cod: 4, rind: 'R1/21, R6/64, R6/52, R11/62, R23/17, R23/18, R23/14, r24/38, R30/02, R31/06, r24/30, R10/79'
 
 }, {
@@ -3311,6 +3606,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R6/25'
 
 }, {
@@ -3321,6 +3617,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 9, rind: 'R2/45, R31/41, R22/33'
 
 }, {
@@ -3331,6 +3628,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R8/42, R12/42'
 
 }, {
@@ -3341,6 +3639,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire foarte timpurie spre mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 3, rind: 'R28/27, S3/07, R9/44'
 
 }, {
@@ -3351,16 +3650,18 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R13/20, R16/19'
 
 }, {
     name: " Huckleberry Fudge",
-    image: " Huckleberry Fudge - IMG_20220526_110822 (DESKTOP-O7A07LK's conflicted copy 2026-01-20).jpg",
+    image: " Huckleberry Fudge - IMG_20220526_110822.jpg",
     color: "visiniu",
     height: 89,
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 3 
 }, {
     name: " Huckleberry Sundae",
@@ -3370,6 +3671,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie",
     rebloom: false,
+    active: 1,
     cod: 3, rind: 'R11/27, T1'
 
 }, {
@@ -3380,6 +3682,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 8, rind: 'R3/09'
 
 }, {
@@ -3390,6 +3693,7 @@ const flowers = [
     class : " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 3 
 }, {
     name: " Idol",
@@ -3399,6 +3703,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la târzie",
     rebloom: false,
+    active: 0,
     cod: 5 
 }, {
     name: " I'm Back",
@@ -3408,6 +3713,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului si reinflorire toamna",
     rebloom: true,
+    active: 0,
 	cod: 5, rind: 'R20/48'
 
 }, {
@@ -3418,6 +3724,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie până la foarte târzie",
     rebloom: false,
+    active: 0,
     cod: 5 
 }, {
     name: " Impressions De Jouy",
@@ -3427,6 +3734,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 3, rind: 'R5/1, R5/08, R9/61, R6/15'
 
 }, {
@@ -3437,6 +3745,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R2/01'
 
 }, {
@@ -3447,6 +3756,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R22/5'
 
 }, {
@@ -3457,6 +3767,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R1/56'
 
 }, {
@@ -3467,6 +3778,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R12/48'
 
 }, {
@@ -3477,6 +3789,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 3 
 }, {
     name: " Indian Chief",
@@ -3486,6 +3799,7 @@ const flowers = [
     class : " TB",
     season: "Înflorire timpurie ",
     rebloom: false,
+    active: 1,
     cod: 3, rind: 'R5/63, R33/14, R15/32, R13/51'
 
 }, {
@@ -3496,6 +3810,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R3/41, R6/57'
 
 }, {
@@ -3506,6 +3821,7 @@ const flowers = [
     class : " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 5, rind: 'r24/07, r24/27, R29/09, R30/31'
 
 }, {
@@ -3516,6 +3832,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 5, rind: 'R1/22, R9/77, R12/62, R12/68, R15/8, R15/19, R15/20, R15/21, R18/04, r25/35'
 
 }, {
@@ -3526,6 +3843,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 5, rind: 'R12/50, R3/14, R27/04, R19/11'
 
 }, {
@@ -3536,6 +3854,7 @@ const flowers = [
     class: " IB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 3, rind: 'R1/62, R1/63, R1/64, R1/65, R1/66, R2/62, R2/63, R2/64, R2/65, R2/66, R3/62, R3/63, R3/64, R3/65, R3/66, R4/62, R4/63, R4/64, R4/65, R4/66, R11/80, R26/10, R33/05'
 
 
@@ -3547,6 +3866,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 6, rind: 'R6/61, R17/1'
 
 }, {
@@ -3557,6 +3877,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 3, rind: 'R14/21, R15/06, R16/47'
 
 }, {
@@ -3567,6 +3888,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R12/34'
 
 }, {
@@ -3577,6 +3899,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
+    active: 0,
     cod: 7, rind: 'R2/8'
 
 }, {
@@ -3587,6 +3910,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R10/42'
 
 }, {
@@ -3597,6 +3921,7 @@ const flowers = [
     class : " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 2, rind: 'curte'
 
 }, {
@@ -3607,6 +3932,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie, mijlocul sezonului, târzie",
     rebloom: false,
+    active: 0,
     cod: 6, rind: 'R1/40'
 
 }, {
@@ -3617,6 +3943,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 2, rind: 'R8/58, R8/59, R8/60, r25/36, R32/17, R8/57'
 
 }, {
@@ -3627,6 +3954,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4 
 }, {
     name: " Joyce Terry",
@@ -3636,6 +3964,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 3, rind: 'R22/40, R31/03'
 
 }, {
@@ -3646,6 +3975,7 @@ const flowers = [
     class : " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 5, rind: 'R26/09'
 
 }, {
@@ -3656,6 +3986,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 9, rind: 'R1/09, R4/25, R15/43, R28/31, R31/35, R10/45'
 
 }, {
@@ -3666,6 +3997,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 6, rind: 'R5/41'
 
 }, {
@@ -3676,17 +4008,8 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 5, rind: 'S3/11'
-
-}, {
-    name: " Kitty Kay",
-    image: " Kitty Kay - IMG_E5674 - R30-13.jpg",
-    color: "portocaliu",
-    height: 94,
-    class: " TB",
-    season: "Înflorire medie spre târzie",
-    rebloom: false,
-    cod: 8, rind: 'R30/13'
 
 }, {
     name: " Kathy's Karnival",
@@ -3696,6 +4019,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 6, rind: 'S1/11'
 
 }, {
@@ -3706,6 +4030,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R12/08'
 
 }, {
@@ -3716,8 +4041,20 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 3 
-}, {
+},  {
+    name: " Kitty Kay",
+    image: " Kitty Kay - IMG_E5674 - R30-13.jpg",
+    color: "portocaliu",
+    height: 94,
+    class: " TB",
+    season: "Înflorire medie spre târzie",
+    rebloom: false,
+    active: 1,
+    cod: 8, rind: 'R30/13'
+
+},{
     name: " Koldovskiie Chary",
     image: " Koldovskiie Chary - IMG_E3358 - R27-30.jpg",
     color: "bicolor, visiniu",
@@ -3725,6 +4062,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 5, rind: 'R27/30'
 
 }, {
@@ -3735,6 +4073,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 8, rind: 'R8/21, R8/23, R29/15, S4/10'
 
 }, {
@@ -3745,16 +4084,18 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R10/62'
 
 }, {
-    name: "Lacy Snowflake",
-    image: "Lacy Snowflake - IMG_20220523_160015.jpg",
+    name: " Lacy Snowflake",
+    image: " Lacy Snowflake - IMG_20220523_160015.jpg",
     color: "alb",
     height: 97,
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 3, rind: 'r25/01, r25/33, R26/19'
 
 }, {
@@ -3765,6 +4106,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie la mijlocul sezonului si reinflorire toamna",
     rebloom: false,
+    active: 1,
     cod: 4, rind: 'R29/27, R2/03, R31/18, R31/31, R2/4, R1/7, R1/39, R30/36, R29/28'
 
 }, {
@@ -3775,6 +4117,7 @@ const flowers = [
     class: " IB",
     season: "Înflorire timpurie până la sfârșitul mijlocului sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R4/58, R4/59, R4/60, R5/59, R5/60'
 
 }, {
@@ -3785,6 +4128,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 9, rind: 'R3/55, R3/56, R6/32, R32/21'
 
 }, {
@@ -3795,6 +4139,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
+    active: 1,
     cod: 4, rind: 'S4/03'
 
 }, {
@@ -3805,6 +4150,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie",
     rebloom: false,
+    active: 1,
     cod: 6, rind: 'R26/28'
 
 }, {
@@ -3815,6 +4161,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire foarte târzie",
     rebloom: false,
+    active: 0,
     cod: 5 
 }, {
     name: " Ledi Nezhnost",
@@ -3824,6 +4171,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 6, rind: 'R14/15'
 
 }, {
@@ -3834,6 +4182,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R19/24'
 
 }, {
@@ -3844,6 +4193,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 6, rind: 'R1/41'
 
 }, {
@@ -3854,6 +4204,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R12/36'
 
 }, {
@@ -3864,6 +4215,7 @@ const flowers = [
     class : " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 1, rind: 'R19/47, R19/50, R12/67'
 
 }, {
@@ -3874,6 +4226,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R6/27, R6/66, R7/66, R17/46, R19/39'
 
 }, {
@@ -3884,6 +4237,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R4/20, R9/55, R5/05'
 
 }, {
@@ -3894,6 +4248,7 @@ const flowers = [
     class: " IB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
+    active: 0,
     cod: 3, rind: 'R1/20'
 
 }, {
@@ -3904,16 +4259,18 @@ const flowers = [
     class : " TB",
     season: "Înflorire foarte timpurie până la începutul sezonului înflorire",
     rebloom: false,
+    active: 0,
     cod: 7, rind: 'R11/41'
 
 }, {
     name: " Loreley",
-    image: " Loreley - galben cu mov striat Presaca - IMG_20220524_180710.jpg",
+    image: " Loreley - galben cu mov striat Presaca - IMG_20220524_180710f701.jpg",
     color: "bicolor, galben, visiniu",
     height:  75 ,
     class : " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 2, rind: 'ALAMOR'
 
 }, {
@@ -3924,6 +4281,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R13/42'
 
 }, {
@@ -3934,6 +4292,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R6/03'
 
 }, {
@@ -3944,6 +4303,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 6, rind: 'R16/37, R13/27'
 
 }, {
@@ -3954,6 +4314,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R8/11, R8/12, R12/25, R1/24, R8/13'
 
 }, {
@@ -3964,6 +4325,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 3 
 }, {
     name: " Lux",
@@ -3973,6 +4335,7 @@ const flowers = [
     class : " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 1, rind: 'R2/28, R28/09, R21/14, R18/9, R21/09, R21/05, R19/5, R30/01, R22/14, R32/20, R19/14, R28/03, R27/27'
 
 }, {
@@ -3983,6 +4346,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R12/44'
 
 }, {
@@ -3993,6 +4357,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R10/54'
 
 }, {
@@ -4003,6 +4368,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R11/47, R12/45'
 
 }, {
@@ -4013,6 +4379,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5 
 }, {
     name: " Magic Bubbles",
@@ -4022,6 +4389,7 @@ const flowers = [
     class: " IB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 3, rind: 'R6/23, R7/27, R7/41, R10/21, R10/83, R12/57, R15/33, R15/34, R15/35, r24/06, r24/11, R26/20, R26/21, R27/42, R32/03, R32/08, R32/19, R32/22, R33/02'
 
 
@@ -4033,6 +4401,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 7, rind: 'R1/34, R29/33'
 
 }, {
@@ -4043,6 +4412,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie până la foarte târzie",
     rebloom: false,
+    active: 0,
     cod: 7, rind: 'R14/03, R21/10'
 
 }, {
@@ -4053,6 +4423,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la târzie",
     rebloom: false,
+    active: 0,
     cod: 3, rind: 'R8/01, R8/02'
 
 }, {
@@ -4063,6 +4434,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R6/34'
 
 }, {
@@ -4073,6 +4445,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R18/06, R18/10'
 
 }, {
@@ -4083,15 +4456,17 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4 
 }, {
     name: " Make Mine Magic",
-    image: " Make Mine Magic -IMG_20230526_161424 -  r11_5.jpg",
+    image: " Make Mine Magic -IMG_20230526_161424 - r11_5.jpg",
     color: "bicolor, galben, visiniu",
     height: 86,
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 7, rind: 'R11/5'
 
 }, {
@@ -4102,6 +4477,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 7, rind: 'R12/46'
 
 }, {
@@ -4112,6 +4488,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R2/5, R12/22'
 
 }, {
@@ -4122,6 +4499,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire foarte timpurie până la începutul sezonului înflorire",
     rebloom: false,
+    active: 0,
     cod: 8, rind: 'R2/56'
 
 }, {
@@ -4132,6 +4510,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4 
 }, {
     name: " Mango Tiger",
@@ -4141,6 +4520,7 @@ const flowers = [
     class : " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 5, rind: 'R3/38, r24/14'
 
 }, {
@@ -4151,6 +4531,7 @@ const flowers = [
     class: " IB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R4/13, R7/22, R3/27'
 
 }, {
@@ -4161,6 +4542,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 4, rind: 'R13/14, R13/15, R29/21, R29/43, R30/32, R31/27'
 
 }, {
@@ -4171,6 +4553,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 8, rind: 'R3/02, R14/40, R22/36, R30/04, R30/09'
 
 }, {
@@ -4181,6 +4564,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R17/9'
 
 }, {
@@ -4191,6 +4575,7 @@ const flowers = [
     class: " IB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 4, rind: 'R9/54, R4/01, R26/33'
 
 }, {
@@ -4201,6 +4586,7 @@ const flowers = [
     class : " TB",
     season: "Înflorire târzie",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R1/04, R6/43'
 
 }, {
@@ -4211,6 +4597,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 3, rind: 'R32/27'
 
 }, {
@@ -4221,6 +4608,7 @@ const flowers = [
     class : " TB",
     season: "Înflorire târzie",
     rebloom: false,
+    active: 0,
     cod: 1, rind: 'R35/28, R35/29, R35/30, R35/31, R35/32, R35/33, R35/34, R35/35, R35/36, R35/37, R35/38, R35/39, R35/40, R35/41, R35/42, R35/43, R35/44, R35/45'
 
 
@@ -4232,6 +4620,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 3, rind: 'R9/21'
 
 }, {
@@ -4242,6 +4631,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5 
 }, {
     name: " Melodiya Dvokh Serdets",
@@ -4251,6 +4641,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie",
     rebloom: false,
+    active: 1,
     cod: 4, rind: 'R1/30, R6/26, R11/36, R34/18'
 
 }, {
@@ -4261,6 +4652,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie până la foarte târzie",
     rebloom: false,
+    active: 0,
     cod: 3, rind: 'R7/42'
 
 }, {
@@ -4271,6 +4663,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R3/30'
 
 }, {
@@ -4281,6 +4674,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire foarte timpurie spre mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 5, rind: 'R10/17, R18/23, R4/27, R33/45'
 
 }, {
@@ -4291,6 +4685,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R5/23'
 
 }, {
@@ -4301,6 +4696,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 5, rind: 'R10/66, r25/15, r25/14'
 
 }, {
@@ -4311,6 +4707,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 5, rind: 'R15/15, R27/17, R29/37'
 
 }, {
@@ -4321,6 +4718,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 3 
 }, {
     name: " Midnight Velvet",
@@ -4330,6 +4728,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie",
     rebloom: false,
+    active: 0,
     cod: 6, rind: 'R10/20'
 
 }, {
@@ -4340,6 +4739,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire foarte timpurie",
     rebloom: false,
+    active: 0,
     cod: 7, rind: 'R16/21'
 
 }, {
@@ -4350,6 +4750,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 4, rind: 'R34/20'
 
 }, {
@@ -4360,6 +4761,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 3, rind: 'R4/45'
 
 }, {
@@ -4370,6 +4772,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 10, rind: 'R11/58'
 
 }, {
@@ -4380,16 +4783,18 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 5, rind: 'R4/49, R5/17, R1/2, R26/26, R28/15, R29/20, R31/39, R7/34, R29/41'
 
 }, {
     name: " Montmartre",
-    image: " Montmartre - IMG_20230519_140342 -  r5_16.jpg",
+    image: " Montmartre - IMG_20230519_140342 - r5_16.jpg",
     color: "bicolor, visiniu",
     height: 84,
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 7, rind: 'S1/09, S3/08'
 
 }, {
@@ -4400,6 +4805,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 4, rind: 'R4/26, R7/21, R10/30, r24/05, r24/25'
 
 }, {
@@ -4410,6 +4816,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la târzie și reînflorire toamna",
     rebloom: true,
+    active: 0,
 	cod: 3, rind: 'R21/40'
 
 }, {
@@ -4420,6 +4827,7 @@ const flowers = [
     class: " SDB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
+    active: 1,
     cod: 3, rind: 'R27/07, R31/11, R32/25'
 
 }, {
@@ -4430,6 +4838,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R10/61, R7/25'
 
 }, {
@@ -4440,6 +4849,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 6, rind: 'R9/41, R31/13'
 
 }, {
@@ -4450,6 +4860,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la târzie",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'Alamor'
 
 }, {
@@ -4460,6 +4871,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
+    active: 1,
     cod: 4, rind: 'R14/39, R15/03, r24/22, R26/06, R29/24, R31/40, R12/69'
 
 }, {
@@ -4470,6 +4882,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 5, rind: 'r24/24'
 
 }, {
@@ -4480,6 +4893,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R7/35, R4/37'
 
 }, {
@@ -4490,6 +4904,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R18/50'
 
 }, {
@@ -4500,6 +4915,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R16/01'
 
 }, {
@@ -4510,6 +4926,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R5/19'
 
 }, {
@@ -4520,6 +4937,7 @@ const flowers = [
     class : " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R10/43, R10/44'
 
 }, {
@@ -4530,6 +4948,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 8 
 }, {
     name: " No Doubt",
@@ -4539,6 +4958,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R18/46'
 }, {
 	name: " No Restain",
@@ -4548,6 +4968,7 @@ const flowers = [
     class: " IB",
     season: "Infl. timpurie la mijl. sezonulu",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R10/55'
 }, {
     name: " Noble Dragon",
@@ -4557,6 +4978,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 4, rind: 'S3/10'
 
 }, {
@@ -4567,6 +4989,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R2/17'
 
 }, {
@@ -4577,6 +5000,7 @@ const flowers = [
     class : " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 7, rind: 'R10/15, R10/16'
 
 }, {
@@ -4587,6 +5011,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R1/38'
 
 }, {
@@ -4597,6 +5022,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R10/7, R11/30, R16/24'
 
 }, {
@@ -4607,6 +5033,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R22/50'
 
 }, {
@@ -4617,6 +5044,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 3, rind: 'R1/48, R9/46, R29/35, R30/17'
 
 }, {
@@ -4627,6 +5055,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie",
     rebloom: false,
+    active: 1,
     cod: 4, rind: 'R3/7, R4/12, R5/10, R7/28, R10/14, R12/24, R16/31, R1/3, R18/47, R28/22, R31/02, R31/29, R3/01'
 
 }, {
@@ -4637,6 +5066,7 @@ const flowers = [
     class: " IB",
     season: "Înflorire timpurie",
     rebloom: false,
+    active: 1,
     cod: 4, rind: 'R4/30, R6/33, R12/43, R13/23, R13/48, R22/35, r24/12, R32/12'
 
 }, {
@@ -4647,6 +5077,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 6, rind: 'R3/15, R20/07, R27/18, R30/33'
 
 }, {
@@ -4657,6 +5088,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 3, rind: 'R1/54, R3/51, R6/40, R29/07, R29/11, R29/34, R29/39, R30/16, R30/24, R30/43'
 
 }, {
@@ -4667,6 +5099,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 3, rind: 'R20/35'
 
 }, {
@@ -4677,6 +5110,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 2, rind: 'r24/01'
 
 }, {
@@ -4687,6 +5121,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie",
     rebloom: false,
+    active: 0,
     cod: 3, rind: 'Alamor'
 
 }, {
@@ -4697,6 +5132,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 8, rind: 'R3/8'
 
 }, {
@@ -4707,6 +5143,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R3/53'
 
 }, {
@@ -4717,6 +5154,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 4, rind: 'R1/35, R2/57, R6/48, R6/55, R8/26, R8/27, R9/47, R10/72, R11/23, R11/76, R14/09, R14/10, R19/09, R14/19, R19/25, R21/18, R22/31, R26/23, R26/24, R27/05, R27/21, R28/04, R28/43, R29/03, R29/32, R30/15, R30/20, R30/37, R31/16, R32/14, R32/35'
 }, {
     name: " Open Sea",
@@ -4726,6 +5164,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
+    active: 1,
     cod: 6, rind: 'R5/48, R30/27'
 
 }, {
@@ -4736,6 +5175,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie la mijlocul sezonului si reinflorire toamna",
     rebloom: true,
+    active: 0,
 	cod: 3, rind: 'R3/61'
 
 }, {
@@ -4746,6 +5186,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R13/25'
 
 }, {
@@ -4756,6 +5197,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R14/47, R15/14'
 
 }, {
@@ -4766,6 +5208,7 @@ const flowers = [
     class : " TB",
     season: "Înflorire timpurie",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R21/39, r25/28'
 
 }, {
@@ -4776,6 +5219,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R11/01'
 
 }, {
@@ -4786,6 +5230,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 6, rind: 'R13/08'
 
 }, {
@@ -4796,6 +5241,7 @@ const flowers = [
     class : " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 2, rind: 'R5/66, R33/21'
 
 }, {
@@ -4806,6 +5252,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R4/38'
 
 }, {
@@ -4816,6 +5263,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R15/01, R16/14'
 
 }, {
@@ -4826,6 +5274,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
+    active: 1,
     cod: 4, rind: 'R2/21, R4/07, R30/21, R32/37'
 
 }, {
@@ -4836,6 +5285,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R19/31, R19/35, R19/38'
 
 }, {
@@ -4846,16 +5296,18 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 3, rind: 'R5/62, R6/62, R6/65, R7/65, R9/62, r25/18, R32/10'
 
 }, {
     name: " Peach Butter",
-    image: " Peach Butter -IMG_20230526_134350 -  r9_16.jpg",
+    image: " Peach Butter -IMG_20230526_134350 - r9_16.jpg",
     color: "portocaliu",
     height: 86,
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5 
 }, {
     name: " Penny Prince",
@@ -4865,6 +5317,7 @@ const flowers = [
     class: " TB",
     season: null,
     rebloom: false,
+    active: 0,
     cod: 2 
 }, {
     name: " Pep Rally",
@@ -4874,6 +5327,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire foarte timpurie până la începutul sezonului înflorire",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R6/18, R6/39'
 
 }, {
@@ -4884,6 +5338,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
+    active: 0,
     cod: 9, rind: 'R2/27'
 
 }, {
@@ -4894,6 +5349,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R19/40'
 
 }, {
@@ -4904,6 +5360,7 @@ const flowers = [
     class: " IB",
     season: "Înflorire timpurie",
     rebloom: false,
+    active: 0,
     cod: 2, rind: 'R22/49'
 
 }, {
@@ -4914,6 +5371,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 3 
 }, {
     name: " Pirate Ahoy",
@@ -4923,6 +5381,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 4, rind: 'R20/15, R22/43, S2/04'
 
 }, {
@@ -4933,6 +5392,7 @@ const flowers = [
     class: " IB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R11/74, R11/81'
 
 }, {
@@ -4943,6 +5403,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R18/40'
 
 }, {
@@ -4953,6 +5414,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R17/22'
 
 }, {
@@ -4963,6 +5425,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 5, rind: 'R31/07'
 
 }, {
@@ -4973,6 +5436,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului si reinflorire toamna",
     rebloom: true,
+    active: 0,
 	cod: 5, rind: 'R5/03'
 
 }, {
@@ -4983,6 +5447,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R20/13'
 
 }, {
@@ -4993,6 +5458,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 6, rind: 'R10/36, R10/35'
 
 }, {
@@ -5003,6 +5469,7 @@ const flowers = [
     class : " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R16/41, R9/79'
 
 }, {
@@ -5013,6 +5480,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 4, rind: 'R4/34, R7/43, R12/33, R14/42, R17/34, R9/7, r24/17, R27/11, R27/37, R34/30'
 
 }, {
@@ -5023,6 +5491,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 3, rind: 'R3/43b'
 
 }, {
@@ -5033,6 +5502,7 @@ const flowers = [
     class: " IB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 5, rind: 'R1/32, R10/38, R28/37, R11/20, R14/12, R17/38, R20/45, R10/68'
 
 }, {
@@ -5043,15 +5513,17 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4   
 }, {
-    name: "Power Of One",
+    name: " Power Of One",
     image: " Power de One - IMG_E5411 - v19-45.jpg",
     color: "galben",
     height: 96,
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 3 
 }, {
     name: " Prague",
@@ -5061,6 +5533,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R5/15, R6/16'
 
 }, {
@@ -5071,6 +5544,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 7, rind: 'R3/19, R31/21'
 
 }, {
@@ -5081,6 +5555,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R2/10'
 
 }, {
@@ -5091,6 +5566,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R5/52, R6/42'
 
 }, {
@@ -5101,6 +5577,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului si reinflorire toamna",
     rebloom: true,
+    active: 0,
 	cod: 4 
 }, {
     name: " Princesse Caroline De Monaco",
@@ -5110,6 +5587,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 3, rind: 'R14/51, R11/67'
 
 }, {
@@ -5120,6 +5598,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R9/63'
 
 }, {
@@ -5130,6 +5609,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
+    active: 1,
     cod: 3, rind: 'R12/04, S2/06'
 
 }, {
@@ -5140,6 +5620,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 4, rind: 'S1/12'
 
 }, {
@@ -5150,16 +5631,18 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R18/17'
 
 }, {
     name: " Pure As Gold",
-    image: " Pure as Gold  IMG_20210527_133251.jpg",
+    image: " Pure as Gold IMG_20210527_133251.jpg",
     color: "galben",
     height: 86,
     class: " TB",
     season: "Înflorire târzie și reînflorire",
     rebloom: true,
+    active: 1,
 	cod: 4, rind: 'R10/08, R10/10, R10/11, R18/34, R32/04, R32/05, S1/10'
 
 }, {
@@ -5170,6 +5653,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
+    active: 0,
     cod: 3, rind: 'R9/78, R11/68'
 
 }, {
@@ -5180,6 +5664,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R19/04'
 
 }, {
@@ -5190,6 +5675,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
+    active: 0,
     cod: 3 
 }, {
     name: " Pustynny Zar",
@@ -5199,6 +5685,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 6, rind: 'R12/07, R12/47'
 
 }, {
@@ -5209,6 +5696,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R22/42'
 
 }, {
@@ -5219,6 +5707,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R11/42'
 
 }, {
@@ -5229,6 +5718,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R5/46, R7/09'
 
 }, {
@@ -5239,6 +5729,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
+    active: 1,
     cod: 3, rind: 'R3/33, R3/47, R4/23, R4/42, R5/22, R32/34, R17/29, R27/39, R8/5, R5/6'
 
 }, {
@@ -5249,6 +5740,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie",
     rebloom: false,
+    active: 0,
     cod: 4 
 }, {
     name: " Queen's Velvet Cape",
@@ -5258,6 +5750,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R10/39'
 
 }, {
@@ -5268,6 +5761,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 4, rind: 'r25/16, R26/31'
 
 }, {
@@ -5278,16 +5772,18 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R12/03'
 
 }, {
     name: " Rameses",
-    image: " Rameses - IMG_20230519_143937 -  r7_60.jpg",
+    image: " Rameses - IMG_20230519_143937 - r7_60.jpg",
     color: "bicolor, maro, visiniu",
     height:  100,
     class : " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
+    active: 0,
     cod: 1, rind: 'R18/30, R32/26, R35/20, R35/21, R35/22, R35/23'
 
 }, {
@@ -5298,6 +5794,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie",
     rebloom: false,
+    active: 0,
     cod: 10, rind: 'R8/04'
 
 }, {
@@ -5308,6 +5805,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R14/20'
 
 }, {
@@ -5318,6 +5816,7 @@ const flowers = [
     class: " IB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 3, rind: 'R9/73'
 
 }, {
@@ -5328,6 +5827,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 4, rind: 'R9/35, R9/36, R9/38, R32/39'
 
 }, {
@@ -5338,6 +5838,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
+    active: 1,
     cod: 4, rind: 'R1/23, R7/44, R22/26, r24/29, r25/07'
 
 }, {
@@ -5348,6 +5849,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 4, rind: 'R5/44, r25/19'
 
 }, {
@@ -5358,6 +5860,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R15/48, R18/15'
 
 }, {
@@ -5368,6 +5871,7 @@ const flowers = [
     class: " SDB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 3, rind: 'S1/05, S4/06'
 
 }, {
@@ -5378,6 +5882,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R16/44'
 
 }, {
@@ -5388,6 +5893,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R3/50, R4/35'
 
 }, {
@@ -5398,6 +5904,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 4, rind: 'R2/13, R28/28, R31/33'
 
 }, {
@@ -5408,6 +5915,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 6, rind: 'R3/06, R3/10, R13/19, R12/10, R16/36, R22/13, R31/01, R34/21, R34/23'
 
 }, {
@@ -5418,6 +5926,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R1/36, R9/39'
 
 }, {
@@ -5428,16 +5937,18 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 4, rind: 'R23/11, R30/10'
 
 }, {
     name: " Red Rock Canyon",
-    image: " Red Rock Canyon - IMG_20230527_170850 -  r23_5.jpg",
+    image: " Red Rock Canyon - IMG_20230527_170850 - r23_5.jpg",
     color: "bicolor, galben, visiniu",
     height: 86,
     class: " TB",
     season: "Înflorire timpurie la mijlocul sezonului si reinflorire toamna",
     rebloom: true,
+    active: 0,
 	cod: 5 
 }, {
     name: " Red Skies",
@@ -5447,6 +5958,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R9/17'
 
 }, {
@@ -5457,6 +5969,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie la mijlocul sezonului si reinflorire toamna",
     rebloom: true,
+    active: 0,
 	cod: 5 
 }, {
     name: " Regal Knave",
@@ -5466,6 +5979,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4 
 }, {
     name: " Repertoire",
@@ -5475,6 +5989,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie",
     rebloom: false,
+    active: 1,
     cod: 6, rind: 'R1/45, R8/44, R28/44'
 
 }, {
@@ -5485,6 +6000,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire foarte timpurie până la începutul sezonului înflorire",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R17/44'
 
 }, {
@@ -5495,6 +6011,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
+    active: 0,
     cod: 7, rind: 'R16/06, R16/07, R16/08'
 
 }, {
@@ -5505,6 +6022,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R17/50'
 
 }, {
@@ -5515,6 +6033,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5 
 }, {
     name: " Rogue Ghio",
@@ -5524,6 +6043,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 3, rind: 'R18/24, S2/01, R21/04'
 
 }, {
@@ -5534,6 +6054,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R3/46, R5/14'
 
 }, {
@@ -5544,6 +6065,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R18/25, R19/28'
 
 }, {
@@ -5554,6 +6076,7 @@ const flowers = [
     class : " TB",
     season: "Înflorire târzie",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R22/44'
 
 }, {
@@ -5564,16 +6087,18 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R10/18'
 
 }, {
     name: " Royal Sunset",
-    image: " Royal Sunset  - IMG_E3736 - r11-51.jpg",
+    image: " Royal Sunset - IMG_E3736 - r11-51.jpg",
     color: "bicolor, alb, visiniu",
     height: 99,
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R11/51'
 
 }, {
@@ -5584,6 +6109,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4,  
 }, {
     name: " Ruby Morn",
@@ -5593,6 +6119,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 5, rind: 'S4/13'
 
 }, {
@@ -5603,6 +6130,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 7, rind: 'S4/12'
 
 }, {
@@ -5613,6 +6141,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie până la foarte târzie",
     rebloom: false,
+    active: 0,
     cod: 6, rind: 'R9/37, R14/37, R14/34, R16/20, R9/22, R8/51'
 
 }, {
@@ -5623,6 +6152,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la târzie",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R12/39'
 
 }, {
@@ -5633,6 +6163,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R23/5'
 
 }, {
@@ -5643,6 +6174,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire foarte, foarte timpurie",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R5/20, R6/06'
 
 }, {
@@ -5653,6 +6185,7 @@ const flowers = [
     class : " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 2 
 }, {
     name: " Sangete",
@@ -5662,6 +6195,7 @@ const flowers = [
     class : " TB",
     season: null,
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R11/71'
 
 }, {
@@ -5672,6 +6206,7 @@ const flowers = [
     class : " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 3, rind: 'R27/43'
 
 }, {
@@ -5682,6 +6217,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 4, rind: 'R20/22, R22/07, R30/35'
 
 }, {
@@ -5692,6 +6228,7 @@ const flowers = [
     class : " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 6, rind: 'R12/56'
 
 }, {
@@ -5702,6 +6239,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5 
 }, {
     name: " Saturn",
@@ -5711,6 +6249,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R5/49'
 
 }, {
@@ -5721,6 +6260,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la târzie",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R4/40, R19/45'
 
 }, {
@@ -5731,6 +6271,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 8, rind: 'R1/51'
 
 }, {
@@ -5741,6 +6282,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie",
     rebloom: false,
+    active: 1,
     cod: 4, rind: 'R7/32, R12/28, R18/01, R7/16, R7/18, R29/04, R30/34, R31/42, R20/08, R11/78'
 
 }, {
@@ -5751,6 +6293,7 @@ const flowers = [
     class: " IB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R1/50, R2/38, R11/53, R13/49'
 
 }, {
@@ -5761,6 +6304,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R1/13, R12/52'
 
 }, {
@@ -5771,6 +6315,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la târzie și reînflorire toamna",
     rebloom: true,
+    active: 0,
 	cod: 4 
 }, {
     name: " Secret Recipe",
@@ -5780,6 +6325,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R2/53'
 
 }, {
@@ -5790,6 +6336,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
+    active: 1,
     cod: 5, rind: 'R9/02, R16/43, R17/47, R9/04, R28/38'
 
 }, {
@@ -5800,6 +6347,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 4, rind: 'R8/36, R8/37, R14/27, R18/11, R34/17'
 
 }, {
@@ -5810,6 +6358,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 5, rind: 'R2/25, R4/05, R4/06, R5/53, R7/46, R10/25, R10/40, R10/48, R13/01, R17/06, R18/36, R20/47, R22/29, r25/11, R28/24, R31/15, R32/01, R34/24'
 
 }, {
@@ -5820,6 +6369,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la târzie",
     rebloom: false,
+    active: 0,
     cod: 6, rind: 'R18/07'
 
 }, {
@@ -5830,6 +6380,7 @@ const flowers = [
     class : " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 2 
 }, {
     name: " Shine On Me Sunshine",
@@ -5839,6 +6390,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 3, rind: 'R13/10'
 
 }, {
@@ -5849,6 +6401,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R22/45'
 
 }, {
@@ -5859,6 +6412,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie si reinflorire toamna",
     rebloom: true,
+    active: 0,
 	cod: 2 
 }, {
     name: " Silent Fire",
@@ -5868,6 +6422,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 8 
 }, {
     name: " Silk Romance",
@@ -5877,6 +6432,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 5, rind: 'R5/54, R9/40, R3/36, r25/17, R26/18, R27/22, R32/38'
 
 }, {
@@ -5887,6 +6443,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 3, rind: 'R4/21, R29/08, R31/08'
 
 }, {
@@ -5897,6 +6454,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 3 
 }, {
     name: " Sizzlin' Hot",
@@ -5906,6 +6464,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie",
     rebloom: false,
+    active: 0,
     cod: 8, rind: 'R12/20'
 
 }, {
@@ -5916,6 +6475,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 8, rind: 'R1/10, R14/28, R28/30, R31/20'
 
 }, {
@@ -5926,6 +6486,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R17/26'
 
 }, {
@@ -5936,6 +6497,7 @@ const flowers = [
     class : " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 3, rind: 'R22/32'
 
 }, {
@@ -5946,6 +6508,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 6, rind: 'R2/43, R9/10'
 
 }, {
@@ -5956,6 +6519,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R14/18, R14/35, R14/43, R14/44'
 
 }, {
@@ -5966,6 +6530,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 3, rind: 'R1/58, R1/59, R1/60, R12/54, R12/55, R13/50, r25/37, R29/40, R31/09, R31/26, R10/67, R10/77'
 
 }, {
@@ -5976,6 +6541,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 3, rind: 'R1/1, R3/26, R3/48, R11/60, R11/66, R12/61, R22/04, R5/07, R6/14, R26/41, R28/20, R30/29, R32/06, R22/02'
 
 }, {
@@ -5986,6 +6552,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R6/54'
 
 }, {
@@ -5996,6 +6563,7 @@ const flowers = [
     class: " IB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R9/50'
 
 }, {
@@ -6006,6 +6574,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
+    active: 0,
     cod: 3 
 }, {
     name: " Sofia",
@@ -6015,6 +6584,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire foarte timpurie până la începutul sezonului înflorire",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R17/48, R18/16'
 
 }, {
@@ -6025,6 +6595,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R12/53'
 
 }, {
@@ -6035,6 +6606,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R4/57, R9/52, R22/27'
 
 }, {
@@ -6045,6 +6617,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R16/17'
 
 }, {
@@ -6055,6 +6628,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 4, rind: 'R5/47, r25/10'
 
 }, {
@@ -6065,6 +6639,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5 
 }, {
     name: " Sordid Lives",
@@ -6074,6 +6649,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R20/19'
 
 }, {
@@ -6084,6 +6660,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4
 
 }, {
@@ -6094,6 +6671,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
+    active: 0,
     cod: 6, rind: 'R5/36, R6/45'
 
 }, {
@@ -6104,6 +6682,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5 
 }, {
     name: " Spice Lord",
@@ -6113,6 +6692,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 3, rind: 'R8/17, R8/20, R8/18, R8/56, R11/83, R15/30, R29/42, R31/10'
 
 }, {
@@ -6123,6 +6703,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 6, rind: 'R11/06, R11/07, R11/73, R16/02, R28/13'
 
 }, {
@@ -6133,6 +6714,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie",
     rebloom: false,
+    active: 0,
     cod: 8, rind: 'R11/39'
 
 }, {
@@ -6143,6 +6725,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 5, rind: 'R9/14, R9/18, R12/15, R14/24, R5/55, R27/35, R28/08, R34/26, R34/16'
 
 }, {
@@ -6153,6 +6736,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 7 
 }, {
     name: " Standing Proud",
@@ -6162,6 +6746,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie",
     rebloom: false,
+    active: 0,
     cod: 3, rind: 'R11/40, R12/40'
 
 }, {
@@ -6172,6 +6757,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului si reinflorireing",
     rebloom: true,
+    active: 0,
 	cod: 4, rind: 'R20/46, R20/50'
 
 }, {
@@ -6182,6 +6768,7 @@ const flowers = [
     class: " IB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 3, rind: 'R7/61, R2/58, R3/58, R3/59, R3/60, R6/63, R3/34, R26/40, R32/15, R27/23'
 
 }, {
@@ -6192,6 +6779,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
+    active: 1,
     cod: 5, rind: 'R14/5, R14/6, r25/20, r25/22, r25/23, R9/76'
 
 }, {
@@ -6202,6 +6790,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R11/34'
 
 }, {
@@ -6212,6 +6801,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R21/44, R21/28, R21/24'
 
 }, {
@@ -6222,6 +6812,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 3, rind: 'R23/10, R8/66, R9/64, R28/18'
 
 }, {
@@ -6232,6 +6823,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 8, rind: 'R12/6, R12/21, R28/05'
 
 }, {
@@ -6242,6 +6834,7 @@ const flowers = [
     class : " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 4, rind: 'R13/2, R13/3, S2/03'
 
 }, {
@@ -6252,6 +6845,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie și reînflorire",
     rebloom: true,
+    active: 0,
 	cod: 4, rind: 'R5/57'
 
 }, {
@@ -6262,6 +6856,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 4, rind: 'R34/29'
 
 }, {
@@ -6272,6 +6867,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 5, rind: 'R11/3, R11/4, R12/37, R27/10, R30/22'
 
 }, {
@@ -6282,6 +6878,7 @@ const flowers = [
     class : " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 3, rind: 'R8/53, R8/54, R8/55, R10/22, r24/33, R7/36'
 
 }, {
@@ -6292,6 +6889,7 @@ const flowers = [
     class : " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R12/12, R18/8, R18/14, R17/12'
 
 }, {
@@ -6302,6 +6900,7 @@ const flowers = [
     class: " IB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 4, rind: 'R7/55, R7/54, r24/20'
 
 }, {
@@ -6312,6 +6911,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R21/01'
 
 }, {
@@ -6322,6 +6922,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R12/17, R13/21, R13/11'
 
 }, {
@@ -6332,6 +6933,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 8, rind: 'R1/19'
 
 }, {
@@ -6342,6 +6944,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
+    active: 0,
     cod: 3, rind: 'R5/24'
 
 }, {
@@ -6352,6 +6955,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R15/37'
 
 }, {
@@ -6362,6 +6966,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 3, rind: 'r24/26, R32/41'
 
 }, {
@@ -6372,6 +6977,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R7/24'
 
 }, {
@@ -6382,6 +6988,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4 
 }, {
     name: " Temporal Anomaly",
@@ -6391,6 +6998,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 6, rind: 'R13/22, R9/72, R9/75, R12/71'
 
 }, {
@@ -6401,6 +7009,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 7 
 }, {
     name: " Tennison Ridge",
@@ -6410,6 +7019,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului si reinflorire toamna",
     rebloom: true,
+    active: 1,
 	cod: 4, rind: 'R27/20, R29/36'
 
 }, {
@@ -6420,6 +7030,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R22/8'
 
 }, {
@@ -6430,6 +7041,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
+    active: 1,
     cod: 4, rind: 'R3/4, R5/42, R30/11'
 
 }, {
@@ -6440,6 +7052,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R20/3'
 
 }, {
@@ -6450,6 +7063,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 4, rind: 'R29/06'
 
 }, {
@@ -6460,6 +7074,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R8/64'
 
 }, {
@@ -6470,16 +7085,18 @@ const flowers = [
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
+    active: 1,
     cod: 5, rind: 'R13/43, R27/31, R28/11'
 
 }, {
     name: " Tiger expert",
-    image: " Tiger expert - IMG_20230526_171636 -  r13_7.jpg",
+    image: " Tiger expert - IMG_20230526_171636 - r13_7.jpg",
     color: "bicolor, galben, visiniu",
     height:  92,
     class : " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 3, rind: 'R13/7'
 
 }, {
@@ -6490,6 +7107,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R2/9'
 
 }, {
@@ -6500,6 +7118,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
+    active: 0,
     cod: 4 
 }, {
     name: " Tintinara",
@@ -6509,6 +7128,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R6/7, R6/24'
 
 }, {
@@ -6519,6 +7139,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 3, rind: 'R7/8, R7/23'
 
 }, {
@@ -6529,6 +7150,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4 
 }, {
     name: " Trails West",
@@ -6538,6 +7160,7 @@ const flowers = [
     class : " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 6, rind: 'R15/25'
 
 }, {
@@ -6548,6 +7171,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire foarte, foarte timpurie",
     rebloom: false,
+    active: 1,
     cod: 4, rind: 'R3/18, R30/28'
 
 }, {
@@ -6558,6 +7182,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului si reinflorire toamna",
     rebloom: true,
+    active: 1,
 	cod: 4, rind: 'R7/15, R22/9, R22/15, R31/24'
 
 }, {
@@ -6568,6 +7193,7 @@ const flowers = [
     class: " IB",
     season: "Înflorire timpurie la mijlocul sezonului si reinflorire toamna",
     rebloom: true,
+    active: 1,
 	cod: 2, rind: 'R1/61, R13/32, R12/78, R28/45, R30/44, S3/12'
 
 }, {
@@ -6578,6 +7204,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 3 
 }, {
     name: " Truly Wicked",
@@ -6587,6 +7214,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 8 
 }, {
     name: " Tunnel Vision",
@@ -6596,6 +7224,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 4, rind: 'R4/15, R12/18, R15/45, R16/46, R28/14, S1/06'
 
 }, {
@@ -6606,6 +7235,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 6, rind: 'R11/13'
 
 }, {
@@ -6616,6 +7246,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R1/17, R6/50, R18/33, R9/65'
 
 }, {
@@ -6626,6 +7257,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4 
 }, {
     name: " Unstable Gene",
@@ -6635,6 +7267,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 6, rind: 'R13/30, R32/40'
 
 }, {
@@ -6645,6 +7278,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 5, rind: 'R8/28, R11/55, R14/2, R14/14, r24/15'
 
 }, {
@@ -6655,6 +7289,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie până la foarte târzie",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R12/14'
 
 }, {
@@ -6665,6 +7300,7 @@ const flowers = [
     class : " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 3, rind: 'R4/43'
 
 }, {
@@ -6675,6 +7311,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R12/35, R9/13'
 
 }, {
@@ -6685,6 +7322,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire foarte târzie",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R7/64'
 
 }, {
@@ -6695,6 +7333,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4 
 }, {
     name: " Vals Kokhannia",
@@ -6704,6 +7343,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire foarte târzie",
     rebloom: false,
+    active: 1,
     cod: 6, rind: 'R20/23, r24/39'
 
 }, {
@@ -6714,6 +7354,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 7, rind: 'R13/41'
 
 }, {
@@ -6724,6 +7365,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 7, rind: 'R2/15, R6/44, R5/25, R19/16, R19/19, R19/20, R20/12, R27/25, R28/32, R29/10, R29/13, R31/38'
 
 }, {
@@ -6734,6 +7376,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 3, rind: 'R21/29, R29/02, R30/06, R31/19'
 
 }, {
@@ -6744,6 +7387,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 3, rind: 'R12/11'
 
 }, {
@@ -6754,6 +7398,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 4, rind: 'R4/8, R6/53, R4/9, R27/34'
 
 }, {
@@ -6764,6 +7409,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire medie spre foarte târzie",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R17/19, R1/42'
 
 }, {
@@ -6774,6 +7420,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 4, rind: 'R23/19, R19/12, R19/13, R27/02, R27/12, R27/13, R30/08'
 
 }, {
@@ -6784,6 +7431,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 3, rind: 'R3/22, R5/51, R26/27, R27/03, R28/06, R5/52b'
 
 }, {
@@ -6794,6 +7442,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului si reinflorire toamna",
     rebloom: true,
+    active: 0,
 	cod: 4, rind: 'R11/45'
 
 }, {
@@ -6804,6 +7453,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie la mijlocul sezonului si reinflorire toamna",
     rebloom: true,
+    active: 0,
 	cod: 5 
 }, {
     name: " Vitrail",
@@ -6813,6 +7463,7 @@ const flowers = [
     class: " IB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 6, rind: 'R11/61, r25/09'
 
 }, {
@@ -6823,6 +7474,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 5, rind: 'R22/16, R23/15, R23/16, R27/06, R30/07'
 
 }, {
@@ -6833,6 +7485,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie",
     rebloom: false,
+    active: 1,
     cod: 2, rind: 'R1/25, R10/82, R15/29, R15/39, R15/47, R16/29, R16/40, R16/45, R18/35, R19/26, R22/3, R22/23, r24/40, R26/08, R32/16, R33/03, R33/06, R33/07, R33/08, R33/09, R33/10'
 
 }, {
@@ -6843,6 +7496,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 6, rind: 'R21/03, R21/37, R21/38, r25/29, R26/12'
 
 }, {
@@ -6853,6 +7507,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 8, rind: 'R8/6, R8/7, R8/8, R17/7, S2/05'
 
 }, {
@@ -6863,6 +7518,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R7/10'
 
 }, {
@@ -6873,6 +7529,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 3, rind: 'R7/51, R7/52, R7/53, R9/11, T1, r24/35, R26/38, R26/34'
 
 }, {
@@ -6883,6 +7540,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R1/12'
 
 }, {
@@ -6893,6 +7551,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 3, rind: 'R6/01, R7/5, R19/3, R19/15, R34/15'
 
 }, {
@@ -6903,6 +7562,7 @@ const flowers = [
     class : " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 3, rind: 'R19/44'
 
 }, {
@@ -6913,6 +7573,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la târzie",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R15/50'
 
 }, {
@@ -6923,6 +7584,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R18/48'
 
 }, {
@@ -6933,16 +7595,18 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R22/47'
 
 }, {
     name: " Whisper Her Name",
-    image: " Whisper Her Name - IMG_20230529_175813 -  r7_4.jpg",
+    image: " Whisper Her Name - IMG_20230529_175813 - r7_4.jpg",
     color: "roz",
     height: 97,
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R7/3, R15/38, R20/32, R20/44'
 
 }, {
@@ -6953,6 +7617,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R15/27, R17/20, R17/24, R17/25'
 
 }, {
@@ -6963,6 +7628,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 3, rind: 'R7/56, R7/57, R7/58, R33/01'
 
 }, {
@@ -6973,6 +7639,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R11/65'
 
 }, {
@@ -6983,16 +7650,18 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la târzie",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R16/30, R17/14'
 
 }, {
     name: " Wink And A Smile",
-    image: " Wink And A Smile - IMG_20230518_200917 - r10_26.jpg",
+    image: " Wink And A Smile - IMG_20230518_200917 - r10_26f701.jpg",
     color: "visiniu",
     height: 91,
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 6, rind: 'R10/26, R10/27, R10/28'
 
 }, {
@@ -7003,6 +7672,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R4/53, R9/57'
 
 }, {
@@ -7013,6 +7683,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R6/12, R6/35, R15/18'
 
 }, {
@@ -7023,6 +7694,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 5, rind: 'R3/25, R7/1, R29/12, R29/29, R30/18, R31/36, R2/26'
 
 }, {
@@ -7033,6 +7705,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 3, rind: 'R14/32, R20/11'
 
 }, {
@@ -7043,6 +7716,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 6, rind: 'R15/46'
 
 }, {
@@ -7053,6 +7727,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R11/11, R3/44'
 
 }, {
@@ -7063,6 +7738,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 4, rind: 'R19/30'
 
 }, {
@@ -7073,6 +7749,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire foarte timpurie până la începutul sezonului înflorire",
     rebloom: false,
+    active: 1,
     cod:  3, rind: 'R6/5, R15/31, r24/09'
 
 }, {
@@ -7083,6 +7760,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod:  3, rind: 'R11/38, R34/28'
 
 }, {
@@ -7093,6 +7771,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie, mijlocul sezonului, târzie",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R5/33, R3/11'
 
 }, {
@@ -7103,6 +7782,7 @@ const flowers = [
     class : " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 1,
     cod: 5, rind: 'R14/1, R14/8, R14/17, R28/17, R29/18, R30/42, R29/37'
 
 }, {
@@ -7113,6 +7793,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 5, rind: 'R9/20'
 
 }, {
@@ -7123,6 +7804,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 10, rind: 'R9/34'
 
 }, {
@@ -7133,6 +7815,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire medie spre târzie",
     rebloom: false,
+    active: 0,
     cod: 10, rind: 'R2/47'
 
 }, {
@@ -7143,10 +7826,452 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
+    active: 0,
     cod: 7, rind: 'R16/3, R16/4, R20/41, R22/38'
+	
+}, {
+    name: " Alaia",
+    image: "Alaia1.jpg",
+    color: "bicolor, portocaliu, visiniu",
+    height: 33,
+    class: " SDB",
+    season: "Înflorire foarte, foarte timpurie",
+    rebloom: false,
+    active: 1,
+    cod: 4, rind: ' '
+	
+}, {
+    name: " R3/5",
+    image: " r3-5.jpg",
+    color: "violet",
+    height:  null,
+    class: " SDB",
+    season: "Înflorire foarte, foarte timpurie",
+    rebloom: false,
+    active: 1,
+    cod: 1, rind: ''
 
-   }
-]; 
+},{
+    name: " R4/30",
+    image: " Grena r4-30 - IMG_20230502_163313.jpg",
+    color: "violet",
+    height:  null,
+    class: " SDB",
+    season: "Înflorire foarte, foarte timpurie",
+    rebloom: false,
+    active: 1,
+    cod: 2, rind: '' 
+
+},{
+    name: " Apricot Tea",
+    image: " Apricot Tea - 2024_04_11_08_45_IMG_1696-R3_1.jpg",
+    color: "portocaliu",
+    height: 28,
+    class: " SDB",
+    season: "Înflorire foarte, foarte timpurie",
+    rebloom: false,
+    active: 1,
+    cod: 2, rind: ''
+
+},{
+    name: " Be Brief",
+    image: " Be brief - 2024_04_08_12_52_IMG_1592-R2_28.jpg",
+    color: ", bicolor, galben, violet",
+    height: 18,
+    class: " MDB",
+    season: "Înflorire foarte, foarte timpurie",
+    rebloom: false,
+    active: 1,
+    cod: 2, rind: ''
+
+},{
+    name: " Being Busy",
+    image: " Being Busy - IMG_20230502_163158- r4-26.jpg",
+    color: "bicolor, galben, visiniu",
+    height: 25-38,
+    class: " SDB",
+    season: "Înflorire foarte, foarte timpurie",
+    rebloom: false,
+    active: 1,
+    cod: 4, rind: ''
+
+},{
+    name: " Coral Wine",
+    image: " Coral Wine - IMG_20220516_094846-R2_37.jpg",
+    color: "bicolor, violet, galben",
+    height: 33,
+    class: " SDB",
+    season: "Înflorire foarte, foarte timpurie",
+    rebloom: false,
+    active: 1,
+    cod: 4, rind: ''
+
+},{
+    name: " Citrynek",
+    image: " Citrynek- 2024_04_10_11_36_IMG_1661-R1_15.jpg",
+    color: "galben",
+    height: 28,
+    class: " SDB",
+    season: "Înflorire foarte, foarte timpurie",
+    rebloom: false,
+    active: 1,
+    cod: 3, rind: ''
+
+},{
+    name: " Festive Bow",
+    image: " Festive Bow - 2024_04_10_11_37_IMG_1664 - R1_19.jpg",
+    color: "portocaliu",
+    height: 30,
+    class: " SDB",
+    season: "Înflorire foarte, foarte timpurie",
+    rebloom: false,
+    active: 1,
+    cod: 3, rind: ''
+
+},{
+    name: " Film Star",
+    image: " Film Star - IMG_20230502_160902-R1_22.jpg",
+    color: "bicolor, galben, visiniu",
+    height: 33,
+    class: " SDB",
+    season: "Înflorire foarte, foarte timpurie",
+    rebloom: false,
+    active: 1,
+    cod: 4, rind: ''
+
+},{
+    name: " Grafon",
+    image: " Grafon - IMG_E1795-R1_11.jpg",
+    color: "bicolor, maro, visiniu",
+    height: 30,
+    class: " SDB",
+    season: "Înflorire foarte, foarte timpurie",
+    rebloom: false,
+    active: 1,
+    cod: 4, rind: ''
+
+},{
+    name: " Barson",
+    image: " Barsoon - 2024_04_11_16_38_IMG_1728_R2_32.jpg",
+    color: "bicolor, violet, alb",
+    height:  null,
+    class: " SDB",
+    season: "Înflorire foarte, foarte timpurie",
+    rebloom: false,
+    active: 0,
+    cod: 3, rind: ''
+
+},{
+    name: " R4/42",
+    image: " Corai pitic r4-42 - IMG_20230516_171918-30784.jpg",
+    color: "visiniu",
+    height:  null,
+    class: " SDB",
+    season: "Înflorire foarte, foarte timpurie",
+    rebloom: false,
+    active: 0,
+    cod: 2, rind: ''
+
+},{
+    name: " Jagodka",
+    image: " Jagodka - 2024_04_09_15_18_IMG_1642-R1_7.jpg",
+    color: "bicolor, violet",
+    height: 30,
+    class: " SDB",
+    season: "Înflorire foarte, foarte timpurie",
+    rebloom: false,
+    active: 1,
+    cod: 3, rind: ''
+
+},{
+    name: " Kasztanek",
+    image: " Kasztanek pitic - IMG_20220513_1201300784.jpg",
+    color: "bicolor, maro, visiniu",
+    height: 36,
+    class: " SDB",
+    season: "Înflorire foarte, foarte timpurie",
+    rebloom: false,
+    active: 0,
+    cod: 3, rind: ''
+
+},{
+    name: " Klil Klik",
+    image: " Klik Klik - 2024_04_09_15_17_IMG_1658-R2_23.jpg",
+    color: "galben",
+    height: 30,
+    class: " SDB",
+    season: "Înflorire foarte, foarte timpurie",
+    rebloom: false,
+    active: 1,
+    cod: 3, rind: ''
+
+},{
+    name: " R4/15",
+    image: " Maro - galben r4-15 - IMG_20230502_1626410784.jpg",
+    color: "bicolor, maro, galben",
+    height:  null,
+    class: " SDB",
+    season: "Înflorire foarte, foarte timpurie",
+    rebloom: false,
+    active: 0,
+    cod: 2, rind: ''
+
+},{
+    name: " R4/11",
+    image: " Maro cu galben r4-11 - IMG_20230502_1625350784.jpg",
+    color: "bicolor, maro, galben",
+    height:  null,
+    class: " SDB",
+    season: "Înflorire foarte, foarte timpurie",
+    rebloom: false,
+    active: 0,
+    cod: 2, rind: ''
+
+},{
+    name: " Mordor",
+    image: " mordor - 2024_04_11_16_39_IMG_1731-R1_22.jpg",
+    color: "visiniu",
+    height: 36,
+    class: " SDB",
+    season: "Înflorire foarte, foarte timpurie",
+    rebloom: false,
+    active: 1,
+    cod: 4, rind: ''
+
+},{
+    name: " R4/21",
+    image: " R4-21- IMG_20230502_162944.jpg",
+    color: "violet",
+    height:  null,
+    class: " SDB",
+    season: "Înflorire foarte, foarte timpurie",
+    rebloom: false,
+    active: 1,
+    cod: 1, rind: ''
+
+},{
+    name: " My Cher",
+    image: " My Cher - IMG_E1800-R2_1.jpg",
+    color: "bicolor, maro, albastru",
+    height: 39,
+    class: " SDB",
+    season: "Înflorire foarte, foarte timpurie",
+    rebloom: false,
+    active: 0,
+    cod: 3, rind: ''
+
+},{
+    name: " Nidoran",
+    image: " Nidoran - IMG_20220516_095021 R2-15.jpg",
+    color: "bicolor, albastru, visiniu",
+    height: 33,
+    class: " SDB",
+    season: "Înflorire foarte, foarte timpurie",
+    rebloom: false,
+    active: 1,
+    cod: 3, rind: ''
+
+},{
+    name: " Peppito",
+    image: " Peppito - 2024_04_10_11_39_IMG_1667-R2_41.jpg",
+    color: "bicolor, visiniu, alb",
+    height: 36,
+    class: " SDB",
+    season: "Înflorire foarte, foarte timpurie",
+    rebloom: false,
+    active: 1,
+    cod: 3, rind: ''
+
+},{
+    name: " Perelka",
+    image: " Perelka r3-2 - IMG_20230509_1152300784.jpg",
+    color: "bicolor, galben, maro",
+    height: 33,
+    class: " SDB",
+    season: "Înflorire foarte, foarte timpurie",
+    rebloom: false,
+    active: 0,
+    cod: 4, rind: ''
+
+},{
+    name: " Purple Pinwheel",
+    image: " Purple Pinwheel r4-33 - IMG_20230509_1210440784.jpg",
+    color: "bicolor, violet, alb",
+    height: 36,
+    class: " SDB",
+    season: "Înflorire foarte, foarte timpurie",
+    rebloom: false,
+    active: 0,
+    cod: 3, rind: ''
+
+},{
+    name: " Sweet Devotion",
+    image: " Sweet Devotion - IMG_E1852-R2_12.jpg",
+    color: "violet",
+    height: 28,
+    class: " SDB",
+    season: "Înflorire foarte, foarte timpurie",
+    rebloom: false,
+    active: 0,
+    cod: 2, rind: ''
+
+},
+{
+    name: " Raspberry Jam",
+    image: " Raspberry Jam - IMG_20230502_163352 -  r4-36.jpg",
+    color: "violet",
+    height: 30,
+    class: " SDB",
+    season: "Înflorire foarte, foarte timpurie",
+    rebloom: false,
+    active: 1,
+    cod: 3, rind: ''
+
+},{
+    name: " Red Hood",
+    image: " Red Hood - 2024_04_08_12_54_IMG_1597-R2_40.jpg",
+    color: "violet",
+    height: 36,
+    class: " SDB",
+    season: "Înflorire foarte, foarte timpurie",
+    rebloom: false,
+    active: 1,
+    cod: 3, rind: ''
+
+},{
+    name: " Spiderstone",
+    image: " Spiderstone - 2024_04_10_11_44_IMG_1674_R2_11.jpg",
+    color: "bicolor, galben, maro",
+    height: 34,
+    class: " SDB",
+    season: "Înflorire foarte, foarte timpurie",
+    rebloom: false,
+    active: 1,
+    cod: 3, rind: ''
+
+},{
+    name: " Stripe Three",
+    image: " Stripe Three - IMG_20220519_1043000784.jpg",
+    color: "bicolor, violet, galben",
+    height: 18,
+    class: " MDB",
+    season: "Înflorire foarte, foarte timpurie",
+    rebloom: false,
+    active: 1,
+    cod: 2, rind: ''
+
+},{
+    name: " Stylish Miss",
+    image: " Stylish Miss - IMG_20220519_104156_1 - R2-06.jpg",
+    color: "violet",
+    height: 28,
+    class: " SDB",
+    season: "Înflorire foarte, foarte timpurie",
+    rebloom: false,
+    active: 1,
+    cod: 3, rind: ''
+
+},{
+    name: " Taz",
+    image: " Taz R1-4 - IMG_20230519_132106-30784.jpg",
+    color: "bicolor, violet, alb, galben",
+    height: 36,
+    class: " SDB",
+    season: "Înflorire foarte, foarte timpurie",
+    rebloom: false,
+    active: 1,
+    cod: 4, rind: ''
+
+},{
+    name: " Two Islands",
+    image: " Two Islands - 2024_04_08_12_52_IMG_1593-R2_36.jpg",
+    color: "bicolor, albastru, violet",
+    height: 25,
+    class: " SDB",
+    season: "Înflorire foarte, foarte timpurie",
+    rebloom: false,
+    active: 0,
+    cod: 3, rind: ''
+
+},{
+    name: " Tabaluca",
+    image: " Tabaluca - 2024_04_08_12_53_IMG_1595-R2_38.jpg",
+    color: "bicolor, galben",
+    height: 38,
+    class: " SDB",
+    season: "Înflorire foarte, foarte timpurie",
+    rebloom: false,
+    active: 0,
+    cod: 4, rind: ''
+
+},{
+    name: " Truly",
+    image: " Truly - IMG_E1809-R4_3.jpg",
+    color: "albastru",
+    height: 30,
+    class: " SDB",
+    season: "Înflorire foarte, foarte timpurie",
+    rebloom: false,
+    active: 0,
+    cod: 2, rind: ''
+
+},{
+    name: " Ultima Nave",
+    image: " Ultima nave- 2024_04_10_11_36_IMG_1660-R1_13.jpg",
+    color: "bicolor, galben, visiniu",
+    height:  null,
+    class: " SDB",
+    season: "Înflorire foarte, foarte timpurie",
+    rebloom: false,
+    active: 0,
+    cod: 3, rind: ''
+
+},{
+    name: " Wazniak",
+    image: " Wazniak - IMG_E1806-R2_34.jpg",
+    color: "violet",
+    height: 34,
+    class: " SDB",
+    season: "Înflorire foarte, foarte timpurie",
+    rebloom: false,
+    active: 0,
+    cod: 3, rind: ''
+
+},{
+    name: " Webmaster",
+    image: " Webmaster - IMG_E1850-R2_30.jpg",
+    color: "visiniu",
+    height: 31,
+    class: " SDB",
+    season: "Înflorire foarte, foarte timpurie",
+    rebloom: false,
+    active: 0,
+    cod: 3, rind: ''
+
+},{
+    name: " Baby Birba",
+    image: " Baby Birba - IMG_E1846-R4_9.jpg",
+    color: "bicolor, galben, maro",
+    height: 22-28,
+    class: " SDB",
+    season: "Înflorire foarte, foarte timpurie",
+    rebloom: false,
+    active: 0,
+    cod: 2, rind: ''
+
+},{
+    name: " Little Blue-Eyes",
+    image: " Little Blue-Eyes - 2024_04_09_15_13_IMG_1634-R4_16.jpg",
+    color: "galben",
+    height: 28,
+    class: " SDB",
+    season: "Înflorire foarte, foarte timpurie",
+    rebloom: false,
+    active: 0,
+    cod: 4, rind: ''
+
+},
+   ];
 
 /* --- 3. Generare galerie + Lightbox --- */
 function renderGallery(data) {
@@ -7179,6 +8304,9 @@ function renderGallery(data) {
 }
 
 /* --- 4. Filtre + sortări --- */
+
+// sortare implicită A–Z
+  flowers.sort((a, b) => a.name.localeCompare(b.name));
 function applyFilters() {
   const nameVal    = search.value.toLowerCase();
   const letterVal  = searchLetter.value.toLowerCase();
@@ -7232,6 +8360,7 @@ document.querySelectorAll(".filters input, .filters select")
 resetBtn.onclick = () => {
   document.querySelectorAll(".filters input, .filters select")
     .forEach(el => el.value = "");
+	
   applyFilters();
 };
 
@@ -7241,26 +8370,10 @@ window.addEventListener("scroll", () => {
 });
 backToTop.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
-/* --- 7. Cod + Rind --- */
-let codVisible = false;
-let rindVisible = false;
-
-secretCod.onclick = () => {
-  codVisible = !codVisible;
-  document.querySelectorAll(".cod").forEach(el =>
-    codVisible ? el.classList.remove("hidden") : el.classList.add("hidden")
-  );
-};
-
-secretRind.onclick = () => {
-  rindVisible = !rindVisible;
-  document.querySelectorAll(".rind").forEach(el =>
-    rindVisible ? el.classList.remove("hidden") : el.classList.add("hidden")
-  );
-};
 
 /* --- 8. Inițializare --- */
 renderGallery(flowers);
 </script>
 
 
+ 
