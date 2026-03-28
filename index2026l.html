@@ -360,6 +360,11 @@ referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
   Printează lista
 </button>
 
+<div id="pdf-info" class="no-print" style="max-width:600px; margin:20px auto;">
+  <label for="clientName">Nume client:</label>
+  <input type="text" id="clientName" placeholder="Introduceți numele..." style="width:100%; padding:6px; margin-top:5px;">
+</div>
+
 <button onclick="salveazaPDF()" class="no-print" style="display:block; margin:20px auto;">
   Salvează ca PDF
 </button>
@@ -7940,7 +7945,6 @@ document.getElementById("goBottom").onclick = () => {
 };
 
 
-/* -----------------------------
    /* -----------------------------
    UTILE
 ------------------------------ */
@@ -8127,8 +8131,6 @@ function renderSavedList() {
 
   let totalGeneral = 0;
   let totalBucati = 0;
-  qs("#totalAddBtn").textContent = `Total adăugări: ${totalBucati}`;
-
 
   items.forEach(item => {
     const total = item.cod * item.cantitate;
@@ -8136,26 +8138,34 @@ function renderSavedList() {
     totalBucati += item.cantitate;
 
     const li = document.createElement("li");
-    li.innerHTML = `
-      <button class="no-print" onclick="deleteItem(${item.cod}, '${item.rind}')">Șterge</button>
-      <button class="no-print" onclick="updateItem(${item.cod}, '${item.rind}', +1)">+</button>
-      <button class="no-print" onclick="updateItem(${item.cod}, '${item.rind}', -1)">-</button>
+   li.innerHTML = `
+  <span class="item-text">
       ${item.nume} — pret euro: ${item.cod} × ${item.cantitate} buc = ${total}
-      <br><small>clasă: ${item.irisClass}</small>
-    `;
-    lista.appendChild(li);
-  });
+      <br>clasă: ${item.irisClass}
+  </span>
 
-totalBox.innerHTML = `
-  Total bucati: ${totalBucati}<br>
-  Pret total in euro: ${totalGeneral}<br>
-  Pret total în lei (×5): ${totalGeneral * 5} lei
+  <span class="item-buttons no-print">
+      <button onclick="deleteItem(${item.cod}, '${item.rind}')">Șterge</button>
+      <button onclick="updateItem(${item.cod}, '${item.rind}', +1)">+</button>
+      <button onclick="updateItem(${item.cod}, '${item.rind}', -1)">-</button>
+  </span>
 `;
 
-// 🔥 Actualizăm și Total adăugări pe baza cantităților reale
-qs("#totalAddBtn").textContent = `Total adăugări: ${totalBucati}`;
 
-}
+    lista.appendChild(li);
+  });  // 🔥 AICI se închide forEach-ul
+
+  // 🔹 Totaluri
+  totalBox.innerHTML = `
+    Total bucati: ${totalBucati}<br>
+    Pret total in euro: ${totalGeneral}<br>
+    Pret total în lei (×5): ${totalGeneral * 5} lei
+  `;
+
+  // 🔹 Actualizăm Total adăugări
+  qs("#totalAddBtn").textContent = `Total adăugări: ${totalBucati}`;
+}  // 🔥 AICI se închide funcția
+
 
 /* -----------------------------
    ADĂUGARE ÎN LISTĂ
@@ -8252,54 +8262,53 @@ function salveazaPDF() {
 
   let y = 10;
 
+  // 🔹 Nume client + data comenzii
+  const clientName = qs("#clientName")?.value || "(fără nume)";
+  const today = new Date();
+  const dataComanda = today.toLocaleDateString("ro-RO");
+
   doc.setFontSize(16);
-  doc.text("Lista mea de selectii", 10, y);
+  doc.text("Lista de selectii", 10, y);
   y += 10;
 
-  const items = loadSavedList();
-
-  if (items.length === 0) {
-    doc.setFontSize(12);
-    doc.text("Lista este goală.", 10, y);
-    doc.save("lista.pdf");
-    return;
-  }
-
-  let totalGeneral = 0;
-  let totalBucati = 0;
-
   doc.setFontSize(12);
+  doc.text(`Nume client: ${clientName}`, 10, y);
+  y += 8;
+  doc.text(`Data comenzii: ${dataComanda}`, 10, y);
+  y += 12;
 
-  items.forEach(item => {
-    const total = item.cod * item.cantitate;
-    totalGeneral += total;
-    totalBucati += item.cantitate;
-
-    const line = `${item.nume} — pret euro: ${item.cod} × ${item.cantitate} buc = ${total}`;
-    doc.text(line, 10, y);
-    y += 8;
-
+  // 🔹 Lista de selectii
+  const items = qsa("#lista-selectii li");
+  items.forEach(li => {
     if (y > 280) {
       doc.addPage();
       y = 10;
     }
+    let text = li.querySelector(".item-text")?.innerText || "";
+
+// eliminăm linia cu "clasă: ..."
+text = text.replace(/clasă:.*$/i, "").trim();
+
+doc.text(text, 10, y);
+
+
+    y += 8;
   });
 
-  y += 10;
+  // 🔹 Totaluri
+  const totaluri = qs("#totaluri")?.innerText || "";
+  if (totaluri) {
+    y += 10;
+    doc.setFontSize(14);
+    doc.text(totaluri, 10, y);
+  }
 
-  doc.setFontSize(14);
-  doc.text(`Total bucati: ${totalBucati}`, 10, y);
-  y += 8;
-  doc.text(`Total suma: ${totalGeneral} euro`, 10, y);
-  y += 8;
-  doc.text(`Total în lei (×5): ${totalGeneral * 5} lei`, 10, y);
-  y += 8;
-  doc.text(`Aceasta lista se trimite pe messenger sau whatsapp`, 10, y);
-
-  doc.save("lista.pdf");
+  doc.save("lista_iris.pdf");
 }
 
+
 /* 🔵 AICI ÎNCEP ADAUGĂRILE PENTRU CONTOR */
+
 
 
 /* Statcounter invizibil */
