@@ -264,6 +264,9 @@ referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
   <p>Catalog interactiv de iriși</p>
   <img src="aIMG_E4385.jpg" alt="Imagine decorativă">
 </header>
+<button onclick="verificaImagini()">Verifică imagini</button>
+<div id="rezultate-imagini" style="max-width:600px; margin:20px auto; font-size:14px;"></div>
+
 
 <!-- FILTRE -->
 <div class="filters">
@@ -7932,7 +7935,7 @@ const flowers = [
 	
 }, {
     name: " Alaia",
-    image: "Alaia - IMG_E1794-R1_8.jpg.jpg",
+    image: "Alaia1.jpg",
     color: "bicolor, portocaliu, visiniu",
     height: 33,
     class: " SDB",
@@ -8373,6 +8376,56 @@ const flowers = [
 
 },
    ];
+function verificaImagini() {
+  let rezultate = [];
+
+  flowers.forEach(f => {
+    const img = new Image();
+    const url = fixImagePath(f.image);
+
+    img.onload = () => {
+      rezultate.push({ nume: f.name, url, status: "OK" });
+      if (rezultate.length === flowers.length) afiseazaRezultate(rezultate);
+    };
+
+    img.onerror = () => {
+      rezultate.push({ nume: f.name, url, status: "EROARE" });
+      if (rezultate.length === flowers.length) afiseazaRezultate(rezultate);
+    };
+
+    img.src = url;
+  });
+}
+
+function afiseazaRezultate(lista) {
+  const box = document.getElementById("rezultate-imagini");
+
+  const invalide = lista.filter(r => r.status === "EROARE");
+
+  if (invalide.length === 0) {
+    box.innerHTML = "<p style='color:green;'>✔ Toate imaginile sunt valide!</p>";
+    return;
+  }
+
+  let html = `
+    <h3 style="color:red;">❌ Imagini invalide găsite: ${invalide.length}</h3>
+    <ul>
+  `;
+
+  invalide.forEach(r => {
+    html += `
+      <li>
+        <strong>${r.nume}</strong><br>
+        <span style="color:#b00;">${r.url}</span>
+      </li>
+    `;
+  });
+
+  html += "</ul>";
+
+  box.innerHTML = html;
+}
+
 
 document.getElementById("goTop").onclick = () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
