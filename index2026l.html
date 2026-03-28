@@ -8213,8 +8213,6 @@ function salveazaPDF() {
   doc.setFontSize(16);
   doc.text("Lista mea de selectii", 10, y);
   y += 10;
-  
-  
 
   const items = loadSavedList();
 
@@ -8245,21 +8243,60 @@ function salveazaPDF() {
     }
   });
 
-  // Spațiu înainte de totaluri
   y += 10;
 
   doc.setFontSize(14);
-doc.text(`Total bucati: ${totalBucati}`, 10, y);
-y += 8;
-doc.text(`Total suma: ${totalGeneral} euro`, 10, y);
-y += 8;
-doc.text(`Total în lei (×5): ${totalGeneral * 5} lei`, 10, y);
-y += 8;
-doc.text(`Aceasta lista se trimite pe messenger sau whatsapp`, 10, y);
+  doc.text(`Total bucati: ${totalBucati}`, 10, y);
+  y += 8;
+  doc.text(`Total suma: ${totalGeneral} euro`, 10, y);
+  y += 8;
+  doc.text(`Total în lei (×5): ${totalGeneral * 5} lei`, 10, y);
+  y += 8;
+  doc.text(`Aceasta lista se trimite pe messenger sau whatsapp`, 10, y);
 
   doc.save("lista.pdf");
 }
 
+/* 🔵 AICI ÎNCEP ADAUGĂRILE PENTRU CONTOR */
+
+/* Afișaj vizitatori */
+document.body.insertAdjacentHTML("beforeend", `
+  <div id="vizitatori" style="
+    text-align:center;
+    margin:20px;
+    font-size:18px;
+    font-weight:bold;">
+    Vizitatori unici: ...
+  </div>
+`);
+
+/* Statcounter invizibil */
+var sc_project = 13213222;
+var sc_invisible = 1;
+var sc_security = "ca3cb5b2";
+
+var scScript = document.createElement("script");
+scScript.src = "https://statcounter.com/counter/counter.js";
+scScript.async = true;
+document.body.appendChild(scScript);
+
+/* Citire vizitatori unici din API */
+async function actualizeazaVizitatori() {
+  try {
+    const r = await fetch("https://api.statcounter.com/stats/?project_id=13213222&security=ca3cb5b2&stat=visitors");
+    const data = await r.json();
+    const total = data?.stats?.visitors?.total || "N/A";
+
+    document.getElementById("vizitatori").textContent =
+      "Vizitatori unici: " + total;
+  } catch (e) {
+    document.getElementById("vizitatori").textContent =
+      "Vizitatori unici: (temporar indisponibil)";
+  }
+}
+
+actualizeazaVizitatori();
 
 </script>
+
 
