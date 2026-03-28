@@ -324,7 +324,6 @@ referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
 
   <button id="resetBtn">🔄 Reset</button>
   <button id="totalAddBtn" class="no-print">Total adăugări: 0</button>
-  <button id="toggleDisponibil" class="no-print">Disponibili</button>
 
 </div>
 
@@ -7940,7 +7939,7 @@ const flowers = [
     season: "timpuriu",
     rebloom: false,
     active: 1,
-    cod: 4, rind: ''
+    cod: 4, rind: ' '
 	
 }, {
     name: " R3/5",
@@ -8394,7 +8393,6 @@ function fixImagePath(path) {
   return path.trim().replace(/ /g, "%20");
 }
 
-let showAll = false; // false = doar disponibili, true = toți
 
 
 /* -----------------------------
@@ -8444,29 +8442,22 @@ function renderGallery(data) {
     card.className = "card";
 
     card.innerHTML = `
-      <img src="${fixImagePath(f.image)}" alt="${f.name}">
-      ${f.rebloom ? '<span class="rebloom-badge">REÎNFLORITOR</span>' : ""}
-      <strong>${f.name}</strong>
-      <p>Înălțime: ${f.height} cm</p>
-      <p>Clasă: ${(f.class || "").trim()} | ${f.season}</p>
-      <p><strong>pret lei:</strong> ${f.cod * 5}</p>
-     ${ showAll
-    ? ""   // dacă suntem în modul "Toți", nu afișăm nimic
-    : (f.active === 1
-        ? `
-          <button class="addBtn"
-            data-nume="${f.name}"
-            data-cod="${f.cod}"
-            data-rind="${f.rind}"
-            data-class="${(f.class || "").trim()}">
-            Adaugă la listă
-          </button>
-        `
-        : ""
-      )
-}
+  <img src="${fixImagePath(f.image)}" alt="${f.name}">
+  ${f.rebloom ? '<span class="rebloom-badge">REÎNFLORITOR</span>' : ""}
+  <strong>${f.name}</strong>
+  <p>Înălțime: ${f.height} cm</p>
+  <p>Clasă: ${(f.class || "").trim()} | ${f.season}</p>
+  <p><strong>pret lei:</strong> ${f.cod * 5}</p>
 
-    `;
+  <button class="addBtn"
+    data-nume="${f.name}"
+    data-cod="${f.cod}"
+    data-rind="${f.rind}"
+    data-class="${(f.class || "").trim()}">
+    Adaugă la listă
+  </button>
+`;
+
 
     gallery.appendChild(card);
   });
@@ -8498,15 +8489,15 @@ function applyFilters() {
     alpha: qs("#sortAlpha")?.value || ""
   };
 
-  let filtered = flowers.filter(f => {
-    if (!showAll && f.active !== 1) return false;
-    return true;
-  });
+  // 🔹 Începem cu TOATE florile
+  let filtered = [...flowers];
 
   // 🔹 Filtru: nume
-  filtered = filtered.filter(f =>
-    f.name.toLowerCase().includes(filters.name)
-  );
+  if (filters.name) {
+    filtered = filtered.filter(f =>
+      f.name.toLowerCase().includes(filters.name)
+    );
+  }
 
   // 🔹 Filtru: culoare
   if (filters.color) {
@@ -8545,9 +8536,10 @@ function applyFilters() {
     filtered.sort((a, b) => b.name.localeCompare(a.name));
   }
 
+  // 🔹 Afișăm rezultatul
   renderGallery(filtered);
-
 }
+
 
 /* -----------------------------
    RENDER LISTĂ
@@ -8667,9 +8659,6 @@ qs("#resetBtn").addEventListener("click", () => {
     if (el) el.value = "";
   });
 
-  // Revenim la modul implicit
-  showAll = false;
-  qs("#toggleDisponibil").textContent = "Disponibili";
 
   // Reafișăm galeria
   applyFilters();
@@ -8681,13 +8670,6 @@ qsa(".filters input, .filters select").forEach(el =>
   el.addEventListener("input", applyFilters)
 );
 
-qs("#toggleDisponibil").onclick = () => {
-    showAll = !showAll;
-
-    qs("#toggleDisponibil").textContent = showAll ? "Toți" : "Disponibili";
-
-    applyFilters();
-};
 qs("#search").addEventListener("input", applyFilters);
 
 
