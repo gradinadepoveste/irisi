@@ -54,7 +54,6 @@
     order: 4;           /* îl trimitem pe linia 2 */
     height: 36px;
   }
-}
   #totalAddBtn {
     grid-column: span 2;
   }
@@ -161,20 +160,17 @@
 
 @media print {
 
-  /* Stil general PDF */
   body {
     font-family: Arial, sans-serif;
     font-size: 14px;
     line-height: 1.4;
   }
 
-  /* Ascundem tot ce nu trebuie în PDF */
   body * {
     display: none !important;
     visibility: hidden !important;
   }
 
-  /* Afișăm doar lista și totalurile */
   #lista-titlu,
   #lista-selectii,
   #lista-selectii li,
@@ -182,12 +178,54 @@
     display: block !important;
     visibility: visible !important;
   }
+
+  /* 🔥 AICI adaugi linia care elimină Șterge +– din PDF */
+  #lista-selectii button {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  #lista-selectii br {
+    display: none !important;
+  }
+
+  /* restul codului tău rămâne neschimbat */
+  #lista-selectii {
+    columns: 2;
+    column-gap: 25px;
+    margin-top: 0;
+    padding: 0;
+  }
+
+ #lista-selectii li > *:not(.item-text) {
+    display: none !important;
+    visibility: hidden !important;
+    grid-template-columns: none !important;
+    gap: 0 !important;
+    list-style: none;
+    padding: 3px 0;
+    border-bottom: 1px solid #ccc;
+    font-size: 12px;
+    white-space: nowrap !important;
+    break-inside: avoid;
+  }
+
+  #lista-selectii li * {
+    display: inline-block !important;
+    margin-right: 6px !important;
+    padding: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  #lista-selectii small {
+    display: none !important;
+  }
+
   #totaluri br {
     display: block !important;
     visibility: visible !important;
   }
 
-  /* Stil pentru titlu */
   #lista-titlu {
     font-size: 22px;
     font-weight: bold;
@@ -195,28 +233,6 @@
     text-align: center;
   }
 
-  /* Transformăm lista într-un tabel vizual */
-  #lista-selectii {
-    margin-top: 0;
-    padding: 0;
-  }
-
-  #lista-selectii li {
-    list-style: none;
-    padding: 2px 0;
-    border-bottom: 1.1px solid #ccc;
-    display: grid;
-    grid-template-columns: 1fr 70px 70px 90px;
-    gap: 4px;
-	font-size: 12px;
-  }
-
-  /* Ascundem câmpul "clasă" */
-  #lista-selectii small {
-    display: none !important;
-  }
-
-  /* Evidențiem totalurile */
   #totaluri {
     margin-top: 25px;
     padding: 15px;
@@ -226,7 +242,8 @@
   }
 }
 
-  
+
+
   </style>
 </head>
 	
@@ -8736,7 +8753,6 @@ flowers.sort((a, b) => a.name.localeCompare(b.name));
 applyFilters();
 renderSavedList();
 
-
 function salveazaPDF() {
   const { jsPDF } = window.jspdf;
   const doc = new jsPDF();
@@ -8758,25 +8774,28 @@ function salveazaPDF() {
   doc.text(`Data comenzii: ${dataComanda}`, 10, y);
   y += 12;
 
-  // 🔹 Lista de selectii
-  const items = qsa("#lista-selectii li");
-  items.forEach(li => {
-    if (y > 280) {
-      doc.addPage();
-      y = 10;
-    }
+// 🔹 Lista de selectii (curată, reconstruită din datele reale)
+const items = loadSavedList().map(item => {
+  const nume = (item.nume || "").trim();
+  const cod = item.cod ?? "-";
+  const rind = item.rind && item.rind.trim() !== "" ? item.rind : "-";
+  const clasa = (item.irisClass || "").trim();
 
-    const textBlock = li.querySelector(".item-text");
+  return `${nume} — cod: ${cod} — rind: ${rind} — clasa: ${clasa}`;
+});
 
-    const nume = textBlock.childNodes[0].textContent.trim();
-    const rind = textBlock.querySelector("br:nth-of-type(1)").nextSibling.textContent.trim().replace("rind: ", "");
-    const clasa = textBlock.querySelector("br:nth-of-type(2)").nextSibling.textContent.trim().replace("clasă: ", "");
 
-    const linie = `${nume} — rind: ${rind} — clasa: ${clasa}`;
+doc.setFontSize(11);
 
-    doc.text(linie, 10, y, { maxWidth: 180 });
-    y += 8;
-  });
+items.forEach(text => {
+  if (y > 280) {
+    doc.addPage();
+    y = 10;
+  }
+
+  doc.text(text, 10, y, { maxWidth: 300 });
+  y += 6;
+});
 
   // 🔹 Totaluri
   const totaluri = qs("#totaluri")?.innerText || "";
@@ -8793,50 +8812,80 @@ function salveazaPDF() {
 
   // 🔹 Pagină nouă pentru lista ordonată după rind
 doc.addPage();
-y = 10;
+let yR = 10;
 
 doc.setFontSize(16);
-doc.text("Lista ordonata dupa rind", 10, y);
-y += 12;
+doc.text("Lista ordonata dupa rind", 10, yR);
+yR += 10;
 
-// Construim lista sortată după rind
+// 🔹 Adăugăm numele clientului și data comenzii și pe această pagină
+doc.setFontSize(12);
+doc.text(`Nume client: ${clientName}`, 10, yR);
+yR += 8;
+doc.text(`Data comenzii: ${dataComanda}`, 10, yR);
+yR += 12;
+
+
+// 🔹 Construim lista sortată după rând
 let items2 = loadSavedList();
-
-// Transformăm fiecare floare în multiple linii (câte un rind)
 let rinduriExpandate = [];
 
+// 🔹 Calculăm numărul de rânduri pentru fiecare plantă
 items2.forEach(item => {
-  const rinduri = item.rind.split(",").map(r => r.trim().toUpperCase());
+  const rinduri = item.rind.split(",").map(r => r.trim()).filter(r => r !== "");
+  const count = rinduri.length;
+
   rinduri.forEach(r => {
     rinduriExpandate.push({
-      rind: r,
-      nume: item.nume
+      rind: r.toUpperCase(),
+      nume: `${item.nume} (${count})`
     });
   });
 });
 
-// sortare după rind
-rinduriExpandate.sort((a, b) => a.rind.localeCompare(b.rind, 'ro', { numeric: true }));
+// 🔹 Sortăm după rând
+rinduriExpandate.sort((a, b) =>
+  a.rind.localeCompare(b.rind, "ro", { numeric: true })
+);
 
-// afișare în PDF
-rinduriExpandate.forEach(entry => {
-  if (y > 280) {
-    doc.addPage();
-    y = 10;
-  }
-
-  const linie = `${entry.rind} — ${entry.nume}`;
-  const wrapped = doc.splitTextToSize(linie, 180);
-
-  doc.text(wrapped, 10, y);
-  y += wrapped.length * 7;
-});
+// 🔹 Transformăm în text simplu
+const rindText = rinduriExpandate.map(entry => `${entry.rind} — ${entry.nume}`);
 
 
+  // 🔹 Împărțim în două coloane
+  const half = Math.ceil(rindText.length / 2);
+  const col1 = rindText.slice(0, half);
+  const col2 = rindText.slice(half);
+
+  let x1 = 10, y1 = yR;
+  let x2 = 110, y2 = yR;
+
+  doc.setFontSize(11);
+
+  // 🔹 Coloana 1
+  col1.forEach(text => {
+    if (y1 > 280) {
+      doc.addPage();
+      y1 = 10;
+    }
+    doc.text(text, x1, y1, { maxWidth: 90 });
+    y1 += 7;
+  });
+
+  // 🔹 Coloana 2
+  col2.forEach(text => {
+    if (y2 > 280) {
+      doc.addPage();
+      y2 = 10;
+    }
+    doc.text(text, x2, y2, { maxWidth: 90 });
+    y2 += 7;
+  });
 
   // 🔹 Salvare PDF
   doc.save("lista_iris.pdf");
 }
+
 
 
 /* 🔵 AICI ÎNCEP ADAUGĂRILE PENTRU CONTOR */
