@@ -275,6 +275,8 @@ referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
     <option value="za">Z-A</option>
   </select>
 
+<button id="sortCodBtn">Pret ↑</button>
+
   <input type="text" id="searchLetter" maxlength="1" placeholder="Litera">
 
   <select id="colorFilter">
@@ -5618,7 +5620,7 @@ const flowers = [
     active: 0,
     cod: 4   
 }, {
-    name: " Power Of One",
+    name: "Power Of One",
     image: " Power de One - IMG_E5411 - v19-45.jpg",
     color: "galben",
     height: 96,
@@ -8673,8 +8675,6 @@ qs("#resetBtn").addEventListener("click", () => {
   applyFilters();
 });
 
-
-
 qsa(".filters input, .filters select").forEach(el =>
   el.addEventListener("input", applyFilters)
 );
@@ -8688,14 +8688,53 @@ qs("#toggleDisponibil").onclick = () => {
 };
 qs("#search").addEventListener("input", applyFilters);
 
+/* -----------------------------
+   SORTARE DUPĂ COD — NOU
+------------------------------ */
+
+let sortCodState = 0; 
+// 0 = alfabetică (default)
+// 1 = cod crescător
+// 2 = cod descrescător
+
+qs("#sortCodBtn").addEventListener("click", () => {
+  
+  if (sortCodState === 0) {
+    // 🔹 Sortare cod crescător
+    flowers.sort((a, b) =>
+      (a.cod || "").toString().localeCompare((b.cod || "").toString(), "ro", { numeric: true })
+    );
+    sortCodState = 1;
+    qs("#sortCodBtn").textContent = "Pret ↓";
+  }
+  else if (sortCodState === 1) {
+    // 🔹 Sortare cod descrescător
+    flowers.sort((a, b) =>
+      (b.cod || "").toString().localeCompare((a.cod || "").toString(), "ro", { numeric: true })
+    );
+    sortCodState = 2;
+    qs("#sortCodBtn").textContent = "Pret (A–Z)";
+  }
+  else {
+    // 🔹 Revenire la sortarea alfabetică
+    flowers.sort((a, b) => a.name.localeCompare(b.name));
+    sortCodState = 0;
+    qs("#sortCodBtn").textContent = "Pret ↑";
+  }
+
+  applyFilters();
+});
 
 /* -----------------------------
    START
 ------------------------------ */
+
 // sortare implicită A–Z
 flowers.sort((a, b) => a.name.localeCompare(b.name));
+
 applyFilters();
 renderSavedList();
+
 
 function salveazaPDF() {
   const { jsPDF } = window.jspdf;

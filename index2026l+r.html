@@ -294,6 +294,8 @@ referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
     <option value="az">A-Z</option>
     <option value="za">Z-A</option>
   </select>
+  
+  <button id="sortCodBtn">Pret ↑</button>
 
   <input type="text" id="searchLetter" maxlength="1" placeholder="Litera">
 
@@ -8729,18 +8731,52 @@ qs("#resetBtn").addEventListener("click", () => {
     if (el) el.value = "";
   });
 
-
   // Reafișăm galeria
   applyFilters();
 });
-
-
 
 qsa(".filters input, .filters select").forEach(el =>
   el.addEventListener("input", applyFilters)
 );
 
 qs("#search").addEventListener("input", applyFilters);
+
+/* -----------------------------
+   SORTARE DUPĂ COD — NOU
+------------------------------ */
+
+let sortCodState = 0; 
+// 0 = alfabetică (default)
+// 1 = cod crescător
+// 2 = cod descrescător
+
+qs("#sortCodBtn").addEventListener("click", () => {
+  
+  if (sortCodState === 0) {
+    // 🔹 Sortare cod crescător
+    flowers.sort((a, b) =>
+      (a.cod || "").toString().localeCompare((b.cod || "").toString(), "ro", { numeric: true })
+    );
+    sortCodState = 1;
+    qs("#sortCodBtn").textContent = "Pret ↓";
+  }
+  else if (sortCodState === 1) {
+    // 🔹 Sortare cod descrescător
+    flowers.sort((a, b) =>
+      (b.cod || "").toString().localeCompare((a.cod || "").toString(), "ro", { numeric: true })
+    );
+    sortCodState = 2;
+    qs("#sortCodBtn").textContent = "Pret (A–Z)";
+  }
+  else {
+    // 🔹 Revenire la sortarea alfabetică
+    flowers.sort((a, b) => a.name.localeCompare(b.name));
+    sortCodState = 0;
+    qs("#sortCodBtn").textContent = "Pret ↑";
+  }
+
+  applyFilters();
+});
 
 
 /* -----------------------------
