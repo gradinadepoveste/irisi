@@ -8505,6 +8505,7 @@ function deleteItem(cod, rind) {
 /* -----------------------------
    GALERIE
 ------------------------------ */
+
 function renderGallery(data) {
   const gallery = qs("#gallery");
   gallery.innerHTML = "";
@@ -8517,10 +8518,11 @@ function renderGallery(data) {
   <img src="${fixImagePath(f.image)}" alt="${f.name}">
   ${f.rebloom ? '<span class="rebloom-badge">REÎNFLORITOR</span>' : ""}
   <strong>${f.name}</strong>
+  
   <p>Înălțime: ${f.height} cm</p>
   <p>Clasă: ${(f.class || "").trim()} | ${f.season}</p>
   <p><strong>pret lei:</strong> ${f.cod * 5}</p>
-
+ <p><strong>Rind:</strong> ${f.rind}</p>
   <button class="addBtn"
     data-nume="${f.name}"
     data-cod="${f.cod}"
@@ -8547,7 +8549,6 @@ function renderGallery(data) {
     }
   );
 }
-
 /* -----------------------------
    FILTRE
 ------------------------------ */
