@@ -8812,13 +8812,19 @@ function salveazaPDF() {
   y += 12;
 
   // 🔹 Lista de selectii
-  const items = loadSavedList().map(item => {
+  let lista = loadSavedList();
+
+// 🔥 SORTARE ALFABETICĂ ÎNAINTE DE PDF
+lista.sort((a, b) => a.nume.localeCompare(b.nume, "ro"));
+
+const items = lista.map(item => {
     const nume = (item.nume || "").trim();
     const cod = item.cod ?? "-";
     const rind = item.rind && item.rind.trim() !== "" ? item.rind : "-";
     const clasa = (item.irisClass || "").trim();
     return `${nume} — cod: ${cod} — rind: ${rind} — clasa: ${clasa}`;
-  });
+});
+
 
   doc.setFontSize(11);
 
