@@ -8761,19 +8761,14 @@ function salveazaPDF() {
 
   // 🔹 Lista de selectii
   const items = qsa("#lista-selectii li");
-  items.forEach(li => {
+  items.forEach((li, index) => {
     if (y > 280) {
       doc.addPage();
       y = 10;
     }
     let text = li.querySelector(".item-text")?.innerText || "";
-
-// eliminăm linia cu "clasă: ..."
-text = text.replace(/clasă:.*$/i, "").trim();
-
-doc.text(text, 10, y);
-
-
+    text = text.replace(/clasă:.*$/i, "").trim();
+    doc.text(`${index + 1}. ${text}`, 10, y);
     y += 8;
   });
 
