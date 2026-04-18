@@ -379,7 +379,7 @@ referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
 
 
 <div id="pdf-info" class="no-print" style="max-width:600px; margin:20px auto;">
-  <label for="clientName">Nume client:</label>
+  <label for="clientName">Nume:</label>
   <input type="text" id="clientName" placeholder="Introduceți numele..." style="width:100%; padding:6px; margin-top:5px;">
 </div>
 
@@ -2281,7 +2281,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    active: 1,
+    active: 0,
     cod: 3, rind: 'R4/19'
 
 }, {
@@ -3370,7 +3370,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    active: 1,
+    active: 0,
     cod: 5, rind: 'R18/05, R14/50, R9/80'
 
 }, {
@@ -4458,7 +4458,7 @@ const flowers = [
     class : " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    active: 1,
+    active: 0,
     cod: 1, rind: 'R2/28, R28/09, R21/14, R18/9, R21/09, R21/05, R19/5, R30/01, R22/14, R32/20, R19/14, R28/03, R27/27'
 
 }, {
@@ -5375,7 +5375,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire târzie la mijlocul sezonului",
     rebloom: false,
-    active: 1,
+    active: 0,
     cod: 5, rind: 'R4/38'
 
 }, {
@@ -6620,7 +6620,7 @@ const flowers = [
     class : " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    active: 1,
+    active: 0,
     cod: 3, rind: 'R22/32'
 
 }, {
@@ -7175,7 +7175,7 @@ const flowers = [
     class: " TB",
     season: "Înflorire timpurie până la mijlocul sezonului",
     rebloom: false,
-    active: 1,
+    active: 0,
     cod: 5, rind: 'R20/3'
 
 }, {
@@ -7219,7 +7219,7 @@ const flowers = [
     class : " TB",
     season: "Înflorire la mijlocul sezonului",
     rebloom: false,
-    active: 1,
+    active: 0,
     cod: 3, rind: 'R13/7'
 
 }, {
@@ -8796,7 +8796,7 @@ function salveazaPDF() {
 
   let y = 10;
 
-  // 🔹 Nume client + data comenzii
+  // 🔹 Nume + data comenzii
   const clientName = qs("#clientName")?.value || "(fără nume)";
   const today = new Date();
   const dataComanda = today.toLocaleDateString("ro-RO");
@@ -8806,7 +8806,7 @@ function salveazaPDF() {
   y += 10;
 
   doc.setFontSize(12);
-  doc.text(`Nume client: ${clientName}`, 10, y);
+  doc.text(`Nume: ${clientName}`, 10, y);
   y += 8;
   doc.text(`Data comenzii: ${dataComanda}`, 10, y);
   y += 12;
@@ -8822,18 +8822,20 @@ const items = lista.map(item => {
     const cod = item.cod ?? "-";
     const rind = item.rind && item.rind.trim() !== "" ? item.rind : "-";
     const clasa = (item.irisClass || "").trim();
-    return `${nume} — cod: ${cod} — rind: ${rind} — clasa: ${clasa}`;
+    const cantitate = item.cantitate ?? 1;
+    const totalLei = (item.cod * 5 * cantitate);
+    return `${cantitate} buc - ${nume} — cod: ${cod} — rind: ${rind} — clasa: ${clasa} — ${cantitate} buc = ${totalLei} lei`;
 });
 
 
   doc.setFontSize(11);
 
-  items.forEach(text => {
+  items.forEach((text, index) => {
     if (y > 280) {
       doc.addPage();
       y = 10;
     }
-    doc.text(text, 10, y, { maxWidth: 300 });
+    doc.text(`${index + 1}. ${text}`, 10, y, { maxWidth: 300 });
     y += 6;
   });
 
@@ -8859,7 +8861,7 @@ doc.text("Lista ordonata dupa rind", 10, yR);
 yR += 10;
 
 doc.setFontSize(12);
-doc.text(`Nume client: ${clientName}`, 10, yR);
+doc.text(`Nume: ${clientName}`, 10, yR);
 yR += 8;
 doc.text(`Data comenzii: ${dataComanda}`, 10, yR);
 yR += 12;
@@ -8915,25 +8917,36 @@ col2.forEach(text => {
 // 🔹 Restul rândurilor pentru paginile următoare
 const rest = rindText.slice(COL_ROWS * 2);
 
-// 🔹 Pagina 2+ : o singură coloană
+// 🔹 Pagina 2+ : tot două coloane
 if (rest.length > 0) {
-  doc.addPage();
-  let y = 10;
+  let i = 0;
+  while (i < rest.length) {
+    doc.addPage();
+    let yPage = 10;
 
-  doc.setFontSize(14);
-  doc.text("Continuare lista ordonata dupa rind", 10, y);
-  y += 12;
+    doc.setFontSize(14);
+    doc.text("Continuare lista ordonata dupa rind", 10, yPage);
+    yPage += 12;
 
-  doc.setFontSize(11);
+    doc.setFontSize(11);
 
-  rest.forEach(text => {
-    if (y > 280) {
-      doc.addPage();
-      y = 10;
-    }
-    doc.text(text, 10, y, { maxWidth: 180 });
-    y += 7;
-  });
+    const pageCol1 = rest.slice(i, i + COL_ROWS);
+    const pageCol2 = rest.slice(i + COL_ROWS, i + COL_ROWS * 2);
+
+    let yA = yPage, yB = yPage;
+
+    pageCol1.forEach(text => {
+      doc.text(text, 10, yA, { maxWidth: 90 });
+      yA += 7;
+    });
+
+    pageCol2.forEach(text => {
+      doc.text(text, 110, yB, { maxWidth: 90 });
+      yB += 7;
+    });
+
+    i += COL_ROWS * 2;
+  }
 }
 
 
