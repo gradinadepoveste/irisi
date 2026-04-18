@@ -8797,7 +8797,7 @@ function salveazaPDF() {
   let y = 10;
 
   // 🔹 Nume + data comenzii
-  const clientName = qs("#clientName")?.value || "(fara nume)";
+  const clientName = qs("#clientName")?.value || "(fără nume)";
   const today = new Date();
   const dataComanda = today.toLocaleDateString("ro-RO");
 
@@ -8831,12 +8831,16 @@ const items = lista.map(item => {
   doc.setFontSize(11);
 
   items.forEach((text, index) => {
-    if (y > 280) {
+    const fullText = `${index + 1}. ${text}`;
+    const lines = doc.splitTextToSize(fullText, 180);
+    const lineHeight = 6;
+    const blockHeight = lines.length * lineHeight;
+    if (y + blockHeight > 285) {
       doc.addPage();
       y = 10;
     }
-    doc.text(`${index + 1}. ${text}`, 10, y, { maxWidth: 300 });
-    y += 6;
+    doc.text(lines, 10, y);
+    y += blockHeight + 1;
   });
 
   // 🔹 Totaluri
