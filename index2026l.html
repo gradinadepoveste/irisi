@@ -9533,14 +9533,14 @@ function renderSavedList() {
   let totalBucati = 0;
 
   items.forEach(item => {
-  const totalLei = item.cod * 5 * item.cantitate;
+  const totalLei = item.cod * item.cantitate;
   totalGeneral += totalLei;
   totalBucati += item.cantitate;
 
   const li = document.createElement("li");
   li.innerHTML = `
     <span class="item-text">
-        ${item.nume} — pret lei: ${item.cod * 5} × ${item.cantitate} buc = ${totalLei}
+        ${item.nume} — pret lei: ${item.cod} × ${item.cantitate} buc = ${totalLei}
         <br>clasă: ${item.irisClass}
     </span>
 
